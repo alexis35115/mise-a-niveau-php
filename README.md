@@ -2,7 +2,7 @@
 
 ## Introduction
 
-__Préambule :__ Le département d'informatique du Cégep de Matane a le plaisir de recevoir à toutes les années de nombres étudiants étrangers dynamiques et ayant tous un parcours scolaire différent.
+__Préambule :__ Le département d'informatique du Cégep de Matane a le plaisir de recevoir à toutes les années de nombreux étudiants étrangers dynamiques et ayant tous un parcours scolaire différent.
 
 __Objectif :__ Faciliter l’intégration des étudiants étrangers via la production d’une mise à niveau en PHP pour le cours de projet web.
 

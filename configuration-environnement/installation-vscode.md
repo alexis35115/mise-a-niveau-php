@@ -17,7 +17,7 @@ Pour installer une extension dans Visual Studio Code, voici la [procédure](http
 Suite à l'installation des extensions, il faut savoir comment [paramétrer les extensions](https://code.visualstudio.com/docs/getstarted/settings). il faut procéder à quelques configurations :
 
 - Définir l'exécutable de PHP : dans la section "Extensions" du menu "Settings", il faut ouvrir "php" et aller éditer le fichier "settings.jsons" pour définir l'endroit de l'exécutable de php. Dans le fichier settings, il faut insérer les valeurs :
-  
+
 ```json
 "php.executablePath": "C:\\Bitnami\\wampstack-[VERSION]\\php\\php.exe",
 "php.validate.executablePath": "C:\\Bitnami\\wampstack-[VERSION]\\php\\php.exe"

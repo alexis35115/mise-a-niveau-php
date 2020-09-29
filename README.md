@@ -30,9 +30,9 @@ Dirigez-vous vers [cette section](/organisation-elements-programmation/README.md
 
 Dirigez-vous vers [cette section](/bonnes-pratiques/README.md).
 
-## Interraction avec la base de données
+## Interaction avec la base de données
 
-Dirigez-vous vers [cette section](/interraction-base-de-donnees/README.md).
+Dirigez-vous vers [cette section](/interaction-base-de-donnees/README.md).
 
 ## Programmation d'un panneau d'administration sécurisé
 
@@ -75,6 +75,6 @@ J'aimerais remercier tous ceux qui ont participé de proche ou de loin à la ré
 - Bruno Harrison
 - Ken Bourgoin
 
-Le département d'informatique est ouvert à tous commentaires constructifs dans le but de bonifier sa mise à niveau.  Il est possible de faire parvenir ces commmentaires à "DÉFINIR OÙ".
+Le département d'informatique est ouvert à tous commentaires constructifs dans le but de bonifier sa mise à niveau.  Il est possible de faire parvenir ces commentaires à "DÉFINIR OÙ".
 
 Tous droits réservés 2020 © Alexis Garon-Michaud, Enseignant en informatique

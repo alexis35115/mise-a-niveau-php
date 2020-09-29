@@ -64,7 +64,15 @@ Dirigez-vous vers [cette section](/resolution-probleme/README.md).
 
 Dirigez-vous vers [cette section](/cross-site/README.md).
 
+## Remerciements
 
-remerciements
+J'aimerais remercier tous ceux qui ont participé de proche ou de loin à la rédaction de cette mise à niveau.
+
+- Nadine Giasson St-Amand
+- Sébastien Bois
+- Bruno Harrison
+- Ken Bourgoin
+
+Le département d'informatique est ouvert à tous commentaires constructifs dans le but de bonifier sa mise à niveau.  Il est possible de faire parvenir ces commmentaires à "DÉFINIR OÙ".
 
 Tous droits réservés 2020 © Alexis Garon-Michaud

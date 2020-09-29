@@ -1,6 +1,6 @@
 # Mise à niveau des étudiants étrangers
 
-thèmes
+__Objectif :__ Faciliter l’intégration des étudiants étrangers via la production d’une mise à niveau en PHP pour le cours de projet web.
 
 ## Configuration de l'environnement
 

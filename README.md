@@ -2,11 +2,13 @@
 
 ## Introduction
 
+__Préambule :__ Le Cégep de Matane a le plaisir de recevoir à toutes les années de nombres étudiants étrangers dynamiques et ayant tous un parcours scolaire différent.
+
 __Objectif :__ Faciliter l’intégration des étudiants étrangers via la production d’une mise à niveau en PHP pour le cours de projet web.
 
-Cette mise à niveau sera composée de documentations, de vidéos, d'exemples et d'exercices.
+__Manières pédagogiques :__ Cette mise à niveau sera composée de documentations, de vidéos, d'exemples et d'exercices.
 
-__Si vous êtes à vos débuts, il est recommandé de suivre les sections dans l'ordre.__
+__Si vous êtes à vos débuts, il est fortement recommandé de suivre les sections dans l'ordre.__
 
 ## Configuration de l'environnement
 

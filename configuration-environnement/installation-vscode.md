@@ -2,6 +2,8 @@
 
 ## Installation
 
+
+
 ### Installation des extensions
 
 Pour installer une extension dans Visual Studio Code, voici la [procédure](https://code.visualstudio.com/docs/editor/extension-gallery) à suivre. Donc, il faut installer les extensions suivantes :

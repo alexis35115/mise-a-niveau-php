@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Cette section couvre l'installation et la configuration des différentes outils nécessaires au développement du PHP en local.
+Cette section couvre l'installation et la configuration des différents outils nécessaires au développement du PHP en local.
 
 ## Lexique
 
@@ -15,7 +15,7 @@ Pour faciliter la lecture de cette section, voici un lexique des différents ter
 
 ## Mise en route
 
-Voici les étapes à suivres :
+Voici les étapes à suivre :
 
 - [Installation de WAMP](installation-wamp.md)
 - [Utilisation initiale de phpMyAdmin](utilisation-initiale-phpMyAdmin.md)

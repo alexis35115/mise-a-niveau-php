@@ -1,4 +1,4 @@
-# Mise à niveau des étudiants étrangers
+# Mise à niveau des étudiants étrangers offert par le département d'informatique du Cégep de Matane
 
 ## Introduction
 
@@ -77,4 +77,4 @@ J'aimerais remercier tous ceux qui ont participé de proche ou de loin à la ré
 
 Le département d'informatique est ouvert à tous commentaires constructifs dans le but de bonifier sa mise à niveau.  Il est possible de faire parvenir ces commmentaires à "DÉFINIR OÙ".
 
-Tous droits réservés 2020 © Alexis Garon-Michaud
+Tous droits réservés 2020 © Alexis Garon-Michaud, Enseignant en informatique

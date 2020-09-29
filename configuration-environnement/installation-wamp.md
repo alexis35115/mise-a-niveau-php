@@ -25,3 +25,5 @@ Pour valider votre configuration, ouvrez un navigateur et naviguez à l'adresse 
 ```
 
 Vous devriez maintenant être en mesure de naviguer à l'adresse : <http://localhost/php/index.php> et voir le texte "test de ma configuration" à l'écran.
+
+[Revenir à la page principale de la section](README.md)

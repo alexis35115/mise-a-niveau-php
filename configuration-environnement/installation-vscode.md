@@ -24,3 +24,5 @@ Suite à l'installation des extensions, il faut savoir comment [paramétrer les 
 ```
 
 - Configurer Open PHP/HTML/JS, il faut aller dans "Extensions" -> "Open PHP/HTML/JS", il faut mettre la valeur "<http://localhost:8888/${fileBasename}>" dans la configuration "Custom Url to Open" et insérer la valeur "C:\Bitnami\wampstack-[VERSION]\apache2\htdocs" dans la configuration "Document Root Folder".
+
+[Revenir à la page principale de la section](README.md)

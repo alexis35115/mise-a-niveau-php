@@ -4,7 +4,7 @@
 
 ## Téléchargement
 
-Pour installer Bitnami, il faut aller [ici](https://bitnami.com/stack/wamp), cliquer sur le bouton "Win / Mac / Linux", suite au téléchargement, il faut procéder à l'installation via l'outil d'installation.
+Pour installer Bitnami, il faut aller [ici](https://bitnami.com/stack/wamp/installer), cliquez sur le bouton "Download for Windows", suite au téléchargement, procédez à l'installation via l'installateur.
 
 ## Configurer son environnement
 

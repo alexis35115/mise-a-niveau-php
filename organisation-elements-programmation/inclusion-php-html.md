@@ -45,6 +45,6 @@ Voici la page web qui sera produite suite à l'interprétation.
 Notez que :
 
 - Les commentaires sont ignorés (ceux en PHP et ceux en HTML).
-- Le code à l'intérieur de la balise "<?php ?>" est interprété et le message résultant de la commande __echo__ est ajouté à la page.
+- Le code à l'intérieur de la balise __<\?php ?\>__ est interprété et le message résultant de la commande __echo__ est ajouté à la page.
 
 [Revenir à la page principale de la section](README.md)

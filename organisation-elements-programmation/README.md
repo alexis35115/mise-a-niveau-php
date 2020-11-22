@@ -1,5 +1,6 @@
 # Organisation des éléments de programmation
 
+Cette section couvre le processus d'interprétation du PHP et des techniques à la production de HTML avec l'aide du PHP.
 
 ## Mise en route
 

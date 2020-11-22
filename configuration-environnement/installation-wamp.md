@@ -28,7 +28,7 @@ Vous devez préciser le dossier d'installation de Bitnami, utiliser la valeur __
 
 ![Dossier d'installation de Bitnami lors de l'installation](../images/dossier-installation-bitnami.PNG)
 
-Vous aurez à saisir un mot de passe pour l'utilisateur __root__ de la base de données. Assurez-vous de mettre un mot de passe et de __prendre celui-ci en note__!
+Vous aurez à saisir un mot de passe pour l'utilisateur __root__ de la base de données. Assurez-vous de saisir un mot de passe et de __prendre celui-ci en note__!
 
 ![Création du mot de passe pour le compte root de la base de données.](../images/creation-pw-root.PNG)
 
@@ -38,24 +38,24 @@ Faire attention à __ne pas__ sélectionner _Launch wampstack in the cloud with 
 
 ## Configuration de son environnement
 
-Suite à l'installation, l'application devrait s'installer sous le répertoire "C:\Bitnami".
+Suite à l'installation, Bitnami devrait s'installer sous le répertoire __"C:\Bitnami"__.
 
 Voici certaines manipulations à effectuer :
 
-- Créer un raccourci du répertoire __htdocs__ qui se trouve sous __"C:\Bitnami\wampstack-[VERSION]\apache2"__ et mettre ce raccourci à la racine de Bitnami __"C:\Bitnami\"__.
-- Dans le répertoire __htdocs__, créez un répertoire __bitnami__ et y insérer le contenu de base du répertoire __htdocs__ à l'intérieur.
-- Dans le but de faciliter le développement, il vous faut désactiver le __cache__ par défaut. Si le cache est activé, lors d'une modification à vos applications, celle-ci ne sera pas immédiatement reflétée dans vos applications. Ouvrez le fichier __"C:\Bitnami\wampstack-[VERSION]\php\php.ini"__ avec un éditeur de texte et rechercher la configuration __opcache.enable__ et lui donner la valeur de __0__ (désactivé) au lieu de "1" (activé), n'oubliez pas d'enregistrer le fichier avant sa fermeture.
+- Créer un raccourci du répertoire __htdocs__ qui se trouve sous __"C:\Bitnami\wampstack\apache2"__ et mettre ce raccourci à la racine de Bitnami __"C:\Bitnami\"__.
+- Dans le répertoire __htdocs__, créez un répertoire __bitnami__ et y insérer le contenu de base du répertoire __htdocs__ à l'intérieur. Vous devriez être en mesure de consulter la page de Bitnami à l'adresse <http://127.0.0.1:81/bitnami/>.
+- Dans le but de faciliter le développement en local, il vous faut désactiver le __cache__ par défaut. Lorsque le cache est activé, les modifications à vos applications ne seront pas immédiatement reflétées dans vos applications. Ouvrez le fichier __"C:\Bitnami\wampstack\php\php.ini"__ et changez la configuration __opcache.enable__ pour lui donner la valeur de __0__ (désactivé) au lieu de __1__ (activé), n'oubliez pas d'enregistrer le fichier avant sa fermeture.
 
 ## Première utilisation
 
-Pour valider votre configuration, ouvrez un navigateur et naviguez à l'adresse : <http://localhost/bitnami/index.html>, vous devriez apercevoir la page par défaut de Bitnami. Prendre note que dans l'adresse du site, il y a "bitnami", celui-ci représente le répertoire créé dans la configuration un peu plus tôt. Donc, nous allons faire un test, créer un répertoire avec le nom de "php" dans le dossier "htdocs". Dans un répertoire "exemple", crée un fichier "index.php" et y insérer le code suivant :
+Créons un répertoire __"exemple"__ dans le répertoire __"htdocs"__. Dans ce répertoire, créez un fichier __"index.php"__ et y insérer le code suivant :
 
 ``` php
 <?php
-    echo("test de ma configuration");
+    phpinfo();
 ?>
 ```
 
-Vous devriez maintenant être en mesure de naviguer à l'adresse : <http://localhost/exemple/index.php> et voir "__test de ma configuration__" à l'écran de votre navigateur.
+Vous devriez maintenant être en mesure de naviguer à l'adresse : <http://localhost:81/exemple/index.php> et voir devriez voir  les informations sur la configuration de PHP.
 
 [Revenir à la page principale de la section](README.md)

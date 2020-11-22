@@ -38,13 +38,20 @@ Suite à l'installation des extensions, il faut savoir comment [paramétrer les 
 
 Ensuite, il faut procéder à quelques configurations :
 
-- Définir l'exécutable de PHP : dans la section __Extensions__ du menu __Settings__, il faut ouvrir __php__ et aller éditer le fichier "settings.json". Dans le fichier de configuration, ajoutez ces valeurs :
+- Définir l'exécutable de PHP : naviguez dans la section __settings__ pour ensuite ouvrir le fichier "settings.json" et ajoutez ces valeurs :
 
 ```json
 "php.executablePath": "C:\\Bitnami\\wampstack\\php\\php.exe",
 "php.validate.executablePath": "C:\\Bitnami\\wampstack\\php\\php.exe"
 ```
 
-- Pour configurer __Open PHP/HTML/JS__, allez dans le menu __Extensions__ -> __Open PHP/HTML/JS__, ajoutez la valeur "<http://localhost:8888/${fileBasename}>". Dans la configuration __Custom Url to Open__, insérez la valeur __"C:\Bitnami\wampstack\apache2\htdocs"__ dans la configuration __Document Root Folder__.
+- Pour configurer __Open PHP/HTML/JS__, naviguez dans la section __settings__ pour ensuite ouvrir le fichier "settings.json" et ajoutez ces valeurs :
+
+```json
+    "open-php-html-js-in-browser.customUrlToOpen": "http://${host}/${fileBasename}",
+    "open-php-html-js-in-browser.documentRootFolder": "C:\\Bitnami\\wampstack\\apache2\\htdocs",
+    "open-php-html-js-in-browser.selectedBrowser": "Edge",
+    "open-php-html-js-in-browser.customHost": "localhost:81"
+```
 
 [Revenir à la page principale de la section](README.md)

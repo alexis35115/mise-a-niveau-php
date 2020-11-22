@@ -1,6 +1,8 @@
 # Organisation des éléments de programmation
 
-- Inclure du PHP dans les pages HTML
+
+
+- Inclure du PHP dans une page HTML
 - Générer du HTML à l'aide de PHP
 - Utilisation judicieuse de include et require
 

@@ -58,4 +58,6 @@ Créons un répertoire __"exemple"__ dans le répertoire __"htdocs"__. Dans ce r
 
 Vous devriez maintenant être en mesure de naviguer à l'adresse : <http://localhost:81/exemple/index.php> et voir devriez voir  les informations sur la configuration de PHP.
 
+![Configuration de PHP](../images/configuration-php.PNG)
+
 [Revenir à la page principale de la section](README.md)

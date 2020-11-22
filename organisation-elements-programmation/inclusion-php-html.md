@@ -36,6 +36,8 @@ dans le flux de sortie (selon la configuration du serveur).
 </html>
 ```
 
+>**Astuce :** Le [code source](../src/exemple-interpretation-php/index.php) est disponible.
+
 Voici la page web qui sera produite suite à l'interprétation.
 
 ![Exemple d'interprétation de PHP dans une page](../images/exemple-interpretation-php.PNG)

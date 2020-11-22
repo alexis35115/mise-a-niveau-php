@@ -4,7 +4,7 @@
 
 ## Téléchargement
 
-Pour installer Bitnami, il faut aller [ici](https://bitnami.com/stack/wamp/installer), cliquez sur le bouton "Download for Windows", suite au téléchargement, procédez à l'installation via l'installateur.
+Pour installer Bitnami, il faut aller [ici](https://bitnami.com/stack/wamp/installer), cliquez sur le bouton "_Download for Windows_", suite au téléchargement, procédez à l'installation via l'installateur.
 
 ## Configurer son environnement
 
@@ -12,7 +12,7 @@ Pour installer Bitnami, il faut aller [ici](https://bitnami.com/stack/wamp/insta
 
 - Créer un raccourci du répertoire "htdocs" qui se trouve sous "C:\Bitnami\wampstack-[VERSION]\apache2" et mettre ce raccourci à la racine de Bitnami ("C:\Bitnami\").
 - Dans le répertoire "htdocs", créer un répertoire "bitnami" et y insérer le contenu de base du répertoire "htdocs" à l'intérieur.
-- Dans le but de faciliter le développement, il faut désactiver la "cache" par défaut qui est configuré dans Bitnami. Si la cache est activée, lors d'une modification à vos applications, celle-ci ne sera pas immédiatement reflétée dans vos applications. Il faut ouvrir le fichier "C:\Bitnami\wampstack-[VERSION]\php\php.ini" avec un éditeur de texte et rechercher la configuration "opcache.enable" et lui donner la valeur de "0" (désactivée) au lieu de "1" (activée).
+- Dans le but de faciliter le développement, il faut désactiver la "cache" par défaut qui est configuré dans Bitnami. Si la cache est activée, lors d'une modification à vos applications, celle-ci ne sera pas immédiatement reflétée dans vos applications. Il faut ouvrir le fichier "C:\Bitnami\wampstack-[VERSION]\php\php.ini" avec un éditeur de texte et rechercher la configuration "opcache.enable" et lui donner la valeur de "0" (désactivée) au lieu de "1" (activée), n'oubliez pas d'enregistrer le fichier avant sa fermeture.
 
 ## Exemple d'utilisation
 
@@ -24,6 +24,6 @@ Pour valider votre configuration, ouvrez un navigateur et naviguez à l'adresse 
 ?>
 ```
 
-Vous devriez maintenant être en mesure de naviguer à l'adresse : <http://localhost/php/index.php> et voir le texte "test de ma configuration" à l'écran.
+Vous devriez maintenant être en mesure de naviguer à l'adresse : <http://localhost/php/index.php> et voir le texte "test de ma configuration" à l'écran de votre navigateur.
 
 [Revenir à la page principale de la section](README.md)

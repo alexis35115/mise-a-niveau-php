@@ -8,6 +8,12 @@ Les requêtes SQL restent possibles, ce qui permet de les tester interactivement
 
 ## Configuration initiale
 
-Par défaut, lors de l'installation de Bitnami WAMP Stack, celui-ci installe phpMyAdmin par défaut. Pour y accéder, naviguez à l'adresse : <http://localhost:81/phpmyadmin/>. Pour vous connecter, utilisez __root__ comme l'utilisateur et utilisez le mot de passe que vous avez saisi lors de l'installation de Bitnami WAMP Stack.
+Par défaut, lors de l'installation de Bitnami WAMP Stack, celui-ci installe phpMyAdmin par défaut. Pour y accéder, naviguez à l'adresse : <http://localhost:81/phpmyadmin/>.
+
+![Connexion initiale à phpMyAdmin](../images/connexion-initiale-phpmyadmin.PNG)
+
+Pour vous connecter, utilisez __root__ comme l'utilisateur et utilisez le mot de passe que vous avez saisi lors de l'installation de Bitnami WAMP Stack.
+
+![Panneau phpMyAdmin](../images/panneau-phpmyadmin.PNG)
 
 [Revenir à la page principale de la section](README.md)

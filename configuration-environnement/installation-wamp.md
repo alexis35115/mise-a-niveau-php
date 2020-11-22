@@ -10,7 +10,7 @@ Pour installer Bitnami, allez [ici](https://bitnami.com/stack/wamp/installer) et
 
 ![Téléchargement de Bitnami pour Windows](../images/download-for-windows-bitnami.PNG)
 
-Une fênetre de connexion s'affichera, vous n'avez qu'à cliquer suite "_No thanks, just take me to the download_" pour lancer le téléchargement.
+Une fenêtre de connexion s'affichera, vous n'avez qu'à cliquer suite "_No thanks, just take me to the download_" pour lancer le téléchargement.
 
 ![Connexion à Bitnami](../images/connexion-bitnami.PNG)
 

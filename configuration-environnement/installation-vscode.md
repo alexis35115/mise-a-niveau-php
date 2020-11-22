@@ -16,11 +16,11 @@ Une vidéo expliquant l'installation et la configuration de Visual Studio Code e
 2. Une fois le téléchargement complété, exécuter l'installateur __VSCodeUserSetup-{version}.exe__.
 3. Par défaut, Visual Studio Code sera installé sous __"C:\users\{username}\AppData\Local\Programs\Microsoft VS Code"__.
 
->**Important :** Assurez-vous d'avoir ces options de sélectionnées.
+>**Important :** assurez-vous d'avoir ces options de sélectionnées.
 
 ![Avoir Visual Studio Code dans le menu contextuel](../images/addContextMenuDuringInstallation.png)
 
->**Astuce :** Lors de l'installation, votre variable `%PATH%` sera modifiée pour y ajouter Visual Studio Code. Un redémarrage sera nécessaire pour que le changement puisse prendre effet.
+>**Astuce :** lors de l'installation, votre variable `%PATH%` sera modifiée pour y ajouter Visual Studio Code. Un redémarrage sera nécessaire pour que le changement puisse prendre effet.
 
 Référez-vous à la [documentation officielle](https://code.visualstudio.com/docs/setup/windows) au besoin.
 
@@ -29,7 +29,7 @@ Référez-vous à la [documentation officielle](https://code.visualstudio.com/do
 Pour installer une extension dans Visual Studio Code, voici la [procédure](https://code.visualstudio.com/docs/editor/extension-gallery) à suivre. Donc, il faut installer les extensions suivantes :
 
 - [PHP extension pack](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-pack) : regroupement d'extensions pour le développement PHP
-- [sftp-sync](https://marketplace.visualstudio.com/items?itemName=liximomo.sftp) :  permet de transférer des fichiers sur le réseau via le protocol FTP
+- [sftp-sync](https://marketplace.visualstudio.com/items?itemName=liximomo.sftp) :  permet de transférer des fichiers sur le réseau via le protocole FTP
 - [Open PHP/HTML/JS In Browser](https://marketplace.visualstudio.com/items?itemName=PrimaFuture.open-php-html-js-in-browser) : permet d'ouvrir le code directement dans le navigateur à l'aide du raccourci par défaut __Shift+F6__.
 
 ## Configuration des extensions

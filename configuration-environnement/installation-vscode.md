@@ -14,7 +14,7 @@ Une vidéo expliquant l'installation et la configuration de Visual Studio Code e
 
 1. Téléchargez l'[installateur](https://go.microsoft.com/fwlink/?LinkID=534107) pour Windows
 2. Une fois le téléchargement complété, exécuter l'installateur __VSCodeUserSetup-{version}.exe__.
-3. Par défaut, Visual Studio Code sera installé sous "C:\users\{username}\AppData\Local\Programs\Microsoft VS Code".
+3. Par défaut, Visual Studio Code sera installé sous __"C:\users\{username}\AppData\Local\Programs\Microsoft VS Code"__.
 
 >**Important :** Assurez-vous d'avoir ces options de sélectionnées.
 
@@ -22,7 +22,7 @@ Une vidéo expliquant l'installation et la configuration de Visual Studio Code e
 
 >**Astuce :** Lors de l'installation, votre variable `%PATH%` sera modifiée pour y ajouter Visual Studio Code. Un redémarrage sera nécessaire pour que le changement puisse prendre effet.
 
-Vous pouvez vous référer à la [documentation officielle](https://code.visualstudio.com/docs/setup/windows) au besoin.
+Référez-vous à la [documentation officielle](https://code.visualstudio.com/docs/setup/windows) au besoin.
 
 ## Installation des extensions recommandées
 

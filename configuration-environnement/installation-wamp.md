@@ -2,9 +2,7 @@
 
 [Bitnami WAMP Stack](https://bitnami.com/stack/wamp) fournis un environnement de développement WAMP complet, entièrement intégré et prêt à fonctionner. Outre PHP, MySQL et Apache, il inclut également phpMyAdmin.
 
-## Vidéo synthèse de la section
-
-Vous pouvez regarder la vidéo suivante VIDEO À METTRE ICI.
+Une vidéo expliquant l'installation et la configuration de Bitnami WAMP Stack est disponible. VIDEO À METTRE ICI.
 
 ## Téléchargement et installation
 

@@ -12,13 +12,13 @@ Pour installer Bitnami, allez [ici](https://bitnami.com/stack/wamp/installer) et
 
 ![Téléchargement de Bitnami pour Windows](../images/download-for-windows-bitnami.PNG)
 
-Une fênetre de connexion s'affichera, vous n'avez qu'à cliquer suite "_No thanks, just take me to the download_" pour lancer le téléchargement de l'installateur.
+Une fênetre de connexion s'affichera, vous n'avez qu'à cliquer suite "_No thanks, just take me to the download_" pour lancer le téléchargement.
 
 ![Connexion à Bitnami](../images/connexion-bitnami.PNG)
 
 ## Installation
 
-Lorsque le téléchargement est complété, procédez à l'installation en lançant l'installateur.
+Lorsque le téléchargement est complété, lancez l'installateur.
 
 Lors de l'installation, vous aurez à choisir les composants à installer, assurez-vous que "__PhpMyAdmin__" est sélectionné. Notez que si vous n'avez pas besoin des autres composants, vous n'avez qu'à désélectionner ces options.
 

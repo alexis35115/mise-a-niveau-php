@@ -1,9 +1,13 @@
 # Organisation des éléments de programmation
 
 
+## Mise en route
 
-- Inclure du PHP dans une page HTML
-- Générer du HTML à l'aide de PHP
-- Utilisation judicieuse de include et require
+Voici les étapes :
+
+- [Inclure du PHP dans une page HTML](inclusion-php-html.md)
+- [Générer du HTML à l'aide de PHP](generation-html-avec-php.md)
+- [Utilisation des instructions include et reuqire]([Revenir à la page principale de la section](README.md)
+)
 
 [Revenir à la page principale](../README.md)

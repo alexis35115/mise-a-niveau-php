@@ -1,5 +1,7 @@
 # Utilisation des instructions include et require
 
+<https://tutowebdesign.com/inclusion-fichiers-php.php>
+
 ## Instruction include
 
 ## Instruction require

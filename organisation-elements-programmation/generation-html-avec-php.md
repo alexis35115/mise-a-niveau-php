@@ -1,8 +1,8 @@
 # Générer du HTML à l'aide de PHP
 
-## Affichage simple avec la commmande echo
+## Affichage simple avec la commande _echo_
 
-La commande __echo__ sert à afficher du contenu texte, ce texte doit être placé entre des guillemets ou des apostrophes.
+La commande _echo_ sert à afficher du contenu texte, ce texte doit être placé entre des guillemets ou des apostrophes.
 
 ```php
 echo("Voici la commande echo");
@@ -68,7 +68,7 @@ Affichage :
 Mon ami "Bruno" est gentil.
 ```
 
-Ce problème peut se produire également lors de l'utilisation d'apstrophes.
+Ce problème peut se produire également lors de l'utilisation d'apostrophes.
 
 ```php
 echo('Mon ami 'Bruno' est gentil.');
@@ -76,7 +76,7 @@ echo('Mon ami 'Bruno' est gentil.');
 
 >**Note :** Le code précédent causera une erreur.
 
-La solution à suivre est là même que lorsque l'on utilise les guillemets, il faut utiliser un caractère d'échapement (symbole __\\__).
+La solution à suivre est là même que lorsque l'on utilise les guillemets, il faut utiliser un caractère d'échappement (symbole __\\__).
 
 ```php
 echo('Mon ami \'Bruno\' est gentil.');
@@ -120,7 +120,7 @@ Le nom de mon chien est Louna.
 
 ## Génération complexe de HTML
 
-Il est possible de générer des éléments HTML plus complèxes.
+Il est possible de générer des éléments HTML plus complexes.
 
 Créons une liste de prénoms avec une balise __\<ul\>__ et des balises __\<li\>__.
 

@@ -117,7 +117,9 @@ Depuis quelques versions, la commande _echo_ possède une version courte. Cette 
 Code PHP :
 
 ```php
-$nom = "Louna";
+<?php
+    $nom = "Louna";
+?>
 ```
 
 Code HTML :
@@ -128,7 +130,7 @@ Code HTML :
 
 Affichage :
 
-```php
+```txt
 Le nom de mon chien est Louna.
 ```
 

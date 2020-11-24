@@ -27,7 +27,7 @@ Aux endroits où les fichiers sont inclus, PHP va prendre le contenu de ces fich
 
 ## Différence entre l'instruction __include()__ et l'instruction __require()__
 
-La grande différence entre les instructions __require()__ et __include()__ est au niveau de la gestion d'erreur. L'instruction __include()__ renvoi qu’un avertissement (_warning_) en cas d’erreur, alors que l'instruction __require()__ provoquera une erreur __fatale__ qui empêchera l’exécution des scripts subséquent.
+La grande différence entre les instructions __require()__ et __include()__ est au niveau de la gestion d'erreur. L'instruction __include()__ renvoi qu’un avertissement (_warning_) en cas d’erreur, alors que l'instruction __require()__ provoquera une erreur __fatale__ qui empêchera l’exécution des scripts subséquents.
 
 ## Inclusion avec l'instruction __include_once()__ et avec l'instruction __require_once()__
 

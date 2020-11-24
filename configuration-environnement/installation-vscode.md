@@ -6,7 +6,7 @@ Les fonctionnalités incluent la prise en charge du débogage, la mise en évide
 
 Le code source de Visual Studio Code provient du projet logiciel libre et open source [VSCode de Microsoft](https://github.com/microsoft/vscode) publié sous la licence MIT permissive, mais les binaires compilés sont des logiciels gratuits pour toute utilisation.
 
-Dans le _[Stack Overflow 2019 Developer Survey]_(https://insights.stackoverflow.com/survey/2019), Visual Studio Code a été classé comme l'outil d'environnement de développement le plus populaire, avec 50,7 % des 87 317 répondants déclarant l'utiliser.
+Dans le _[Stack Overflow 2019 Developer Survey](https://insights.stackoverflow.com/survey/2019)_, Visual Studio Code a été classé comme l'outil d'environnement de développement le plus populaire, avec 50,7 % des 87 317 répondants déclarant l'utiliser.
 
 Une vidéo expliquant l'installation et la configuration de Visual Studio Code est disponible. VIDEO À METTRE ICI.
 

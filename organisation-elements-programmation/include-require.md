@@ -1,6 +1,6 @@
 # Inclusion de fichiers
 
-En pratique, lorsque l'on créer un site web, les contenus communs à toutes les pages sont enregistrés dans différents fichiers (entête de page, pied de page, menu principal...). Lorsque de la création d'une nouvelle page, on peut appeler ces fichiers et les placer au bon endroit grâce à la fonction __include()__ ou __require()__.
+En pratique, lorsque l'on créer un site web, les contenus communs à toutes les pages sont enregistrés dans différents fichiers (entête de page, pied de page, menu principal...). Lors de la création d'une nouvelle page, on peut appeler ces fichiers et les placer au bon endroit grâce à la fonction __include()__ ou __require()__.
 
 Par exemple :
 
@@ -27,7 +27,7 @@ Aux endroits où les fichiers sont inclus, PHP va prendre le contenu de ces fich
 
 ## Différence entre l'instruction __include()__ et l'instruction __require()__
 
-La grande différence est l'instruction __require()__ et de l'instruction __include()__ est au niveau de la gestion d'erreur. L'instruction __include()__ renvoi qu’un avertissement (_warning_) en cas d’erreur, alors que l'instruction __require()__ provoquera une erreur __fatale__ qui empêchera l’exécution des scripts subséquent.
+La grande différence entre l'instruction __require()__ et de l'instruction __include()__ est au niveau de la gestion d'erreur. L'instruction __include()__ renvoi qu’un avertissement (_warning_) en cas d’erreur, alors que l'instruction __require()__ provoquera une erreur __fatale__ qui empêchera l’exécution des scripts subséquent.
 
 ## Inclusion avec l'instruction __include_once()__ et avec l'instruction __require_once()__
 

@@ -56,7 +56,7 @@ echo("Mon ami "Bruno" est gentil.");
 
 >**Note :** Le code précédent causera une erreur.
 
-Pour corriger ce problème, il suffit de mettre un caractère d'échappement (le symbole __\__).
+Pour corriger ce problème, il suffit de mettre un caractère d'échappement (le symbole __\\__).
 
 ```php
 echo("Mon ami \"Bruno\" est gentil.");
@@ -76,7 +76,7 @@ echo('Mon ami 'Bruno' est gentil.');
 
 >**Note :** Le code précédent causera une erreur.
 
-La solution à suivre est là même que lorsque l'on utilise les guillemets, il faut utiliser un caractère d'échapement (symbole __\__).
+La solution à suivre est là même que lorsque l'on utilise les guillemets, il faut utiliser un caractère d'échapement (symbole __\\__).
 
 ```php
 echo('Mon ami \'Bruno\' est gentil.');

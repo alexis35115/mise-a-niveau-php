@@ -20,7 +20,7 @@ L'affichage sera :
 Voici la commande echo
 ```
 
-Il est également possible d'afficher un nombre, dans ce cas, il n'est pas nécessaire de mettre des guillemets.
+Il est également possible d'afficher un nombre, dans ce cas l'utilisation de guillemets n'est pas nécessaire.
 
 ```php
 echo(2020);
@@ -32,9 +32,9 @@ L'affichage sera :
 2020
 ```
 
-## Afficher du HTML à l'aide de la commande echo
+## Afficher du HTML à l'aide de la commande _echo_
 
-À l'aide de la commande echo, il est possible de produire du HTML dynamiquement.
+À l'aide de la commande _echo_, il est possible de produire du HTML dynamiquement.
 
 ```php
 echo("<h3>Titre simple</h3><p>Bacon ipsum</p>");
@@ -93,9 +93,7 @@ Mon ami 'Bruno' est gentil.
 Si votre contenu correspond à du code HTML, plutôt que d’échapper tous les guillemets, vous pouvez délimiter le contenu par des apostrophes.
 
 ```php
-<?php
-    echo('<a id="lien" href="#" title="infobulle"> lien </a>');
-?>
+echo('<a id="lien" href="#" title="infobulle"> lien </a>');
 ```
 
 ## Version courte de la commande _echo_
@@ -105,9 +103,7 @@ Depuis quelques versions, la commande _echo_ possède une version courte. Cette 
 Code PHP :
 
 ```php
-<?php
-    $nom = "Louna";
-?>
+$nom = "Louna";
 ```
 
 Code HTML :

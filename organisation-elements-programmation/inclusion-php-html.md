@@ -2,14 +2,14 @@
 
 Le code PHP peut s’ajouter n’importe où dans une page HTML, il suffit à chaque fois d’ouvrir la balise d’ouverture et de fermeture PHP à différents endroits de la page HTML.
 
-## Processus d'interprétateur d'une page PHP
+## Processus d'interprétation d'une page PHP
 
 L'interpréteur lit un fichier source avec l'extension __.php__ puis génère un flux de sortie avec les règles suivantes :
 
-- Toute ligne située à l’extérieur d’un bloc PHP __(entre <?php et ?>)__ est recopiée et inchangée dans le flux de sortie.
+- Toute ligne située à l’extérieur d’un bloc PHP __(entre \<?php et ?\>)__ est recopiée et inchangée dans le flux de sortie.
 - Le code PHP est interprété et génère éventuellement des résultats intégrés eux aussi au flux de sortie.
 - Les erreurs éventuelles donnent lieu à des messages d’erreurs qu’on retrouve également
-dans le flux de sortie (selon la configuration du serveur).
+dans le flux de sortie (__selon la configuration du serveur__).
 - Une __page HTML pure__ sauvegardée avec l’extension .php sera donc non modifiée et renvoyée telle quelle par le serveur.
 
 ![Processus d'interprétation du PHP](../images/interpreteurphp.png)

@@ -5,17 +5,13 @@
 La commande __echo__ sert à afficher du contenu texte, ce texte doit être placé entre des guillemets ou des apostrophes.
 
 ```php
-<?php
-    echo("Voici la commande echo");
-?>
+echo("Voici la commande echo");
 ```
 
 ou avec des apostrophes
 
 ```php
-<?php
-    echo('Voici la commande echo');
-?>
+echo('Voici la commande echo');
 ```
 
 L'affichage sera :
@@ -27,9 +23,7 @@ Voici la commande echo
 Il est également possible d'afficher un nombre, dans ce cas, il n'est pas nécessaire de mettre des guillemets.
 
 ```php
-<?php
-    echo(2020);
-?>
+echo(2020);
 ```
 
 L'affichage sera :
@@ -43,9 +37,7 @@ L'affichage sera :
 À l'aide de la commande echo, il est possible de produire du HTML dynamiquement.
 
 ```php
-<?php
-    echo("<h3>Titre simple</h3><p>Bacon ipsum</p>");
-?>
+echo("<h3>Titre simple</h3><p>Bacon ipsum</p>");
 ```
 
 L'affichage sera :
@@ -59,9 +51,7 @@ Bacon ipsum
 Si vous avez un contenu texte à afficher avec des guillemets, ceux-ci peuvent être confondus avec les guillemets de début et de fin.
 
 ```php
-<?php
-    echo("Mon ami "Bruno" est gentil.");
-?>
+echo("Mon ami "Bruno" est gentil.");
 ```
 
 >**Note :** Le code précédent causera une erreur.
@@ -69,9 +59,7 @@ Si vous avez un contenu texte à afficher avec des guillemets, ceux-ci peuvent �
 Pour corriger ce problème, il suffit de mettre un caractère d'échappement (le symbole __\__).
 
 ```php
-<?php
-    echo("Mon ami \"Bruno\" est gentil.");
-?>
+echo("Mon ami \"Bruno\" est gentil.");
 ```
 
 Affichage :
@@ -83,7 +71,7 @@ Mon ami "Bruno" est gentil.
 Ce problème peut se produire également lors de l'utilisation d'apstrophes.
 
 ```php
-    echo('Mon ami 'Bruno' est gentil.');
+echo('Mon ami 'Bruno' est gentil.');
 ```
 
 >**Note :** Le code précédent causera une erreur.
@@ -91,7 +79,7 @@ Ce problème peut se produire également lors de l'utilisation d'apstrophes.
 La solution à suivre est là même que lorsque l'on utilise les guillemets, il faut utiliser un caractère d'échapement (symbole __\__).
 
 ```php
-    echo('Mon ami \'Bruno\' est gentil.');
+echo('Mon ami \'Bruno\' est gentil.');
 ```
 
 Affichage :

@@ -2,7 +2,7 @@
 
 ## Affichage simple avec la commmande echo
 
-La commande __echo__ sert à afficher du contenu texte. Le texte doit être placé entre des guillemets ou des apostrophes.
+La commande __echo__ sert à afficher du contenu texte, ce texte doit être placé entre des guillemets ou des apostrophes.
 
 ```php
 <?php
@@ -24,7 +24,7 @@ L'affichage sera :
 Voici la commande echo
 ```
 
-Il est également possible d'afficher un nombre, dans ce cas, il n'est pas nécessaire de mettre des guillemets
+Il est également possible d'afficher un nombre, dans ce cas, il n'est pas nécessaire de mettre des guillemets.
 
 ```php
 <?php
@@ -136,7 +136,7 @@ Le nom de mon chien est Louna.
 
 Il est possible de générer des éléments HTML plus complèxes.
 
-Créons une liste de prénoms avec une balise __<ul>__ et des balises __<li>__.
+Créons une liste de prénoms avec une balise __\<ul\>__ et des balises __\<li\>__.
 
 ```php
 <!DOCTYPE html>
@@ -167,6 +167,5 @@ Affichage :
 ![Afficher une liste de prénoms](../images/afficher-liste-prenom.PNG)
 
 >**Astuce :** Le [code source](../src/exemple-interpretation-php/exemple-afficher-liste.php) est disponible.
-
 
 [Revenir à la page principale de la section](README.md)

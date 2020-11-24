@@ -2,19 +2,19 @@
 
 ## Affichage simple avec la commande _echo_
 
-La commande _echo_ sert à afficher du contenu texte, ce texte doit être placé entre des guillemets ou des apostrophes.
+La commande _echo_ sert à afficher du contenu texte, ce texte doit être placé entre des guillemets.
 
 ```php
 echo("Voici la commande echo");
 ```
 
-ou avec des apostrophes
+ou bien avec des apostrophes
 
 ```php
 echo('Voici la commande echo');
 ```
 
-L'affichage sera :
+L'affichage :
 
 ```txt
 Voici la commande echo
@@ -26,7 +26,7 @@ Il est également possible d'afficher un nombre, dans ce cas l'utilisation de gu
 echo(2020);
 ```
 
-L'affichage sera :
+L'affichage :
 
 ```txt
 2020
@@ -34,13 +34,13 @@ L'affichage sera :
 
 ## Afficher du HTML à l'aide de la commande _echo_
 
-À l'aide de la commande _echo_, il est possible de produire du HTML dynamiquement.
+À l'aide de la commande _echo_, il est possible de produire du HTML.
 
 ```php
 echo("<h3>Titre simple</h3><p>Bacon ipsum</p>");
 ```
 
-L'affichage sera :
+L'affichage :
 
 __Titre simple__
 

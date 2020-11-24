@@ -25,11 +25,11 @@ Par exemple :
 
 Aux endroits où les fichiers sont inclus, PHP va prendre le contenu de ces fichiers pour les annexer à la page. Cela permet non seulement de gagner du temps, mais surtout de pouvoir rapidement modifier toutes les pages lors d'une modification à ces parties communes.
 
-## Différence entre l'instruction __include()__ et l'instruction __require()__
+## Différence entre l'instruction _include()_ et l'instruction _require()_
 
 La grande différence entre les instructions __require()__ et __include()__ est au niveau de la gestion d'erreur. L'instruction __include()__ renvoi qu’un avertissement (_warning_) en cas d’erreur, alors que l'instruction __require()__ provoquera une erreur __fatale__ qui empêchera l’exécution des scripts subséquents.
 
-## Inclusion avec l'instruction __include_once()__ et avec l'instruction __require_once()__
+## Inclusion avec l'instruction _include\_once()_ et avec l'instruction _require\_once()_
 
 D'autres fonctions existent pour inclure des fichiers, __include_once()__ et __require_once()__. Le comportement est sensiblement similaire à __include()__ et __require()__, mais la différence est que si le code a déjà été inclus, il ne le __sera pas une seconde fois__.
 

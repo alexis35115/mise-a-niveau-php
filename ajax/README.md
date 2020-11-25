@@ -14,13 +14,13 @@ L'__AJAX__ permet de :
 
 ## Le fonctionnement de l'__AJAX__
 
-1. Un événement se produit dans une page Web (la page est chargée, un bouton est cliqué)
-2. Un objet est créé par le JavaScript
-3. L’objet envoie une demande à un serveur Web
-4. Le serveur traite la demande
-5. Le serveur envoie une réponse à la page Web
-6. La réponse est lue par le JavaScript
-7. L’action appropriée (comme la mise à jour de page) est effectuée par le JavaScript
+1. Un événement se produit dans une page Web (la page est chargée, un bouton est cliqué).
+2. Un objet est créé par le JavaScript.
+3. L’objet envoie une demande à un serveur Web.
+4. Le serveur traite la demande.
+5. Le serveur envoie une réponse à la page Web.
+6. La réponse est lue par le JavaScript.
+7. L’action appropriée (comme la mise à jour de la page) est effectuée par le JavaScript.
 
 ## Le transfert des données
 
@@ -34,27 +34,27 @@ L'__XML__ cité dans l'acronyme __AJAX__ était historiquement le moyen privilé
 
 Une demande envers un serveur web doit être indiquée par un verbe HTTP. Les verbes __les plus courants__ incluent GET, POST, PUT et DELETE.
 
-- __GET__ récupère des ressources
-- __POST__ soumet de nouvelles données au serveur
-- __PUT__ met à jour les données existantes
+- __GET__ récupère des ressources.
+- __POST__ soumet de nouvelles données au serveur.
+- __PUT__ met à jour les données existantes.
 - __DELETE__ supprime les données.
 
 ![Architecture d'un API REST](../images/structure-api-rest.png)
 
 ## Fetch la nouvelle API native
 
-__Fetch__ est une nouvelle API JavaScript native, supportée par la plupart des navigateurs d'aujourd’hui. __Fetch__ vous permet de faire des requêtes similaires à __XMLHttpRequest__. Selon [Google](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api), il est plus facile avec __fetch()__ de faire des demandes asynchrones et de gérer les réponses qu’avec les anciennes manières.
+__Fetch__ est une nouvelle API JavaScript native, supportée par la plupart des navigateurs d'aujourd’hui. __Fetch__ vous permet de faire des requêtes similaires à __XMLHttpRequest__. Selon [Google](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api), il est plus facile avec __fetch()__ de faire des demandes asynchrones et d'en gérer les réponses qu’avec les anciennes manières.
 
-__Fetch__ dispose des interfaces suivantes :
+__Fetch__ dispose dans son interface les éléments suivants :
 
-- __fetch()__ : La méthode utilisée pour aller chercher une ressource
-- __Headers__ : Représente les en-têtes de la réponse/demande, vous permettant de les interroger et de prendre différentes mesures en fonction des résultats.
+- __fetch()__ : La méthode utilisée pour aller chercher une ressource.
+- __Headers__ : Représente les en-têtes de la réponse et de la demande, vous permettant de les interroger et de prendre différentes mesures en fonction des résultats.
 - __Request__ : Représente une demande de ressources.
 - __Response__ : Représente la réponse à une demande.
 
 ## Récupérer des données à l'aide de __fetch()__
 
-La fonction __fetch()__ est disponible dans l'objet global. La fonction prend un argument obligatoire qui est le chemin vers la ressource à obtenir.
+La fonction __fetch()__ est disponible dans l'objet global. La fonction prend un argument obligatoire qui est l'adresse vers la ressource à obtenir.
 
 ```js
 fetch('https://api.github.com/users/alexis35115')
@@ -68,7 +68,7 @@ fetch('https://api.github.com/users/alexis35115')
 
 >**Astuce :** Le [code source](../src/exemple-ajax/index.html) est disponible.
 
-Le code ci-dessus utilise l'API Fetch pour récupérer des données sur l’utilisateur "alexis35115" sur GitHub. Lorsque la promesse est résolue, nous obtenons un objet en retour. Néanmoins, si vous essayez de journaliser la réponse dans la console du navigateur, vous trouverez qu’on a pas les données que nous cherchons. C’est parce qu’un objet "reponse" a des informations sur elle-même en plus des données.
+Le code ci-dessus utilise l'API Fetch pour récupérer les données de l’utilisateur "alexis35115" sur GitHub. Lorsque la promesse est résolue, nous obtenons un objet en retour. Néanmoins, si vous essayez de journaliser la réponse dans la console du navigateur, vous trouverez que nous n'avons a pas les données que nous cherchons. C’est parce qu’un objet "reponse" possède des informations sur elle-même en plus des données.
 
 ![Journalisation de l'objet de la réponse de l'API Fetch](../images/demo-fetch-console-reponse.PNG)
 

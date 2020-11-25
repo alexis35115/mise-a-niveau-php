@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration de l'API Fetch</title>
+</head>
+<body>
+    <h1>Ouvrez la console du navigateur</h1>
+    <script>
+        // Afficher dans la console du navigateur l'objet de la réponse de l'API FETCH
+        fetch('https://api.github.com/users/alexis35115')
+            .then((reponse) => {
+                console.log(reponse);
+            })
+            .catch((erreur) => {
+                console.log("Une erreur est survenue", erreur);
+            });
+
+        // Afficher les données de l'usager `alexis35115` après la conversion en JSON
+        fetch('https://api.github.com/users/alexis35115')
+            .then((reponse) => {
+                return reponse.json();
+            })
+            .then((donnees) =>{
+                console.log(donnees);
+            })
+            .catch((erreur) => {
+                console.log("Une erreur est survenue", erreur);
+            });
+    </script>
+</body>
+</html>

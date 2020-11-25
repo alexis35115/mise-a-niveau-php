@@ -2,7 +2,7 @@
 
 l'acronyme __AJAX__ signifie _asynchronous JavaScript and XML_. L'__AJAX__ combine l'utilisation du JavaScript et du [DOM](https://fr.wikipedia.org/wiki/Document_Object_Model) pour modifier l'information présentée dans le navigateur.
 
-![Architecture d'un API REST](api-rest-architecture.png)
+![Architecture d'un API REST](../images/api-rest-architecture.png)
 
 ## Quand utiliser de l'AJAX
 

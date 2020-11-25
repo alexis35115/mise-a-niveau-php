@@ -4,7 +4,7 @@ l'acronyme __AJAX__ signifie _asynchronous JavaScript and XML_. L'__AJAX__ combi
 
 L'__AJAX__ permet de mettre à jour une page web de manière asynchrone en échangeant des données avec un serveur web. Cela signifie qu’il est possible de mettre à jour des parties d’une page Web, sans recharger toute la page.
 
-## Quand utiliser de l'AJAX
+## Que permet l'AJAX
 
 L'__AJAX__ permet de :
 

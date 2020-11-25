@@ -24,11 +24,11 @@ L'__AJAX__ permet de :
 
 ## Le transfert des données
 
-Les [API REST](https://fr.wikipedia.org/wiki/Representational_state_transfer) devraient accepter le format __[JSON](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation#:~:text=JavaScript%20Object%20Notation%20(JSON)%20est,le%20permet%20XML%20par%20exemple.)__ pour la demande et lors de la réception de la réponse. __JSON est la norme pour le transfert de données__. Presque toutes les technologies peuvent l’utiliser, JavaScript dispose de méthodes intégrées pour coder et décoder le __JSON__ soit via l’[API Fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API) ou soit par l’intermédiaire d’un autre [client HTTP](https://fr.wikipedia.org/wiki/Client_HTTP#:~:text=Un%20client%20HTTP%20est%20un,HTTP%20(Hypertext%20Transfer%20Protocol).). Les technologies côté serveur ont des bibliothèques qui peuvent décoder le __JSON__.
+Les [API REST](https://fr.wikipedia.org/wiki/Representational_state_transfer) devraient accepter le format __[JSON](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation#:~:text=JavaScript%20Object%20Notation%20(JSON)%20est,le%20permet%20XML%20par%20exemple.)__ pour la demande et lors de la réception de la réponse. __JSON est la norme pour le transfert de données__. Presque toutes les technologies peuvent l’utiliser, le JavaScript dispose de méthodes intégrées pour coder et décoder le __JSON__ soit via l’[API Fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API) ou soit par l’intermédiaire d’un autre [client HTTP](https://fr.wikipedia.org/wiki/Client_HTTP#:~:text=Un%20client%20HTTP%20est%20un,HTTP%20(Hypertext%20Transfer%20Protocol).). Les technologies côté serveur ont des bibliothèques qui peuvent décoder le __JSON__.
 
-Il existe d’autres façons de transférer des données. [XML](https://fr.wikipedia.org/wiki/Extensible_Markup_Language) n’est pas largement pris en charge les frameworks sans transformer les données nous-mêmes en quelque chose qui peut être utilisé et c’est généralement du __JSON__. Nous ne pouvons pas manipuler ces données aussi facilement du côté du client, en particulier dans les navigateurs. Il finit par être beaucoup de travail supplémentaire juste pour faire le transfert de données.
+Il existe d’autres façons de transférer des données. L'[XML](https://fr.wikipedia.org/wiki/Extensible_Markup_Language) n’est pas largement pris en charge les frameworks sans transformer les données nous-mêmes en quelque chose qui peut être utilisé et c’est généralement du __JSON__. Nous ne pouvons pas manipuler ces données aussi facilement du côté du client, en particulier dans les navigateurs. Il finit par être beaucoup de travail supplémentaire juste pour faire le transfert de données.
 
-L'__XML__ cité dans l'acronyme __AJAX__ était historiquement le moyen privilégié pour structurer les informations transmises entre le serveur web et le navigateur, de nos jours le __JSON__ tend à être le nouveau standard.
+L'__XML__ cité dans l'acronyme __AJAX__ était historiquement le moyen privilégié pour structurer les informations transmises entre le serveur web et le navigateur. De nos jours, le __JSON__ tend à être le nouveau standard.
 
 ## Les différentes requêtes envers un serveur web
 
@@ -41,11 +41,11 @@ Une demande envers un serveur web doit être indiquée par un verbe HTTP. Les ve
 
 ![Architecture d'un API REST](../images/structure-api-rest.png)
 
-## Fetch la nouvelle API native
+## La nouvelle API native Fetch
 
-__Fetch__ est une nouvelle API JavaScript native, supportée par la plupart des navigateurs d'aujourd’hui. __Fetch__ vous permet de faire des requêtes similaires à __XMLHttpRequest__. Selon [Google](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api), il est plus facile avec __fetch()__ de faire des demandes asynchrones et d'en gérer les réponses qu’avec les anciennes manières.
+Fetch est une nouvelle API JavaScript native, supportée par la plupart des navigateurs d'aujourd’hui. Fetch vous permet de faire des requêtes similaires à __XMLHttpRequest__. Selon [Google](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api), il est plus facile avec __fetch()__ de faire des demandes asynchrones et d'en gérer les réponses qu’avec les anciennes manières.
 
-__Fetch__ dispose dans son interface les éléments suivants :
+Fetch dispose dans son interface les éléments suivants :
 
 - __fetch()__ : La méthode utilisée pour aller chercher une ressource.
 - __Headers__ : Représente les en-têtes de la réponse et de la demande, vous permettant de les interroger et de prendre différentes mesures en fonction des résultats.
@@ -68,7 +68,7 @@ fetch('https://api.github.com/users/alexis35115')
 
 >**Astuce :** Le [code source](../src/exemple-ajax/index.html) est disponible.
 
-Le code ci-dessus utilise l'API Fetch pour récupérer les données de l’utilisateur "alexis35115" sur GitHub. Lorsque la promesse est résolue, nous obtenons un objet en retour. Néanmoins, si vous essayez de journaliser la réponse dans la console du navigateur, vous trouverez que nous n'avons a pas les données que nous cherchons. C’est parce qu’un objet "reponse" possède des informations sur elle-même en plus des données.
+Le code ci-dessus utilise l'API Fetch pour récupérer les données de l’utilisateur "alexis35115" sur GitHub. Lorsque la promesse est résolue, nous obtenons un objet en retour. Néanmoins, si vous essayez de journaliser la réponse dans la console du navigateur, vous trouverez que nous n'avons pas les données que nous cherchons. C’est parce qu’un objet "reponse" possède des informations sur elle-même en plus des données.
 
 ![Journalisation de l'objet de la réponse de l'API Fetch](../images/demo-fetch-console-reponse.PNG)
 

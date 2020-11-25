@@ -2,19 +2,15 @@
 
 l'acronyme __AJAX__ signifie _asynchronous JavaScript and XML_. L'__AJAX__ combine l'utilisation du JavaScript et du [DOM](https://fr.wikipedia.org/wiki/Document_Object_Model) pour modifier l'information présentée dans le navigateur.
 
-L'__AJAX__ est une technique pour mettre à jour des parties d’une page Web, sans recharger toute la page.
-
-Les pages "classiques" (celles n'utilisant pas __AJAX__) doivent recharger toute la page si le contenu doit changer.
+L'__AJAX__ permet de mettre à jour une page web de manière asynchrone en échangeant des données avec un serveur web. Cela signifie qu’il est possible de mettre à jour des parties d’une page Web, sans recharger toute la page.
 
 ## Quand utiliser de l'AJAX
 
-L'AJAX permet de :
+L'__AJAX__ permet de :
 
 - Lire les données d'un serveur web, et ce après qu'une page soit chargée.
 - Mettre à jour une page web sans procéder à un rechargement de la page.
 - Envoyer des données à un serveur web, et ce en arrière-plan.
-
-L'__AJAX__ permet de mettre à jour une page web de manière asynchrone en échangeant des données avec un serveur web. Cela signifie qu’il est possible de mettre à jour des parties d’une page Web, sans recharger toute la page.
 
 ## Le fonctionnement de l'__AJAX__
 
@@ -23,12 +19,12 @@ L'__AJAX__ permet de mettre à jour une page web de manière asynchrone en écha
 3. L’objet envoie une demande à un serveur Web
 4. Le serveur traite la demande
 5. Le serveur envoie une réponse à la page Web
-6. La réponse est lue par JavaScript
-7. L’action appropriée (comme la mise à jour de page) est effectuée par JavaScript
+6. La réponse est lue par le JavaScript
+7. L’action appropriée (comme la mise à jour de page) est effectuée par le JavaScript
 
 ## Le transfert des données
 
-Les [API REST](https://fr.wikipedia.org/wiki/Representational_state_transfer) devraient accepter le format __[JSON](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation#:~:text=JavaScript%20Object%20Notation%20(JSON)%20est,le%20permet%20XML%20par%20exemple.)__ pour la demande et lors de la réception de la réponse. __JSON est la norme pour le transfert de données__. Presque toutes les technologies peuvent l’utiliser, JavaScript dispose de méthodes intégrées pour coder et décoder le __JSON__ soit via l’[API Fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API) ou soit par l’intermédiaire d’un autre [client HTTP](https://fr.wikipedia.org/wiki/Client_HTTP#:~:text=Un%20client%20HTTP%20est%20un,HTTP%20(Hypertext%20Transfer%20Protocol).). Les technologies côté serveur ont des bibliothèques qui peuvent décoder le __JSON__ sans générer beaucoup de travail.
+Les [API REST](https://fr.wikipedia.org/wiki/Representational_state_transfer) devraient accepter le format __[JSON](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation#:~:text=JavaScript%20Object%20Notation%20(JSON)%20est,le%20permet%20XML%20par%20exemple.)__ pour la demande et lors de la réception de la réponse. __JSON est la norme pour le transfert de données__. Presque toutes les technologies peuvent l’utiliser, JavaScript dispose de méthodes intégrées pour coder et décoder le __JSON__ soit via l’[API Fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API) ou soit par l’intermédiaire d’un autre [client HTTP](https://fr.wikipedia.org/wiki/Client_HTTP#:~:text=Un%20client%20HTTP%20est%20un,HTTP%20(Hypertext%20Transfer%20Protocol).). Les technologies côté serveur ont des bibliothèques qui peuvent décoder le __JSON__.
 
 Il existe d’autres façons de transférer des données. [XML](https://fr.wikipedia.org/wiki/Extensible_Markup_Language) n’est pas largement pris en charge les frameworks sans transformer les données nous-mêmes en quelque chose qui peut être utilisé et c’est généralement du __JSON__. Nous ne pouvons pas manipuler ces données aussi facilement du côté du client, en particulier dans les navigateurs. Il finit par être beaucoup de travail supplémentaire juste pour faire le transfert de données.
 
@@ -43,11 +39,11 @@ Une demande envers un serveur web doit être indiquée par un verbe HTTP. Les ve
 - __PUT__ met à jour les données existantes
 - __DELETE__ supprime les données.
 
-![Architecture d'un API REST](../images/api-rest-architecture.png)
+![Architecture d'un API REST](../images/structure-api-rest.png)
 
 ## Fetch la nouvelle API native
 
-__Fetch__ est une nouvelle API JavaScript native, supportée par la plupart des navigateurs d'aujourd’hui. __Fetch__ vous permet de faire des demandes réseau similaires à __XMLHttpRequest__. Selon [Google](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api), il est plus facile de faire des demandes asynchrones et de gérer les réponses qu’avec les anciennes manières
+__Fetch__ est une nouvelle API JavaScript native, supportée par la plupart des navigateurs d'aujourd’hui. __Fetch__ vous permet de faire des requêtes similaires à __XMLHttpRequest__. Selon [Google](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api), il est plus facile avec __fetch()__ de faire des demandes asynchrones et de gérer les réponses qu’avec les anciennes manières.
 
 __Fetch__ dispose des interfaces suivantes :
 
@@ -56,7 +52,7 @@ __Fetch__ dispose des interfaces suivantes :
 - __Request__ : Représente une demande de ressources.
 - __Response__ : Représente la réponse à une demande.
 
-## Récupérer des donnes à l'aide de __fetch()__
+## Récupérer des données à l'aide de __fetch()__
 
 La fonction __fetch()__ est disponible dans l'objet global. La fonction prend un argument obligatoire qui est le chemin vers la ressource à obtenir.
 
@@ -70,13 +66,13 @@ fetch('https://api.github.com/users/alexis35115')
     });
 ```
 
->**Astuce :** Le [code source](../src\exemple-ajax\index.html) est disponible.
+>**Astuce :** Le [code source](../src/exemple-ajax/index.html) est disponible.
 
-Le code ci-dessus utilise l'API Fetch pour récupérer des données sur l’utilisateur "alexis35115" sur GitHub. Lorsque la promesse est résolue, nous obtenons un objet en retour. Néanmoins, si vous essayez de journaliser la réponse dans la console du navigateur, vous trouverez qu’il n’avait pas les données que nous voulons. C’est parce qu’un objet "reponse" a des informations sur elle-même en plus des données.
+Le code ci-dessus utilise l'API Fetch pour récupérer des données sur l’utilisateur "alexis35115" sur GitHub. Lorsque la promesse est résolue, nous obtenons un objet en retour. Néanmoins, si vous essayez de journaliser la réponse dans la console du navigateur, vous trouverez qu’on a pas les données que nous cherchons. C’est parce qu’un objet "reponse" a des informations sur elle-même en plus des données.
 
 ![Journalisation de l'objet de la réponse de l'API Fetch](../images/demo-fetch-console-reponse.PNG)
 
-Pour obtenir les données, nous devons enchaîner une autre instruction __then()__ pour appeler la méthode __json()__ pour obtenir ses données.
+Pour obtenir les données, nous devons enchaîner une autre instruction __then()__ pour appeler la méthode __json()__.
 
 ```js
 fetch('https://api.github.com/users/alexis35115')

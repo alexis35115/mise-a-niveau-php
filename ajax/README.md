@@ -1,6 +1,6 @@
 # AJAX
 
-l'acroynme __AJAX__ signifie _asynchronous JavaScript and XML_. L'__AJAX__ combine l'utilisation du JavaScript et du [DOM](https://fr.wikipedia.org/wiki/Document_Object_Model) pour modifier l'information présentée dans le navigateur.
+l'acronyme __AJAX__ signifie _asynchronous JavaScript and XML_. L'__AJAX__ combine l'utilisation du JavaScript et du [DOM](https://fr.wikipedia.org/wiki/Document_Object_Model) pour modifier l'information présentée dans le navigateur.
 
 >**Note:** L'acronyme d'__AJAX__ est trompeur. __AJAX__ permet d'utiliser du __XML__ pour transporter les données, mais il est tout aussi courant de transporter des données que du texte clair ou du texte en format __JSON__.
 
@@ -8,9 +8,9 @@ l'acroynme __AJAX__ signifie _asynchronous JavaScript and XML_. L'__AJAX__ combi
 
 L'AJAX permet de :
 
-- Lire les données d'un serveur web et ce après qu'une page soit chargée.
+- Lire les données d'un serveur web, et ce après qu'une page soit chargée.
 - Mettre à jour une page web sans procéder à un rechargement de la page.
-- Envoyer des données à un serveur web et ce en arrière-plan.
+- Envoyer des données à un serveur web, et ce en arrière-plan.
 
 L'__AJAX__ permet de mettre à jour une page web de manière asynchrone en échangeant des données avec un serveur web. Cela signifie qu’il est possible de mettre à jour des parties d’une page Web, sans recharger toute la page.
 

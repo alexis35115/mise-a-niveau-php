@@ -5,14 +5,10 @@
 
 Voici les étapes à suivre :
 
-- Initialiser une connexion à la base de données
-- Récupérer des données de la base de données
-- Insérer des données dans la base de données
-- Modifier des données dans la base de données
-- Supprimer des données dans la base de données
-
-- [Installation de WAMP](installation-wamp.md)
-- [Utilisation initiale de phpMyAdmin](utilisation-initiale-phpMyAdmin.md)
-- [Installation de Visual Studio Code](installation-vscode.md)
+- [Initialiser une connexion à la base de données](initialiser-connexion-bd.md)
+- [Récupérer des données de la base de données](recuperer-donnees-bd.md)
+- [Insérer des données dans la base de données](inserer-donnees-bd.md)
+- [Modifier des données dans la base de données](modifier-donnees-bd.md)
+- [Supprimer des données dans la base de données](supprimer-donnees-bd.md)
 
 [Revenir à la page principale](../README.md)

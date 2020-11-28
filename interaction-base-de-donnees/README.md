@@ -3,6 +3,13 @@
 
 ## Mise en route
 
+bonnes pratiques
+
+    - bind param 
+    - tester les requêtes
+    - les caractère d'échappement
+
+
 Voici les étapes à suivre :
 
 - [Initialiser une connexion à la base de données](initialiser-connexion-bd.md)

@@ -1,7 +1,6 @@
 # Interaction avec la base de données
 
 
-## Mise en route
 
 bonnes pratiques
 
@@ -9,6 +8,7 @@ bonnes pratiques
     - tester les requêtes
     - les caractère d'échappement
 
+## Mise en route
 
 Voici les étapes à suivre :
 

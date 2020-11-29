@@ -4,7 +4,7 @@ On ne devrait jamais mentionner le terme "c'est la norme à suivre". C'est utopi
 
 On devrait plus tôt utiliser le terme de "pratiques émergentes".
 
-Néanmoins, voici quelques recommandations à suivre lors de la rédaction du SQL.
+Néanmoins, voici quelques recommandations à suivre lors de la rédaction de SQL.
 
 ## Général
 
@@ -15,12 +15,12 @@ Néanmoins, voici quelques recommandations à suivre lors de la rédaction du SQ
 - Stockez les dates sous le format YYYY-MM-DD HH:MM:SS.SSSSS pour être conforme à l’[ISO 8601](https://fr.wikipedia.org/wiki/ISO_8601).
 - Essayez d’utiliser uniquement des fonctions SQL standard au lieu de fonctions spécifiques pour des raisons de portabilité.
 - Gardez le code [succinct](https://www.larousse.fr/dictionnaires/francais/succinct/75168) et dépourvu de SQL redondant, comme des citations inutiles et des parenthèses.
-- Inclure les commentaires dans le code SQL si nécessaire. Utilisez l’ouverture /* et la fermeture */ du style C dans la mesure du possible, sinon précéder les commentaires avec -- et les terminer avec une nouvelle ligne.
+- Inclure les commentaires dans le code SQL si nécessaire. Utilisez l’ouverture /* et la fermeture */ du style C# dans la mesure du possible, sinon précéder les commentaires avec -- et les terminer avec une nouvelle ligne.
 
 ### À éviter
 
 - CamelCase - il est difficile de numériser rapidement.
-- Préfixes descriptifs ou notation hongroise tels que "sp_" (stored procedure) ou "tbl".
+- Préfixes descriptifs ou notation hongroise tels que "sp_" (_stored procedure_) ou "tbl".
 - Pluriels - utilisez plutôt le terme collectif plus naturel.
 - Les principes de conception orientés objet ne doivent pas être appliqués aux structures SQL ou à la base de données (la base de données doit être séparée du code).
 

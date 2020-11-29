@@ -4,22 +4,22 @@ SQL est un langage standard pour accéder et manipuler les bases de données.
 
 ## Qu’est-ce que le SQL
 
-- SQL signifie langage de requête structurée.
+- SQL signifie _Structured Query Language_.
 - SQL vous permet d’accéder et de manipuler des bases de données.
-- SQL est devenu une norme de l’American National Standards Institute (ANSI) en 1986, et de l’Organisation internationale pour la normalisation (ISO) en 1987.
+- SQL est devenu une norme de l’_American National Standards Institute_ (ANSI) en 1986 et de l’Organisation internationale pour la normalisation (ISO) en 1987.
 
 ## Que peut faire le SQL
 
-- SQL peut exécuter des requêtes contre une base de données.
-- SQL peut récupérer des données à partir d’une base de données.
-- SQL peut insérer des enregistrements dans une base de données.
-- SQL peut mettre à jour les enregistrements dans une base de données.
-- SQL peut supprimer des enregistrements d’une base de données.
-- SQL peut créer de nouvelles bases de données.
-- SQL peut créer de nouvelles tables dans une base de données.
-- SQL peut créer des procédures stockées dans une base de données.
-- SQL peut créer des vues dans une base de données.
-- SQL peut définir des autorisations sur les tables, procédures et vues.
+- Permets d'exécuter des requêtes contre une base de données.
+- Permets de récupérer des données à partir d’une base de données.
+- Permets d'insérer des enregistrements dans une base de données.
+- Permets de mettre à jour les enregistrements dans une base de données.
+- Permets de supprimer des enregistrements d’une base de données.
+- Permets de créer de nouvelles bases de données.
+- Permets de créer de nouvelles tables dans une base de données.
+- Permets de créer des procédures stockées dans une base de données.
+- Permets de créer des vues dans une base de données.
+- Permets de définir des autorisations sur les tables, procédures et vues.
 
 ## Instructions SQL
 
@@ -43,7 +43,7 @@ L’instruction AS va donc nous permettre de __déterminer des alias pour nos no
 
 ### DISTINCT
 
-Il est possible que plus d’un enregistrement possède la même valeur pour une colonne donnée.  Le résultat sera que notre requête affichera plusieurs fois la même donnée.  __Si nous souhaitons éliminer les duplications des données dans nos résultats__, il sera possible d’utiliser l’instruction DISTINCT à la gauche du nom de colonne concerné.
+Il est possible que plus d’un enregistrement possède la même valeur pour une colonne donnée.  Le résultat sera que notre requête affichera plusieurs fois la même donnée.  __Si nous souhaitons éliminer les duplications des données dans nos résultats__, il sera possible d’utiliser l’instruction DISTINCT à la gauche du nom de la colonne concerné.
 
 ```sql
 SELECT DISTINCT nom
@@ -113,9 +113,11 @@ Voici le résultat :
 L’instruction GROUP BY va __regrouper les enregistrements retournés en fonction des colonnes spécifiés__ dans la clause GROUP BY. __Tous les enregistrements retournés par la requête seront regroupés en fonction des champs spécifiés dans la clause GROUP BY__.
 
 ```sql
-SELECT id_utilisateur, YEAR(date_naissance)
+SELECT id_utilisateur,
+       YEAR(date_naissance)
   FROM utilisateur
- GROUP BY id_utilisateur, YEAR(date_naissance)
+ GROUP BY id_utilisateur,
+          YEAR(date_naissance)
 ```
 
 Voici le résultat :
@@ -143,7 +145,7 @@ Voici le résultat :
 | Garon-Michaud | 4 |
 | Michaud | 1 |
 
-Notez que __les fonctions d’agrégation ignorent les données à valeur NULL sauf COUNT(*)__.
+>**Note :** Les fonctions d’agrégation ignorent les données à valeur NULL sauf COUNT(*).
 
 ### ORDER BY
 
@@ -228,7 +230,7 @@ Le tableau suivant répertorie les opérateurs comparatifs :
 | >= | Supérieur ou égale à |
 | < | Inférieur à |
 | <= | Inférieur ou égale à |
-| <> | Différent à |
+| != | Différent à |
 | Exp1 IN (exp2, exp3, …) | Compare l’expression (Exp1) seule à toutes les expressions de la liste  (est incluse dans…) |
 | IS NULL | Renvoie TRUE si l’expression est NULL, False le cas échéant. |
 | Exp1 BETWEEN minimum AND maximum | Véfifie si la valeur de Exp1 est comprise entre la valeur « minimum » et « maximum ». Notez que les bornes minimum et maximum sont incluses. |
@@ -237,28 +239,30 @@ Le tableau suivant répertorie les opérateurs comparatifs :
 
 ### L'opérateur de comparaison LIKE
 
-Détermine si une chaîne de caractères spécifique correspond à un modèle spécifié. Un motif peut inclure des caractères réguliers et des caractères _wildcard_. Pendant l’appariement des motifs, les caractères réguliers doivent correspondre exactement aux caractères spécifiés dans la chaîne de caractères. Toutefois, les caractères _wildcard_ peuvent être appariés avec des fragments arbitraires de la chaîne de caractères. L’utilisation de caractères _wildcard_ rend l’opérateur LIKE plus flexible que l’utilisation des opérateurs de comparaison = et !=. Si l’un des arguments n’est pas de type chaîne de caractères, le moteur de base de données convertit en chaîne de caractères, si c’est possible.
+Détermine si une chaîne de caractères spécifique correspond à un modèle spécifié. Un motif peut inclure des caractères réguliers et des caractères _wildcard_. Pendant l’appariement des motifs, les caractères réguliers doivent correspondre exactement aux caractères spécifiés dans la chaîne de caractères. Toutefois, les caractères _wildcard_ peuvent être appariés avec des fragments arbitraires de la chaîne de caractères. L’utilisation de caractères _wildcard_ rend l’opérateur LIKE plus flexible que l’utilisation des opérateurs de comparaison = et !=. Si l’un des arguments n’est pas de type chaîne de caractères, le moteur de la base de données convertit en chaîne de caractères, si c’est possible.
 
 | Opérateur | Description |
 |---|---|
-| WHERE prenom LIKE 'a%' | Trouver les valeurs qui commencent par "a". |
-| WHERE prenom LIKE '%a' | Trouver les valeurs qui terminent par "a". |
-| WHERE prenom LIKE '%ga%' | Trouver toutes les valeurs qui possèdent "ga" peu importe la position. |
-| WHERE prenom LIKE '_a%' | Trouver toutes les valeurs qui possèdent un "a" à la seconde position |
-| WHERE prenom LIKE 'g_%' | Trouver toutes les valeurs qui commencent par un "g" et ayant un minimum de 2 caractères de long. |
-| WHERE prenom LIKE 'g__%' | Trouver toutes les valeurs qui commencent par un "g" et ayant un minimum de 3 caractères de long. |
-| WHERE prenom LIKE 'g%n' | Trouver toutes les valeurs qui commencent par un "g" et se terminent par un "n". |
+| WHERE prenom LIKE 'a%' | Trouver les prénoms qui commencent par "a". |
+| WHERE prenom LIKE '%a' | Trouver les prénoms qui terminent par "a". |
+| WHERE prenom LIKE '%ga%' | Trouver tous les prénoms qui possèdent "ga" peu importe la position. |
+| WHERE prenom LIKE '_a%' | Trouver tous les prénoms qui possèdent un "a" à la seconde position |
+| WHERE prenom LIKE 'g_%' | Trouver tous les prénoms qui commencent par un "g" et ayant un minimum de 2 caractères de long. |
+| WHERE prenom LIKE 'g__%' | Trouver tous les prénoms qui commencent par un "g" et ayant un minimum de 3 caractères de long. |
+| WHERE prenom LIKE 'g%n' | Trouver tous les prénoms qui commencent par un "g" et se terminent par un "n". |
 
 >**Note :** L'expression du LIKE est entre apostrophes.
 
 ### Les fonctions d’agrégation
 
+Les fonctions d’agrégation dans le langage SQL permettent d’effectuer des opérations de statistiques sur un ensemble d’enregistrement.
+
 | Fonction | Description |
 |---|---|
 | SUM() | Donne le total d'un champ de tous les enregistrements satisfaisant la condition de la requête. Le champ doit bien sûr être de type numérique. |
 | AVG() | Donne la moyenne d'un champ de tous les enregistrements satisfaisant la condition de la requête. |
-| MAX() | Donne la valeur la plus élevée d'un champ de tous les enregistrements satisfaisait la condition de la requête. |
-| MIN() | Donne la valeur la plus petite d'un champ de tous les enregistrements satisfaisait la condition de la requête.|
+| MAX() | Donne la valeur la plus élevée d'un champ de tous les enregistrements satisfaisant la condition de la requête. |
+| MIN() | Donne la valeur la plus petite d'un champ de tous les enregistrements satisfaisant la condition de la requête.|
 | COUNT(*) | Envoie le nombre d'enregistrements satisfaisant la requête. |
 
 ## Références

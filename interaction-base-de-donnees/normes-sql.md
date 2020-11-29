@@ -15,7 +15,7 @@ Néanmoins, voici quelques recommandations à suivre lors de la rédaction de SQ
 - Stockez les dates sous le format YYYY-MM-DD HH:MM:SS.SSSSS pour être conforme à l’[ISO 8601](https://fr.wikipedia.org/wiki/ISO_8601).
 - Essayez d’utiliser uniquement des fonctions SQL standard au lieu de fonctions spécifiques pour des raisons de portabilité.
 - Gardez le code [succinct](https://www.larousse.fr/dictionnaires/francais/succinct/75168) et dépourvu de SQL redondant, comme des citations inutiles et des parenthèses.
-- Inclure les commentaires dans le code SQL si nécessaire. Utilisez l’ouverture /* et la fermeture */ du style C# dans la mesure du possible, sinon précéder les commentaires avec -- et les terminer avec une nouvelle ligne.
+- Inclure les commentaires dans le code SQL si nécessaire. Utilisez l’ouverture /* et la fermeture */ du style PHP dans la mesure du possible, sinon précéder les commentaires avec -- et les terminer avec une nouvelle ligne.
 
 ### À éviter
 
@@ -138,7 +138,7 @@ VALUES ('Charcoal Lane', '1990-01-01 01:01:01.00000', '1990-01-01 01:01:01.00000
 
 ## Conclusion
 
-Tout comme le code C# ou autres, le SQL doit :
+Tout comme le code PHP ou autres, le SQL doit :
 
 - être agréable à lire
 - propre et concentré

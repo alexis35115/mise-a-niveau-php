@@ -1,12 +1,12 @@
 # Interaction avec la base de données
 
-
+INTRO À METTRE
 
 bonnes pratiques
 
     - bind param 
     - tester les requêtes
-    - les caractère d'échappement
+    - les caractères d'échappement
 
 ## Mise en route
 

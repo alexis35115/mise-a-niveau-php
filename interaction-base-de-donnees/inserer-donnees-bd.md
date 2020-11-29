@@ -9,5 +9,7 @@ les différents types de données
 
 échappement de caractères
 
+https://www.php.net/manual/fr/pdo.transactions.php
+
 
 [Revenir à la page principale de la section](README.md)

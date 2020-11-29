@@ -1,12 +1,6 @@
 # Interaction avec la base de données
 
-INTRO À METTRE
-
-bonnes pratiques
-
-    - bind param 
-    - tester les requêtes
-    - les caractères d'échappement
+Cette section couvre les notions SQL ainsi que l'interaction depuis le PHP.
 
 ## Mise en route
 

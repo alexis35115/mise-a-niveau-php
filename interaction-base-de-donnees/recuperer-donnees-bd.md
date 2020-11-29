@@ -19,6 +19,12 @@ Pour créer un site Web qui affiche les données d’une base de données, vous 
 escape string
 
 
+bonnes pratiques
+
+    - bind param 
+    - tester les requêtes
+    - les caractères d'échappement
+
 couvrir un minimum les jointures que ça existe
 
 partager mon document des normes SQL?

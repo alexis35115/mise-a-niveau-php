@@ -2,7 +2,7 @@
 
 Selon [www.php.net](https://www.php.net/manual/fr/intro.pdo.php), l'extension _PHP Data Objects_ (PDO) définit une excellente interface pour accéder à une base de données depuis PHP.
 
-PDO fournit une interface d'abstraction à l'accès de données, ce qui signifie que vous utilisez les mêmes fonctions pour exécuter des requêtes ou récupérer les données, quelle que soit la base de données utilisée. PDO ne fournit pas une abstraction de base de données : il ne réécrit pas le SQL, n'émule pas des fonctionnalités manquantes. Vous devriez utiliser une interface d'abstraction complète si vous avez besoin de cela.
+PDO fournit une interface d'abstraction à l'accès de données, ce qui signifie que vous utilisez les mêmes fonctions pour exécuter des requêtes ou récupérer les données, quelle que soit la base de données utilisée.
 
 PDO est fourni avec PHP 5.1+ et ne fonctionne pas avec les versions antérieures de PHP.
 
@@ -10,7 +10,7 @@ PDO est fourni avec PHP 5.1+ et ne fonctionne pas avec les versions antérieures
 
 Les connexions sont établies en créant des instances de la classe de base de PDO. Le constructeur accepte des paramètres pour spécifier la source de la base de données (connue en tant que __DSN__) et optionnellement, le nom d'utilisateur et le mot de passe (s'il y en a un).
 
-__Exemple Connexion à MySQL__ :
+__Exemple de connexion à MySQL__ :
 
 ```php
 <?php
@@ -20,7 +20,7 @@ $dbh = new PDO('mysql:host=localhost;dbname=test', $utilisateur, $motPasse);
 
 S'il y a des erreurs de connexion, un objet __PDOException__ est lancé. Vous pouvez attraper cette exception si vous voulez gérer cette erreur, ou laisser le gestionnaire global d'exception défini via la fonction [set_exception_handler()](https://www.php.net/manual/fr/function.set-exception-handler.php) la traiter.
 
-Lorsque la connexion à la base de données a réussi, une instance de la classe PDO est retournée à votre script. La connexion est active tant que l'objet PDO l'est. Pour clore la connexion, vous devez détruire l'objet en vous assurant que toutes ses références sont effacées. Vous pouvez faire cela en assignant __NULL__ à la variable gérant l'objet. Si vous ne le faites pas explicitement, PHP fermera automatiquement la connexion lorsque le script arrivera à la fin.
+Lorsque la connexion à la base de données a réussi, une instance de la classe PDO est retournée. La connexion est active tant que l'objet PDO l'est. Pour clore la connexion, vous devez détruire l'objet en vous assurant que toutes ses références sont effacées. Vous pouvez faire cela en assignant __NULL__ à la variable gérant l'objet. Si vous ne le faites pas explicitement, PHP fermera automatiquement la connexion lorsque le script arrivera à la fin.
 
 Référez-vous à la [documentation](https://www.php.net/manual/fr/pdo.connections.php) au besoin.
 
@@ -29,15 +29,15 @@ Référez-vous à la [documentation](https://www.php.net/manual/fr/pdo.connectio
 PDO vous offre 3 façons différentes de gérer les erreurs afin de mieux s'adapter à votre application.
 
 - __PDO::ERRMODE_SILENT__
-  C'est le mode par défaut. PDO définit simplement le code d'erreur à inspecter grâce aux méthodes [PDO::errorCode()](https://www.php.net/manual/fr/pdo.errorcode.php) et [PDO::errorInfo()](https://www.php.net/manual/fr/pdo.errorinfo.php) sur les objets représentant les requêtes, mais aussi ceux représentant les bases de données ; si l'erreur résulte d'un appel à l'objet représentant la requête, vous pouvez appeler la méthode [PDOStatement::errorCode()](https://www.php.net/manual/fr/pdostatement.errorcode.php) ou la méthode [PDOStatement::errorInfo()](https://www.php.net/manual/fr/pdostatement.errorinfo.php) sur l'objet. Si l'erreur résulte d'un appel sur l'objet représentant une base de données, vous pouvez également appeler ces deux mêmes méthodes sur l'objet.
+  C'est le mode par défaut. PDO définit simplement le code d'erreur à inspecter grâce aux méthodes [PDO::errorCode()](https://www.php.net/manual/fr/pdo.errorcode.php) et [PDO::errorInfo()](https://www.php.net/manual/fr/pdo.errorinfo.php) sur les objets représentant les requêtes, mais aussi ceux représentant les bases de données; si l'erreur résulte d'un appel à l'objet représentant la requête, vous pouvez appeler la méthode [PDOStatement::errorCode()](https://www.php.net/manual/fr/pdostatement.errorcode.php) ou la méthode [PDOStatement::errorInfo()](https://www.php.net/manual/fr/pdostatement.errorinfo.php) sur l'objet. Si l'erreur résulte d'un appel sur l'objet représentant une base de données, vous pouvez également appeler ces deux mêmes méthodes sur l'objet.
 - __PDO::ERRMODE_WARNING__
   En plus de définir le code d'erreur, PDO émettra un message E_WARNING traditionnel. Cette configuration est utile lors des tests et du débogage, si vous voulez voir le problème sans interrompre l'application.
 - __PDO::ERRMODE_EXCEPTION__
-  En plus de définir le code d'erreur, PDO lancera une exception [PDOException](https://www.php.net/manual/fr/class.pdoexception.php) et y définit les propriétés afin de représenter le code d'erreur et les informations complémentaires. Cette configuration est également utile lors du débogage, car elle va « contourner » le point critique de votre code, vous montrer rapidement le problème rencontré (souvenez-vous : les transactions sont automatiquement annulées si l'exception fait que votre script se termine).
+  En plus de définir le code d'erreur, PDO lancera une exception [PDOException](https://www.php.net/manual/fr/class.pdoexception.php) et y définit les propriétés afin de représenter le code d'erreur et les informations complémentaires. Cette configuration est également utile lors du débogage, car elle va « contourner » le point critique de votre code, vous montrer rapidement le problème rencontré (sachez que les transactions sont automatiquement annulées si l'exception fait en sorte que votre script se termine).
 
   Le mode "exception" est également très utile, car ainsi, vous pouvez structurer votre gestionnaire d'erreur plus clairement qu'avec les alertes traditionnelles PHP et, ce, avec moins de code que lorsque vous exécutez votre code en mode silence, et que vous vérifiez systématiquement les valeurs retournées après chaque appel à la base de données.
 
-PDO utilise les codes erreurs SQL-92 SQLSTATE ; chaque pilote PDO est responsable de lier ses codes natifs aux codes SQLSTATE appropriés. La méthode [PDO::errorCode()](https://www.php.net/manual/fr/pdo.errorcode.php) retourne un code SQLSTATE unique. Si vous avez besoin d'informations spécifiques sur l'erreur, PDO vous propose également la méthode [PDO::errorInfo()](https://www.php.net/manual/fr/pdo.errorinfo.php) qui retourne un tableau contenant le code SQLSTATE, le code d'erreur spécifique du pilote et la chaîne décrivant l'erreur provenant du pilote.
+PDO utilise les codes erreurs SQL-92 SQLSTATE; chaque pilote PDO est responsable de lier ses codes natifs aux codes SQLSTATE appropriés. La méthode [PDO::errorCode()](https://www.php.net/manual/fr/pdo.errorcode.php) retourne un code SQLSTATE unique. Si vous avez besoin d'informations spécifiques sur l'erreur, PDO vous propose également la méthode [PDO::errorInfo()](https://www.php.net/manual/fr/pdo.errorinfo.php) qui retourne un tableau contenant le code SQLSTATE, le code d'erreur spécifique du pilote et la chaîne décrivant l'erreur provenant du pilote.
 
 Création d'une instance de PDO et définir un mode d'erreur :
 

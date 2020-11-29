@@ -59,7 +59,7 @@ Voici le résultat :
 
 Dans cet exemple, la table _utilisateur_ contient tous les utilisateurs. Si nous souhaitons afficher les noms des clients, l’instruction DISTINCT va s’assurer de nous afficher qu’une seule fois chacun de ces noms d'utilisateur.
 
-### *
+### Instruction *
 
 Si vous souhaitez consulter tous les champs d’une table, l’instruction __*__ va nous permettre de le faire facilement. __Remarquez toutefois que le résultat de la requête va varier si l’ordre des champs d’une table est modifié__.  Si vous souhaitez obtenir toujours les champs dans un ordre bien précis, il est préférable de lister tous les champs.
 

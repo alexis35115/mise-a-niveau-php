@@ -195,7 +195,7 @@ Array
 - bind param à cause de https://kinsta.com/fr/blog/injections-sql/ https://www.php.net/manual/fr/pdo.constants.php
 - exemple complet pour intégrer dans une page
 
-## Produire une page web avec des données provenant de la base de données
+## Produire une page web dynamique avec des données provenant de la base de données
 
 
 

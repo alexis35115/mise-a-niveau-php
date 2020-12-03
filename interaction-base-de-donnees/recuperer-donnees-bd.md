@@ -186,13 +186,13 @@ Array
 
 L'injection SQL (en anglais _SQL Injection_) est un type d’attaque d’injection qui permet d’exécuter des instructions SQL malveillantes. Les attaquants peuvent utiliser les vulnérabilités d’injection SQL pour contourner les mesures de sécurité de l’application. Ils peuvent contourner l’authentification et l’autorisation d’une page Web ou d’une application Web et récupérer le contenu de l’ensemble de la base de données. Ils peuvent également utiliser de l'injection SQL pour ajouter, modifier et supprimer des enregistrements dans la base de données.
 
-Une vulnérabilité d’injection SQL peut affecter n’importe quel site Web ou application Web qui utilise une base de données SQL telle que MySQL, Oracle, SQL Server ou d’autres. Les utilisateurs malveillants peuvent les utiliser pour obtenir un accès non autorisé à vos données sensibles :
+Une vulnérabilité d’injection SQL peut affecter n’importe quel site Web ou application Web qui utilise une base de données SQL telle que MySQL, Oracle, SQL Server ou autres. Les utilisateurs malveillants peuvent les utiliser pour obtenir un accès non autorisé à vos données sensibles :
 
-- Des informations sur les clients
-- Des données personnelles
-- Des secrets commerciaux
-- Des données bancaires
-- Et d'autres
+- Informations sur les clients
+- Données personnelles
+- Secrets commerciaux
+- Données bancaires
+- Autres
 
 Les attaques d’injection SQL sont l’une des vulnérabilités d’applications Web les plus anciennes, les plus répandues et __les plus dangereuses__.
 
@@ -206,7 +206,7 @@ Pour effectuer une attaque d’injection SQL, un attaquant doit d’abord trouve
 
 Le SQL est un langage qui a été conçu pour gérer les données stockées dans des bases de données relationnelles. Vous pouvez l’utiliser pour accéder, modifier et supprimer des données. De nombreuses applications web et sites Web stockent toutes les données dans les bases de données SQL. Dans certains cas, vous pouvez également utiliser les commandes SQL pour exécuter des commandes de système d’exploitation. Par conséquent, __une attaque d’injection SQL réussie peut avoir de très graves conséquences__.
 
-- Les attaquants peuvent utiliser de l'injection SQL pour trouver les informations d’identification d’autres utilisateurs dans la base de données. Ils peuvent alors usurper l’identité de ces utilisateurs. L’utilisateur usurpé peut être un __administrateur de base de données avec tous les privilèges de base de données__.
+- Les attaquants peuvent utiliser de l'injection SQL pour trouver les informations d’identification d’autres utilisateurs dans la base de données. Ils peuvent alors usurper l’identité de ces utilisateurs. L’utilisateur usurpé peut être un __administrateur de base de données avec tous les privilèges de la base de données__.
 - Le SQL vous permet de sélectionner les données de la base de données. Une vulnérabilité d’injection SQL pourrait permettre à l’attaquant d’accéder à toutes les données d’un serveur de base de données.
 - Le SQL vous permet également de modifier les données d’une base de données et d’ajouter de nouvelles données. Par exemple, avec le site Web d'une banque, un attaquant peut utiliser de l'injection SQL pour modifier les soldes, annuler des transactions ou transférer de l’argent sur son compte.
 - Vous pouvez utiliser le SQL pour supprimer des enregistrements d’une base de données, voire supprimer des tables. Même si l’administrateur effectue des sauvegardes de base de données, la suppression des données peut affecter la disponibilité de l’application jusqu’à ce que la base de données soit restaurée. En outre, les sauvegardes peuvent ne pas couvrir les données les plus récentes.

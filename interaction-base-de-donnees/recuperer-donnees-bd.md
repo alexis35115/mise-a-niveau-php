@@ -154,7 +154,7 @@ try {
     // Exécution de la requête
     $sth->execute();
 
-    // Récupérer l'utilisateurs provenant de l'exécution de la requête
+    // Récupérer l'utilisateur provenant de l'exécution de la requête
     $utilisateur = $sth->fetch();
 
     // Afficher les informations de l'utilisateur à l'écran
@@ -182,20 +182,185 @@ Array
 )
 ```
 
+
+
+## Injection SQL
+
+_SQL Injection_ est un type d’attaque d’injection qui permet d’exécuter des instructions SQL malveillantes. Les attaquants peuvent utiliser les vulnérabilités d’injection SQL pour contourner les mesures de sécurité de l’application. Ils peuvent contourner l’authentification et l’autorisation d’une page Web ou d’une application Web et récupérer le contenu de l’ensemble de la base de données SQL. Ils peuvent également utiliser de l'injection SQL pour ajouter, modifier et supprimer des enregistrements dans la base de données.
+
+Une vulnérabilité d’injection SQL peut affecter n’importe quel site Web ou application Web qui utilise une base de données SQL telle que MySQL, Oracle, SQL Server ou d’autres. Les hackers peuvent les utiliser pour obtenir un accès non autorisé à vos données sensibles :
+
+- Des informations sur les clients
+- Des données personnelles
+- Des secrets commerciaux
+- Des données bancaires
+- Et d'autres
+
+Les attaques d’injection SQL sont l’une des vulnérabilités d’applications Web les plus anciennes, les plus répandues et __les plus dangereuses__.
+
+![Diagramme pour une attaque de type injection SQL](../images/injection-sql-diagram.png)
+
+>**Note :** w3schools possède une [page dédiée](https://www.w3schools.com/sql/sql_injection.asp) sur le sujet.
+
+### Comment et pourquoi une attaque d’injection SQL est-elle effectuée
+
+Pour effectuer une attaque d’injection SQL, un attaquant doit d’abord trouver des entrées utilisateur vulnérables dans la page Web ou l’application Web. Une page Web ou une application Web qui a une vulnérabilité d’injection SQL utilise ces entrées utilisateur directement dans une requête SQL. L’attaquant peut créer du contenu d’entrée. Ce contenu est souvent appelé une charge utile malveillante et est l’élément clé de l’attaque. Une fois que l’attaquant envoie ce contenu, des commandes SQL malveillantes sont exécutées dans la base de données.
+
+Le SQL est un langage qui a été conçu pour gérer les données stockées dans des bases de données relationnelles. Vous pouvez l’utiliser pour accéder, modifier et supprimer des données. De nombreuses applications web et sites Web stockent toutes les données dans les bases de données SQL. Dans certains cas, vous pouvez également utiliser les commandes SQL pour exécuter des commandes de système d’exploitation. Par conséquent, __une attaque d’injection SQL réussie peut avoir de très graves conséquences__.
+
+- Les attaquants peuvent utiliser de l'injection SQL pour trouver les informations d’identification d’autres utilisateurs dans la base de données. Ils peuvent alors usurper l’identité de ces utilisateurs. L’utilisateur usurpé peut être un __administrateur de base de données avec tous les privilèges de base de données__.
+- Le SQL vous permet de sélectionner les données de la base de données. Une vulnérabilité d’injection SQL pourrait permettre à l’attaquant d’accéder à toutes les données d’un serveur de base de données.
+- Le SQL vous permet également de modifier les données d’une base de données et d’ajouter de nouvelles données. Par exemple, le site Web d'une banque, un attaquant peut utiliser de l'injection SQL pour modifier les soldes, annuler des transactions ou transférer de l’argent sur son compte.
+- Vous pouvez utiliser le SQL pour supprimer des enregistrements d’une base de données, voire supprimer des tables. Même si l’administrateur effectue des sauvegardes de base de données, la suppression des données peut affecter la disponibilité de l’application jusqu’à ce que la base de données soit restaurée. En outre, les sauvegardes peuvent ne pas couvrir les données les plus récentes.
+
+### Exemple simple d'injection SQL
+
+Voici comment un attaquant peut utiliser une vulnérabilité d’injection SQL pour contourner la sécurité d'une application et s'authentifier en tant qu’administrateur.
+
+Le __code suivant est le pseudocode__ exécuté sur un serveur Web. Il s’agit d’un exemple simple d’authentification avec un nom d’utilisateur et un mot de passe.
+
+```php
+
+# Obtenir les informations envoyées par le navigateur au serveur web
+idUtilisateur = requete.POST['idUtilisateur']
+motPasse = requete.POST['motPasse']
+
+# Structure de la requête vulnérable
+sql = "SELECT id_utilisateur FROM utilisateur WHERE id_utilisateur '" + idUtilisateur + "' AND mot_passe = '" + motPasse + "'"
+
+# Exécution de la requête SQL
+bd.execute(sql)
+
+```
+
+Ces champs d’entrée sont vulnérables à l’injection SQL. Un attaquant peut utiliser les commandes SQL dans l’entrée d’une manière qui modifierait la instruction SQL exécutée par le serveur de base de données. Par exemple, ils pourraient utiliser un truc impliquant une seule citation et définir le champ à:passwd
+
+
+Par conséquent, le serveur de base de données exécute la requête SQL suivante :
+
+```SQL
+SELECT id_utilisateur FROM utilisateur WHERE id_utilisateur='idUtilisateur' AND mot_passe='motPasse' OR 1=1'
+```
+
+En raison de la déclaration __OR 1=1__, la clause __WHERE__ renvoie le premier __id_utilisateur__ de la table, peu importe l'identifiant utilisateur et son mot de passe. Le premier utilisateur d’une base de données est très souvent l’administrateur. De cette façon, l’attaquant non seulement contourne l’authentification, mais gagne également des privilèges d’administrateur. Ils peuvent également commenter le reste de la déclaration SQL pour contrôler davantage l’exécution de la requête SQL.
+
+### Comment prévenir une injection SQL
+
+La seule manière sûre de se protéger des attaques d’injection SQL est la validation des valeurs à l'entrée et l'utilisation des requêtes paramétrisées, y compris les instructions préparées. __Le code d'une application ne doit jamais utiliser les valeurs à l'entrée directement__. Le développeur doit [assainir](https://www.larousse.fr/dictionnaires/francais/assainir/5771) toutes les entrées, et pas seulement les entrées de formulaire web telles que les formulaires de connexion. Ils doivent supprimer les éléments de code malveillants potentiels tels que les guillemets simples. C’est également très important de ne pas afficher les erreurs de la base de données pour les sites de production. Les erreurs retournées par la base de données peuvent être utilisées avec de l'injection SQL pour obtenir des informations sur votre base de données.
+
+>**Astuce :** Si vous voulez en appprendre plus sur le sujet, je vous propose cette [lecture](https://kinsta.com/fr/blog/injections-sql/).
+
 ## Récupérer des données à partir d'une requête paramétrée
+
+
+
+
+```php
+<?php
+$dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
+$utilisateur = 'root';
+$motPasse = 'admin123';
+
+try {
+    // Créer la connexion
+    $dbh = new PDO($dsn, $utilisateur, $motPasse);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dbh->exec('SET CHARACTER SET UTF8');
+
+
+    $idUtilisateur = 1;
+
+    // Requête SQL à exécuter, notez la présence du paramètre ":id"
+    $requeteObtenirUtilisateur = "SELECT id_utilisateur, nom, prenom FROM utilisateur WHERE id_utilisateur = :id";
+
+    $sth = $dbh->prepare($requeteObtenirUtilisateur);
+
+    // Préciser la valeur ainsi que le type du paramètre ":id"
+    $sth->bindParam(':id', $idUtilisateur, PDO::PARAM_INT);
+    $sth->execute();
+    $utilisateur = $sth->fetch();
+
+    // Afficher les informations de l'utilisateur à l'écran
+    echo("<pre>");
+    print_r($utilisateur);
+    echo("</pre>");
+
+} catch (PDOException $e) {
+    echo('Échec lors de la connexion : ' . $e->getMessage());
+}
+?>
+```
+
+Affichage à l'écran :
+
+```txt
+Array
+(
+    [id_utilisateur] => 1
+    [0] => 1
+    [nom] => Garon-Michaud
+    [1] => Garon-Michaud
+    [prenom] => Alexis
+    [2] => Alexis
+)
+```
+
+https://www.php.net/manual/fr/pdo.constants.php
 
 
 
 - avec un paramètre
 - avec deux paramètres
 
-## Injection SQL
 
-- escape_string
-- bind param à cause de https://kinsta.com/fr/blog/injections-sql/ https://www.php.net/manual/fr/pdo.constants.php
-- exemple complet pour intégrer dans une page
 
-## Produire une page web dynamique avec des données provenant de la base de données
+
+```php
+<?php
+$dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
+$utilisateur = 'root';
+$motPasse = 'admin123';
+
+try {
+    // Créer la connexion
+    $dbh = new PDO($dsn, $utilisateur, $motPasse);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dbh->exec('SET CHARACTER SET UTF8');
+
+    $nom = "Garon-Michaud";
+
+    // Requête SQL à exécuter, notez la présence du paramètre ":nom"
+    $requeteObtenirUtilisateurs = "SELECT id_utilisateur, nom, prenom FROM utilisateur WHERE nom = :nom";
+
+    $sth = $dbh->prepare($requeteObtenirUtilisateurs);
+
+    // Préciser la valeur ainsi que le type du paramètre ":nom"
+    $sth->bindParam(':nom', $nom, PDO::PARAM_STR);
+    $sth->execute();
+    $utilisateurs = $sth->fetchAll();
+
+    // Afficher les informations des utilisateurs à l'écran
+    foreach ($utilisateurs as $utilisateur) {
+    ?>
+        <div style="border:solid 1px black; margin:5px; padding:5px;">
+        <?php
+            echo($utilisateur['id_utilisateur'] . " - " . $utilisateur['prenom'] . " " . $utilisateur['nom'])
+        ?>
+        </div>
+    <?php
+    }
+
+} catch (PDOException $e) {
+    echo('Échec lors de la connexion : ' . $e->getMessage());
+}
+?>
+```
+
+Affiche à l'écran :
+
+![Résultat de la requête pour obtenir les utilisateurs par nom](../images/select-utilisateur-resultat.PNG)
+
+
 
 
 
@@ -203,5 +368,6 @@ Array
 
 - <https://www.php.net/manual/fr/pdostatement.fetch.php>
 - <https://www.php.net/manual/fr/pdostatement.fetchall.php>
+- <https://fr.wikipedia.org/wiki/Injection_SQL#:~:text=La%20faille%20SQLi%2C%20abr%C3%A9viation%20de,avec%20une%20base%20de%20donn%C3%A9es.>
 
 [Revenir à la page principale de la section](README.md)

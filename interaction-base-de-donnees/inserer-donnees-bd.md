@@ -4,6 +4,7 @@ Insérer des données flats
 
 ne pas insérer une valeur dans un champ auto-incrément
 
+escape_string
 
 les différents types de données
 

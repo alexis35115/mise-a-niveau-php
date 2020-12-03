@@ -124,7 +124,7 @@ Array
 )
 ```
 
-### Utiliser PDO et fetch() pour récupérer un usager spéficique
+### Utiliser PDO et fetch() pour récupérer un usager spécifique
 
 La fonction fetch(), récupère une ligne depuis un jeu de résultats associé à l'objet PDOStatement.
 
@@ -243,9 +243,9 @@ En raison de la déclaration __'OR 1=1#__, la clause __WHERE__ renvoie tous les 
 
 ### Comment prévenir une injection SQL
 
-La seule manière sûre de se protéger des attaques d’injection SQL est la validation des valeurs à l'entrée et l'utilisation des requêtes paramétrisées, y compris les instructions préparées. __Le code d'une application ne doit jamais utiliser les valeurs à l'entrée directement__. Le développeur doit [assainir](https://www.larousse.fr/dictionnaires/francais/assainir/5771) toutes les entrées, et pas seulement les entrées de formulaire web telles que les formulaires de connexion. Ils doivent supprimer les éléments de code malveillants potentiels tels que les guillemets simples. C’est également très important de ne pas afficher les erreurs de la base de données pour les sites de production. Les erreurs retournées par la base de données peuvent être utilisées avec de l'injection SQL pour obtenir des informations sur votre base de données.
+La seule manière sûre de se protéger des attaques d’injection SQL est la validation des valeurs à l'entrée et l'utilisation des requêtes paramétrées, y compris les instructions préparées. __Le code d'une application ne doit jamais utiliser les valeurs à l'entrée directement__. Le développeur doit [assainir](https://www.larousse.fr/dictionnaires/francais/assainir/5771) toutes les entrées, et pas seulement les entrées de formulaire web telles que les formulaires de connexion. Ils doivent supprimer les éléments malveillants potentiels du code tels que les guillemets simples. C’est également très important de ne pas afficher les erreurs de la base de données pour les sites de production. Les erreurs retournées par la base de données peuvent être utilisées avec de l'injection SQL pour obtenir des informations sur votre base de données.
 
->**Astuce :** Si vous voulez en appprendre plus sur le sujet, je vous propose cette [lecture](https://kinsta.com/fr/blog/injections-sql/).
+>**Astuce :** Si vous voulez en apprendre plus sur le sujet, je vous propose cette [lecture](https://kinsta.com/fr/blog/injections-sql/).
 
 ## Récupérer des données à partir d'une requête paramétrée
 
@@ -268,7 +268,6 @@ try {
     $dbh = new PDO($dsn, $utilisateur, $motPasse);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbh->exec('SET CHARACTER SET UTF8');
-
 
     $idUtilisateur = 1;
 

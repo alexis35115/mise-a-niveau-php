@@ -130,7 +130,7 @@ La fonction fetch(), récupère une ligne depuis un jeu de résultats associé �
 
 La valeur retournée par cette fonction en cas de succès dépend du type récupéré. Dans tous les cas, FALSE est retourné si une erreur survient.
 
-L'exemple suivant sélectionne les colonnes _id\_utilisateur_, _prenom_ et _nom_ de la table _utilisateur_ où la colonne _id\_utilisateur_ est égale à 1, pour ensuite afficher les données :
+L'exemple suivant sélectionne les colonnes _id\_utilisateur_, _prenom_ et _nom_ de la table _utilisateur_ où la colonne _id\_utilisateur_ est égale à __1__, pour ensuite afficher les données :
 
 ```php
 <?php
@@ -182,13 +182,11 @@ Array
 )
 ```
 
-
-
 ## Injection SQL
 
-_SQL Injection_ est un type d’attaque d’injection qui permet d’exécuter des instructions SQL malveillantes. Les attaquants peuvent utiliser les vulnérabilités d’injection SQL pour contourner les mesures de sécurité de l’application. Ils peuvent contourner l’authentification et l’autorisation d’une page Web ou d’une application Web et récupérer le contenu de l’ensemble de la base de données SQL. Ils peuvent également utiliser de l'injection SQL pour ajouter, modifier et supprimer des enregistrements dans la base de données.
+L'injection SQL (en anglais _SQL Injection_) est un type d’attaque d’injection qui permet d’exécuter des instructions SQL malveillantes. Les attaquants peuvent utiliser les vulnérabilités d’injection SQL pour contourner les mesures de sécurité de l’application. Ils peuvent contourner l’authentification et l’autorisation d’une page Web ou d’une application Web et récupérer le contenu de l’ensemble de la base de données. Ils peuvent également utiliser de l'injection SQL pour ajouter, modifier et supprimer des enregistrements dans la base de données.
 
-Une vulnérabilité d’injection SQL peut affecter n’importe quel site Web ou application Web qui utilise une base de données SQL telle que MySQL, Oracle, SQL Server ou d’autres. Les hackers peuvent les utiliser pour obtenir un accès non autorisé à vos données sensibles :
+Une vulnérabilité d’injection SQL peut affecter n’importe quel site Web ou application Web qui utilise une base de données SQL telle que MySQL, Oracle, SQL Server ou d’autres. Les utilisateurs malveillants peuvent les utiliser pour obtenir un accès non autorisé à vos données sensibles :
 
 - Des informations sur les clients
 - Des données personnelles
@@ -210,7 +208,7 @@ Le SQL est un langage qui a été conçu pour gérer les données stockées dans
 
 - Les attaquants peuvent utiliser de l'injection SQL pour trouver les informations d’identification d’autres utilisateurs dans la base de données. Ils peuvent alors usurper l’identité de ces utilisateurs. L’utilisateur usurpé peut être un __administrateur de base de données avec tous les privilèges de base de données__.
 - Le SQL vous permet de sélectionner les données de la base de données. Une vulnérabilité d’injection SQL pourrait permettre à l’attaquant d’accéder à toutes les données d’un serveur de base de données.
-- Le SQL vous permet également de modifier les données d’une base de données et d’ajouter de nouvelles données. Par exemple, le site Web d'une banque, un attaquant peut utiliser de l'injection SQL pour modifier les soldes, annuler des transactions ou transférer de l’argent sur son compte.
+- Le SQL vous permet également de modifier les données d’une base de données et d’ajouter de nouvelles données. Par exemple, avec le site Web d'une banque, un attaquant peut utiliser de l'injection SQL pour modifier les soldes, annuler des transactions ou transférer de l’argent sur son compte.
 - Vous pouvez utiliser le SQL pour supprimer des enregistrements d’une base de données, voire supprimer des tables. Même si l’administrateur effectue des sauvegardes de base de données, la suppression des données peut affecter la disponibilité de l’application jusqu’à ce que la base de données soit restaurée. En outre, les sauvegardes peuvent ne pas couvrir les données les plus récentes.
 
 ### Exemple simple d'injection SQL
@@ -233,16 +231,15 @@ bd.execute(sql)
 
 ```
 
-Ces champs d’entrée sont vulnérables à l’injection SQL. Un attaquant peut utiliser les commandes SQL dans l’entrée d’une manière qui modifierait la instruction SQL exécutée par le serveur de base de données. Par exemple, ils pourraient utiliser un truc impliquant une seule citation et définir le champ à:passwd
-
+Ces champs d’entrée sont vulnérables à l’injection SQL. Un attaquant peut utiliser les commandes SQL dans l’entrée d’une manière qui modifierait l'instruction SQL exécutée par le serveur de base de données. Par exemple, l'attaquant pourrait utiliser un truc impliquant une seule citation et définir le champ _mot\_passe_ à _'OR 1=1#_:
 
 Par conséquent, le serveur de base de données exécute la requête SQL suivante :
 
 ```SQL
-SELECT id_utilisateur FROM utilisateur WHERE id_utilisateur='idUtilisateur' AND mot_passe='motPasse' OR 1=1'
+SELECT id_utilisateur FROM utilisateur WHERE id_utilisateur='idUtilisateur' AND mot_passe=''OR 1=1#'
 ```
 
-En raison de la déclaration __OR 1=1__, la clause __WHERE__ renvoie le premier __id_utilisateur__ de la table, peu importe l'identifiant utilisateur et son mot de passe. Le premier utilisateur d’une base de données est très souvent l’administrateur. De cette façon, l’attaquant non seulement contourne l’authentification, mais gagne également des privilèges d’administrateur. Ils peuvent également commenter le reste de la déclaration SQL pour contrôler davantage l’exécution de la requête SQL.
+En raison de la déclaration __'OR 1=1#__, la clause __WHERE__ renvoie tous les utilisateurs de la table, peu importe l'identifiant utilisateur et son mot de passe!
 
 ### Comment prévenir une injection SQL
 

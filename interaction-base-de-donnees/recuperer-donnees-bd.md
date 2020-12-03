@@ -249,8 +249,13 @@ La seule manière sûre de se protéger des attaques d’injection SQL est la va
 
 ## Récupérer des données à partir d'une requête paramétrée
 
+Les requêtes préparées PDO fonctionnent comme ceci :
 
+- Préparez une requête SQL avec des valeurs vides en tant que _placeholders_ avec un nom de variable avec un __:__ qui la précède.
+- Lier des valeurs aux _placesholders_
+- Exécuter la requête
 
+Voici un exemple d'utilisation d'une requête préparée avec un _placeholders_, dans le cas présent, le paramètre sera _:id_ et aura la valeur de _1_ :
 
 ```php
 <?php
@@ -302,15 +307,9 @@ Array
 )
 ```
 
-https://www.php.net/manual/fr/pdo.constants.php
+> **Astuces :** Référez-vous à la [documentation](https://www.php.net/manual/fr/pdo.constants.php) au besoin.
 
-
-
-- avec un paramètre
-- avec deux paramètres
-
-
-
+Voici un autre exemple d'utilisation d'une requête préparée avec un _placeholders_. Cette fois, le paramètre sera _:nom_ et aura la valeur de _Garon-Michaud_ :
 
 ```php
 <?php
@@ -353,13 +352,9 @@ try {
 ?>
 ```
 
-Affiche à l'écran :
+Notez que l'affichage est généré à l'aide d'une boucle _foreach_ pour itérer sur chacun des utilisateurs et en produire un affichage :
 
 ![Résultat de la requête pour obtenir les utilisateurs par nom](../images/select-utilisateur-resultat.PNG)
-
-
-
-
 
 ## Références
 

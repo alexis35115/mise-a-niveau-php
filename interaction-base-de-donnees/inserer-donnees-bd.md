@@ -1,27 +1,27 @@
 # Insérer des données dans la base de données
 
-__INSERT INTO__ est utilisée pour stocker des données dans les tables de la base de données. La commande INSERT crée une nouvelle ligne dans la table pour en conserver les données. Les données sont généralement fournies par des programmes n qui s’exécutent en haut de la base de données.
+__INSERT INTO__ est utilisée pour créer des données dans les tables de la base de données. La commande INSERT crée une nouvelle ligne dans la table pour en conserver les données. Les données sont généralement fournies par des programmes qui s’exécutent par dessus la base de données.
 
 ## Syntaxe de base
 
-Examinons la syntaxe de base de la commande INSERT INTO MySQL :
+Examinons la syntaxe de base de la commande INSERT INTO :
 
 ```sql
-INSERT INTO nom_table (colonne_1, colonne_2,...)
-               VALUES (valeur_1, valeur_2,...);
+INSERT INTO nom_table (colonne_1, colonne_2, ...)
+               VALUES (valeur_1, valeur_2, ...);
 ```
 
-- INSERT INTO 'nom_table' est la commande qui indique au serveur MySQL d’ajouter une nouvelle ligne dans une table nommée « nom_table ».
-- (colonne_1 colonne_2,...) spécifie les colonnes à mettre à jour dans la nouvelle ligne MySQL.
-- VALUES (valeur_1 valeur_2,...) précise les valeurs à ajouter dans la nouvelle ligne.
+- __INSERT INTO 'nom_table'__ - Est la commande qui indique au serveur de base de dnnées d’ajouter une nouvelle ligne dans une table nommée "nom_table".
+- __(colonne_1, colonne_2, ...)__ - Spécifie les colonnes à renseigner lors de la création.
+- __VALUES (valeur_1, valeur_2, ...)__ - Précise les valeurs à ajouter dans la nouvelle ligne.
 
 Lorsqu'on fournit les valeurs à insérer dans un nouvel enregistrement, les éléments suivants doivent être pris en considération :
 
-- Les données de type texte - les données textes doivent être incluses dans des guillemets simples.
-- Les données de type numérique - les valeurs numériques doivent être fournies directement et sans les entourer de guillemets simples ou doubles.
-- Les données de type date - les valeurs de type date doivent être entre des guillemets simples dans le format 'YYYY-MM-DD'.
+- __Les données de type texte__ - Les données textes doivent être incluses dans des guillemets simples.
+- __Les données de type numérique__ - Les valeurs numériques doivent être fournies directement et sans les entourer de guillemets simples ou doubles.
+- __Les données de type date__ - Les valeurs de type date doivent être entre des guillemets simples dans un format tel que 'YYYY-MM-DD'.
 
->**Note :** Référez-vous à la [documentation officielle](https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html) pour les différents formats de date.
+>**Note :** Au besoin, référez-vous à la [documentation](https://dev.mysql.com/doc/refman/8.0/en/data-types.html) au sujet des différents types.
 
 ## Insérer mes premières données
 
@@ -29,18 +29,18 @@ Lorsqu'on fournit les valeurs à insérer dans un nouvel enregistrement, les él
 
 ![Structure de la table série.](../images/structure-table-serie.PNG)
 
->**Remarque :** Le champ _id\_serie_ attribut __[AUTO_INCREMENT](https://dev.mysql.com/doc/refman/8.0/en/example-auto-increment.html)__ pour générer automatiquement un identifiant unique pour un nouvel enregistrement. C'est pour cette raison, qu'il est recommandé de laisser la base de données générer l'identifiant au lieu de déléguer la responsabilité à l'application cliente.
+>**Remarque :** Le champ _id\_serie_ possède l'attribut __[AUTO_INCREMENT](https://dev.mysql.com/doc/refman/8.0/en/example-auto-increment.html)__ pour générer automatiquement un identifiant unique lors de la création d'un nouvel enregistrement. Pour cette raison, il est recommandé de déléguer la généreration l'identifiant unique à la base de données.
 
->**Astuce :** Le [script pour la création](../src/exemple-interaction-bd/creation-table-serie.sql) de la table _serie_ est disponible.
+>**Astuce :** Le [script](../src/exemple-interaction-bd/creation-table-serie.sql) pour la création de la table _serie_ est disponible.
 
-Regardons de plus près les valeurs de la nouvelle série à créer :
+Analysons de plus près les valeurs de la nouvelle série à créer :
 
 | Champ | Valeur | Remarque |
 |---|---|---|
 | nom | 'Nom de la série' | Le nom de la série doit être entouré de guillemets |
-| synopsis | 'Synopsis de la série' | Le Synopsis de la série doit être entouré de guillemets |
+| synopsis | 'Synopsis de la série' | Le synopsis de la série doit être entouré de guillemets |
 | description | 'Description de la série' | La description de la série doit être entourée de guillemets |
-| date_creation | '2009-09-23 06:23:19' | Le format de la date de création est 'YYYY-MM-DD HH:MMLSS' |
+| date_creation | '2009-09-23 06:23:19' | Le format de la date de création est 'YYYY-MM-DD HH:MM:SS' |
 | date\_modification | NULL | Lors de l'utilisation de _NULL_, il ne faut pas entourer la valeur de guillemets |
 | date\_suppression | NULL | Lors de l'utilisation de _NULL_, il ne faut pas entourer la valeur de guillemets |
 
@@ -114,11 +114,10 @@ try {
 ?>
 ```
 
->**Important** Notez l'utilisation de "PDO::PARAM_STR" lors de l'association d'une date. PDO ne possède pas un paramètre de type "date".
+>**Note :** L'utilisation de "PDO::PARAM_STR" lors de l'association à un champ de type date.
 
-Avec de l'identifiant unique (id_serie) affiché à l'écran, provenant de lastInsertId(), il est possible de récupérer la nouvelle série créée :
+À l'aide de l'identifiant unique (id_serie) affiché à l'écran, provenant de lastInsertId(), il est possible de récupérer la nouvelle série créée :
 ![Affichage de la nouvelle série créée à partir du PHP](../images/serie-cree-via-php.PNG)
-
 
 Au besoin, référez-vous à la [documentation officielle](https://dev.mysql.com/doc/refman/8.0/en/insert.html).
 

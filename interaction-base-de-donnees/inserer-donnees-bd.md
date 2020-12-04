@@ -11,7 +11,7 @@ INSERT INTO nom_table (colonne_1, colonne_2, ...)
                VALUES (valeur_1, valeur_2, ...);
 ```
 
-- __INSERT INTO 'nom_table'__ - Est la commande qui indique au serveur de base de dnnées d’ajouter une nouvelle ligne dans une table nommée "nom_table".
+- __INSERT INTO nom\_table__ - Est la commande qui indique au serveur de base de données d’ajouter une nouvelle ligne dans une table nommée _nom\_table_.
 - __(colonne_1, colonne_2, ...)__ - Spécifie les colonnes à renseigner lors de la création.
 - __VALUES (valeur_1, valeur_2, ...)__ - Précise les valeurs à ajouter dans la nouvelle ligne.
 

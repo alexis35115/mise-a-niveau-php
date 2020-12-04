@@ -17,13 +17,13 @@ INSERT INTO nom_table (colonne_1, colonne_2, ...)
 
 Lorsqu'on fournit les valeurs à insérer dans un nouvel enregistrement, les éléments suivants doivent être pris en considération :
 
-- __Les données de type texte__ - Les données textes doivent être incluses dans des guillemets simples.
-- __Les données de type numérique__ - Les valeurs numériques doivent être fournies directement et sans les entourer de guillemets simples ou doubles.
-- __Les données de type date__ - Les valeurs de type date doivent être entre des guillemets simples dans un format tel que 'YYYY-MM-DD'.
+- __Les données de type texte__ - Doivent être incluses dans des guillemets simples.
+- __Les données de type numérique__ - Doivent être fournies directement et sans les entourer de guillemets simples ou doubles.
+- __Les données de type date__ - Doivent être entre des guillemets simples dans un format tel que 'YYYY-MM-DD'.
 
 >**Note :** Au besoin, référez-vous à la [documentation](https://dev.mysql.com/doc/refman/8.0/en/data-types.html) au sujet des différents types.
 
-## Insérer mes premières données
+## Créer ma première donnée
 
 À l'aide de phpMyAdmin, nous allons insérer notre premier enregistrement. Avant de procéder à l'insertion dans la base de données, regardons la structure de la table _serie_.
 
@@ -63,7 +63,7 @@ Voici le message de confirmation, notez que l'identifiant de la série préalabl
 
 ![Message de confirmation suite à l'insertion de la série](../images/confirmation-phpmyadmin-insert.PNG)
 
-## Insérer des données avec PHP à l'aide de PDO
+## Créer une donnée avec PHP à l'aide de PDO
 
 Cette fois, nous allons procéder à la création d'une série, mais à partir de PHP avec PDO.
 
@@ -114,9 +114,9 @@ try {
 ?>
 ```
 
->**Note :** L'utilisation de "PDO::PARAM_STR" lors de l'association à un champ de type date.
+>**Note :** L'utilisation de __PDO::PARAM_STR__ lors de l'association à un champ de type date.
 
-À l'aide de l'identifiant unique (id_serie) affiché à l'écran, provenant de lastInsertId(), il est possible de récupérer la nouvelle série créée :
+À l'aide de l'identifiant unique (_id\_serie_) affiché à l'écran, provenant de lastInsertId(), il est possible de rechercher la nouvelle série créée :
 ![Affichage de la nouvelle série créée à partir du PHP](../images/serie-cree-via-php.PNG)
 
 Au besoin, référez-vous à la [documentation officielle](https://dev.mysql.com/doc/refman/8.0/en/insert.html).

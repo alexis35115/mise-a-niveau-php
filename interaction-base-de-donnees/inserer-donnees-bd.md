@@ -1,6 +1,6 @@
 # Insérer des données dans la base de données
 
-__INSERT INTO__ est utilisée pour créer des données dans les tables de la base de données. La commande INSERT crée une nouvelle ligne dans la table pour en conserver les données. Les données sont généralement fournies par des programmes qui s’exécutent par dessus la base de données.
+__INSERT INTO__ est utilisée pour créer des données dans une table de la base de données. La commande INSERT crée une nouvelle ligne dans la table pour en conserver les données. Les données sont généralement fournies par des programmes qui s’exécutent par dessus la base de données.
 
 ## Syntaxe de base
 

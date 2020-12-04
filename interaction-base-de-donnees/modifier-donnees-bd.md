@@ -12,8 +12,8 @@ UPDATE nom_table
 [WHERE condition];
 ```
 
-- __UPDATE nom_table__ - Est la commande qui indique à la base de données de mettre à jour les données de la table.
-- __SET nom_colonne = nouvelle\_valeur__ - Est la combinaisons de noms et de valeurs des champs affectés par la mise à jour.
+- __UPDATE nom_table__ - Est la commande qui indique à la base de données de mettre à jour des données de la table.
+- __SET nom_colonne = nouvelle\_valeur__ - Est la combinaison de noms et de valeurs des champs affectés par la mise à jour.
 - __[WHERE condition]__ - Est facultative et peut être utilisée pour appliquer un filtre qui restreint le nombre de lignes affectées par la mise à jour.
 
 Lorsqu'on renseigne les valeurs pour une mise à jour d'un enregistrement, les éléments suivants doivent être pris en considération :
@@ -47,6 +47,7 @@ UPDATE serie
 ```
 
 Voici le message de confirmation :
+
 ![Message de confirmation suite à la mise à jour de la série.](../images/message-confirmation-update-phpmyadmin.PNG)
 
 Regardons de plus près la série modifiée :

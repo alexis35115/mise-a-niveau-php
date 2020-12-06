@@ -13,7 +13,7 @@ DELETE FROM nom_table
 [WHERE condition];
 ```
 
-- __DELETE FROM nom\_table__ - Est la commande qui indique à la base de données la table cibl pour la suppression.
+- __DELETE FROM nom\_table__ - Est la commande qui indique à la base de données la table cible pour la suppression.
 - __[WHERE condition]__ - Est facultative et peut être utilisée pour appliquer un filtre qui restreint le nombre de lignes affectées par la suppression.
 
 Lorsqu'on renseigne les valeurs pour dans la clause WHERE, les éléments suivants doivent être pris en considération :

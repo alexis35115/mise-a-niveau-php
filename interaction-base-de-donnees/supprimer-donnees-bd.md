@@ -16,7 +16,7 @@ DELETE FROM nom_table
 - __DELETE FROM nom\_table__ - Est la commande qui indique à la base de données la table cible pour la suppression.
 - __[WHERE condition]__ - Est facultative et peut être utilisée pour appliquer un filtre qui restreint le nombre de lignes affectées par la suppression.
 
-Lorsqu'on renseigne les valeurs pour dans la clause WHERE, les éléments suivants doivent être pris en considération :
+Lorsqu'on renseigne les valeurs dans la clause WHERE, les éléments suivants doivent être pris en considération :
 
 - __Les données de type texte__ - Doivent être incluses dans des guillemets simples.
 - __Les données de type numérique__ - Doivent être fournies directement et sans les entourer de guillemets simples ou doubles.
@@ -34,7 +34,7 @@ Lorsqu'on renseigne les valeurs pour dans la clause WHERE, les éléments suivan
 
 >**Astuce :** Le [script](../src/exemple-interaction-bd/creation-table-serie.sql) pour la création de la table _serie_ est disponible.
 
-Nous allons procéder à la suppression de la série ayant pour identifiant (_id\_serie_) la valeur de __3__ :
+Nous allons procéder à la suppression de la série ayant pour identifiant unique (_id\_serie_) la valeur de __3__ :
 
 ```sql
 DELETE FROM serie
@@ -75,7 +75,7 @@ try {
 ?>
 ```
 
-À l'aide de phpMyAdmin, il est possible de confirmer la mise à jour de la série :
+À l'aide de phpMyAdmin, il est possible de confirmer la suppression de la série :
 
 ![Confirmation de la suppression de la série avec PDO à partir de phpMyAdmin](../images/confirmation-suppression-phpmyadmin-pdo.PNG/)
 

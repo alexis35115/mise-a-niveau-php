@@ -4,9 +4,9 @@
 
 __Préambule :__ Le département d'informatique du Cégep de Matane a le plaisir de recevoir à toutes les années de nombreux étudiants dynamiques et ayant tous un parcours scolaire différent.
 
-__Objectif :__ Faciliter l’intégration des étudiants via la production d’une mise à niveau en PHP pour le cours de projet web.
+__Objectif :__ Faciliter l’intégration des étudiants via la production d’une mise à niveau en PHP.
 
-__Manières pédagogiques :__ Cette mise à niveau sera composée de documentations, de vidéos, d'exemples et d'exercices.
+__Manières pédagogiques :__ Cette mise à niveau sera composée de documentations, de vidéos et d'exemples.
 
 __Si vous êtes à vos débuts, il est fortement recommandé de suivre les sections dans l'ordre.__
 
@@ -71,10 +71,10 @@ Dirigez-vous vers [cette section](/cross-site/README.md).
 J'aimerais remercier tous ceux qui ont participé de proche ou de loin à la rédaction de cette mise à niveau.
 
 - Nadine Giasson St-Amand
-- Sébastien Bois
 - Bruno Harrison
 - Ken Bourgoin
+- Raphaël Lavoie
 
-Le département d'informatique est ouvert à tous commentaires constructifs dans le but de bonifier sa mise à niveau.  Il est possible de faire parvenir ces commentaires à "DÉFINIR OÙ".
+Le département d'informatique est ouvert à tous commentaires constructifs dans le but de bonifier sa mise à niveau.  Il est possible de faire parvenir ces commentaires à l'adresse <dept.informatique@cgmatane.qc.ca>.
 
 Tous droits réservés 2020 © Alexis Garon-Michaud, Enseignant en informatique

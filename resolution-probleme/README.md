@@ -1,5 +1,5 @@
 # Résolution des problèmes
 
-À prioriser
+__Documentation à venir!__🪂
 
 [Revenir à la page principale](../README.md)

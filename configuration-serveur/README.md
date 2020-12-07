@@ -1,17 +1,14 @@
 # Configuration du serveur
 
-<https://github.com/alexis35115/ConfigurationUbuntu/blob/master/README.md#git>
+__Documentation à venir!__ 🪂
 
-<https://github.com/alexis35115/ConfigurationUbuntu/blob/master/README.md#lamp-linux-apache-mysql-php>
+Voici les notions qui seront couvertes :
 
-<https://github.com/alexis35115/ConfigurationUbuntu/blob/master/README.md#gestion-des-comptes>
-
-<https://github.com/alexis35115/ConfigurationUbuntu/blob/master/README.md#gestion-des-services>
-
-<https://github.com/alexis35115/ConfigurationUbuntu/blob/master/README.md#ssh>
-
-<https://github.com/alexis35115/ConfigurationUbuntu/blob/master/README.md#r%C3%A9solutions-de-probl%C3%A8mes>
-
-<https://github.com/alexis35115/ConfigurationUbuntu/blob/master/README.md#nodejs-et-npm>
+- Installer Apache
+- Installer MySQL
+- Installer PhpMyAdmin
+- Installer PHP
+- Créer un usager autre que celui root
+- Déployer un projet sur le serveur et faire la mise à jour
 
 [Revenir à la page principale](../README.md)

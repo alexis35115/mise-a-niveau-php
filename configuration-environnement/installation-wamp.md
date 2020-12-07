@@ -2,7 +2,7 @@
 
 [Bitnami WAMP Stack](https://bitnami.com/stack/wamp) fournis un environnement de développement WAMP complet, entièrement intégré et prêt à fonctionner. Outre PHP, MySQL et Apache, il inclut également phpMyAdmin.
 
-Une vidéo expliquant l'installation et la configuration de Bitnami WAMP Stack est disponible. VIDEO À METTRE ICI.
+>**Astuce** - Une [vidéo](https://youtu.be/iy-pGJfJrYs) expliquant l'installation et la configuration de Bitnami WAMP Stack est disponible.
 
 ## Téléchargement et installation
 
@@ -41,7 +41,7 @@ Suite à l'installation, Bitnami devrait s'installer sous le répertoire __C:\Bi
 Voici certaines manipulations à effectuer :
 
 - Créer un raccourci du répertoire __htdocs__ qui se trouve sous __C:\Bitnami\wampstack\apache2__ et mettre ce raccourci à la racine de Bitnami __C:\Bitnami__.
-- Dans le répertoire __htdocs__, créez un répertoire __bitnami__ et y insérer le contenu de base du répertoire __htdocs__ à l'intérieur. Vous devriez être en mesure de consulter la page de Bitnami à l'adresse <http://localhost:81/bitnami/>.
+- Dans le répertoire __htdocs__, créez un répertoire __bitnami__ et y insérer le contenu de base du répertoire __htdocs__ à l'intérieur. Vous devriez être en mesure de consulter la page de Bitnami à l'adresse <http://localhost/bitnami/>.
 - Dans le but de faciliter le développement en local, il vous faut désactiver le __cache__ par défaut. Lorsque le cache est activé, les modifications à vos applications ne seront pas immédiatement reflétées dans vos applications. Ouvrez le fichier __C:\Bitnami\wampstack\php\php.ini__ et changez la configuration __opcache.enable__ pour lui donner la valeur de __0__ (désactivé) au lieu de __1__ (activé), n'oubliez pas d'enregistrer le fichier avant sa fermeture.
 
 ## Première utilisation
@@ -54,7 +54,7 @@ Créons un répertoire __exemple__ dans le répertoire __htdocs__. Dans ce répe
 ?>
 ```
 
-Vous devriez maintenant être en mesure de naviguer à l'adresse : <http://localhost:81/exemple/index.php> et vous devriez voir  les informations sur la configuration de PHP.
+Vous devriez maintenant être en mesure de naviguer à l'adresse : <http://localhost/exemple/index.php> et vous devriez voir  les informations sur la configuration de PHP.
 
 ![Configuration de PHP](../images/configuration-php.PNG)
 

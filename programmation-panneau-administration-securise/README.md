@@ -1,5 +1,9 @@
 # Programmation d'un panneau d'administration sécurisé
 
+__RÉDACTION EN COURS!__ 🏗  
+
+note à moi-même : Créer une version non-sécurisée et une oui.
+
 Ce n'est pas tous les sites Web qui ont besoin d'un panneau d'administration. Ce besoin dépend du genre de site web que vous programmez. Regardons les différents facteurs qui vient influeancer la nécessité d'avoir un panneau d'adminsitration.
 
 Vous __n'avez pas besoin__ d'un panneau d'administration lorsque :
@@ -80,8 +84,7 @@ Les fonctions de hachage ont les caractéristiques suivantes :
 
 Ainsi, contrairement au chiffrement, le hachage est un mécanisme __à sens unique__. Les données qui sont hachées ne peuvent pratiquement pas être _unhashed_.
 
-
-
+__todo : ajouter des diagrammes ici pour expliquer la différence entre le cryptage et le hachage__
 
 
 Les algorithmes de hachage couramment utilisés incluent les algorithmes _Message Digest_ (MDx), tels que MD5, et _secure hash algorithms_ (SHA),tels que SHA-1 et la famille SHA-2 qui inclut l’algorithme SHA-256 largement utilisé.

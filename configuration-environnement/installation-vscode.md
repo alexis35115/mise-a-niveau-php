@@ -8,7 +8,7 @@ Le code source de Visual Studio Code provient du projet logiciel libre et open s
 
 Dans le _[Stack Overflow 2019 Developer Survey](https://insights.stackoverflow.com/survey/2019)_, Visual Studio Code a été classé comme l'outil d'environnement de développement le plus populaire, avec 50,7 % des 87 317 répondants déclarant l'utiliser.
 
-Une vidéo expliquant l'installation et la configuration de Visual Studio Code est disponible. VIDEO À METTRE ICI.
+>**Astuce** - Une [vidéo](https://youtu.be/891inAC6E4w) expliquant l'installation et la configuration de Visual Studio Code est disponible. VIDEO À METTRE ICI.
 
 ## Installation de Visual Studio Code
 
@@ -52,7 +52,7 @@ Ensuite, il faut procéder à quelques configurations :
 ```json
     "open-php-html-js-in-browser.customUrlToOpen": "http://${host}/${fileBasename}",
     "open-php-html-js-in-browser.documentRootFolder": "C:\\Bitnami\\wampstack\\apache2\\htdocs",
-    "open-php-html-js-in-browser.customHost": "localhost:81"
+    "open-php-html-js-in-browser.customHost": "localhost"
 ```
 
 [Revenir à la page principale de la section](README.md)

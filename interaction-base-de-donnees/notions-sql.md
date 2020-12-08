@@ -8,22 +8,22 @@ SQL est un langage standard pour accéder et manipuler les bases de données.
 - SQL vous permet d’accéder et de manipuler des bases de données.
 - SQL est devenu une norme de l’_American National Standards Institute_ (ANSI) en 1986 et de l’Organisation internationale pour la normalisation (ISO) en 1987.
 
-## Que peut faire le SQL
+## Que permet de faire le SQL
 
-- Permets d'exécuter des requêtes contre une base de données.
-- Permets de récupérer des données à partir d’une base de données.
-- Permets d'insérer des enregistrements dans une base de données.
-- Permets de mettre à jour les enregistrements dans une base de données.
-- Permets de supprimer des enregistrements d’une base de données.
-- Permets de créer de nouvelles bases de données.
-- Permets de créer de nouvelles tables dans une base de données.
-- Permets de créer des procédures stockées dans une base de données.
-- Permets de créer des vues dans une base de données.
-- Permets de définir des autorisations sur les tables, procédures et vues.
+- D'exécuter des requêtes contre une base de données.
+- De récupérer des données à partir d’une base de données.
+- D'insérer des enregistrements dans une base de données.
+- De mettre à jour les enregistrements dans une base de données.
+- De supprimer des enregistrements d’une base de données.
+- De créer de nouvelles bases de données.
+- De créer de nouvelles tables dans une base de données.
+- De créer des procédures stockées dans une base de données.
+- De créer des vues dans une base de données.
+- De définir des autorisations sur les tables, procédures et vues.
 
 ## Instructions SQL
 
->**Astuce :** Le [script de création](../src/exemple-interaction-bd/demo_acces_donnees.sql) de la base de données cible pour la démonstration est disponible. Au besoin, consultez la section À METTRE ICI, pour l'importortation d'une base de données via un script.
+>**Astuce :** Le [script de création](../src/exemple-interaction-bd/demo_acces_donnees.sql) de la base de données cible pour la démonstration est disponible.
 
 ### SELECT
 
@@ -50,7 +50,7 @@ SELECT DISTINCT nom
   FROM utilisateur;
 ```
 
-Voici le résultat :
+Résultats :
 
 | nom |
 |---|
@@ -68,7 +68,7 @@ SELECT *
   FROM utilisateur;
 ```
 
-Voici le résultat :
+Résultats :
 
 | id_utilisateur | nom | prenom | date_naissance | date_suppression |
 |---|---|---|---|---|
@@ -91,7 +91,7 @@ L’instruction FROM vient dans ce cas-ci préciser que la sélection doit se fa
 
 ### WHERE
 
-L’instruction WHERE va servir à __filtrer les enregistrements provenant de la table de l’instruction FROM__. Nous allons utiliser des expressions logiques qui seront évaluées et __seuls les enregistrements dont l’expression donne un résultat égal à TRUE seront retournés dans le résultat de la requête__.
+L’instruction WHERE sert à __filtrer les enregistrements provenant de la table de l’instruction FROM__. Nous allons utiliser des expressions logiques qui seront évaluées et __seuls les enregistrements dont l’expression donne un résultat égal à TRUE seront retournés dans le résultat de la requête__.
 
 Par exemple, nous pourrions tenter d’obtenir un résultat en fonction d’un numéro d’utilisateur en particulier :
 
@@ -102,7 +102,7 @@ SELECT prenom,
  WHERE id_utilisateur = 1;
 ```
 
-Voici le résultat :
+Résultats :
 
 | prenom | nom |
 |---|---|
@@ -114,15 +114,15 @@ L’instruction GROUP BY va __regrouper les enregistrements retournés en foncti
 
 ```sql
 SELECT id_utilisateur,
-       YEAR(date_naissance)
+       YEAR(date_naissance) AS annee_naissance
   FROM utilisateur
  GROUP BY id_utilisateur,
           YEAR(date_naissance)
 ```
 
-Voici le résultat :
+Résultats :
 
-| id_utilisateur | YEAR(date_naissance) |
+| id_utilisateur | annee_naissance |
 |---|---|
 | 1 | 1992 |
 | 3 | 1997 |
@@ -133,23 +133,23 @@ Voici le résultat :
 Comme la clause SELECT est interprétée après le GROUP BY, seuls les champs dans le GROUP BY peuvent être sélectionnés.  Toutefois, les fonctions d’agrégation COUNT(), SUM(), AVG(), MIN() et MAX() peuvent être utilisées pour faire des calculs sur les regroupements.  
 
 ```sql
-SELECT nom, COUNT(*)
+SELECT nom, COUNT(*) AS nombre_occurences
   FROM utilisateur
  GROUP BY nom
 ```
 
-Voici le résultat :
+Résultats :
 
-| nom | COUNT(*) |
+| nom | nombre_occurences |
 |---|---|
 | Garon-Michaud | 4 |
 | Michaud | 1 |
 
->**Note :** Les fonctions d’agrégation ignorent les données à valeur NULL sauf COUNT(*).
+>**Note :** Les fonctions d’agrégation ignorent les données à valeur _NULL_ sauf COUNT(*).
 
 ### ORDER BY
 
-La clause ORDER BY va permettre de __trier les enregistrements retournés par notre requête à des fins de présentation__.  Le tri peut se faire sur plus d’une colonne et __l’ordre de tri sera de gauche à droite dans l’ordre d’écriture de la clause__.
+La clause ORDER BY permet de __trier les enregistrements retournés par notre requête à des fins de présentation__.  Le tri peut se faire sur plus d’une colonne et __l’ordre de tri sera de gauche à droite dans l’ordre d’écriture de la clause__.
 
 ```sql
 SELECT prenom, nom
@@ -157,7 +157,7 @@ SELECT prenom, nom
 ORDER BY date_naissance
 ```
 
-Voici le résultat :
+Résultats :
 
 | prenom | nom |
 |---|---|
@@ -169,7 +169,7 @@ Voici le résultat :
 
 Comme les __données dans les tables ne sont pas nécessairement triées, la clause ORDER BY nous permet de forcer l’affichage des résultats en respectant un ordre de tri__ que nous allons y spécifier.
 
-Notez que comme la clause ORDER BY est la seule qui vient après le SELECT dans l’interprétation des instructions, elle est aussi __la seule qui peut faire référence à un nom d’alias__.
+Notez que la clause ORDER BY est la seule qui vient après le SELECT dans l’interprétation des instructions, elle est aussi __la seule qui peut faire référence à un nom d’alias__.
 
 __Par défaut, le tri se fait en ordre ascendant__.  Si on souhaite modifier l’ordre pour descendant, il suffit de __rajouter l’instruction DESC après le champ trié__.
 
@@ -179,7 +179,7 @@ FROM utilisateur
 ORDER BY date_naissance DESC
 ```
 
-Voici le résultat :
+Résultats :
 
 | prenom | nom |
 |---|---|

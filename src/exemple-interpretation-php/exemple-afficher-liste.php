@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-$prenoms = ["Alexis", "Ken", "Nadine", "Sébastien"];
+    $prenoms = ["Alexis", "Ken", "Nadine", "Sébastien"];
 ?>
 
 <ul>

@@ -68,34 +68,35 @@ Cette fois, nous allons procéder à la mise à jour d'une série, mais à parti
 
 ```php
 <?php
-$dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
-$utilisateur = 'root';
-$motPasse = 'admin123';
+  $dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
+  $utilisateur = 'root';
+  $motPasse = 'admin123';
 
-try {
-    // Créer la connexion
-    $dbh = new PDO($dsn, $utilisateur, $motPasse);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $dbh->exec('SET CHARACTER SET UTF8');
+  try {
+      // Créer la connexion
+      $dbh = new PDO($dsn, $utilisateur, $motPasse);
+      $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $dbh->exec('SET CHARACTER SET UTF8');
 
-    // Informations de la série
-    $dateSuppression = '2020-12-04 01:01:01';
-    $idSerie = 2;
+      // Informations de la série
+      $dateSuppression = '2020-12-04 01:01:01';
+      $idSerie = 2;
 
-    // Requête UPDATE pour la mise à jour d'une série
-    $requeteMiseAJourSerie = "UPDATE serie
-                                 SET date_suppression = :date_suppression
-                               WHERE id_serie = :id_serie";
+      // Requête UPDATE pour la mise à jour d'une série
+      $requeteMiseAJourSerie = "UPDATE serie
+                                  SET date_suppression = :date_suppression
+                                WHERE id_serie = :id_serie";
 
-    $sth = $dbh->prepare($requeteMiseAJourSerie);
+      $sth = $dbh->prepare($requeteMiseAJourSerie);
 
-    $sth->bindParam(':date_suppression', $dateSuppression, PDO::PARAM_STR);
-    $sth->bindParam(':id_serie', $idSerie, PDO::PARAM_INT);
-    $sth->execute();
+      $sth->bindParam(':date_suppression', $dateSuppression, PDO::PARAM_STR);
+      $sth->bindParam(':id_serie', $idSerie, PDO::PARAM_INT);
+      $sth->execute();
 
-} catch (PDOException $e) {
-    echo('Échec lors de la connexion : ' . $e->getMessage());
-}
+  }
+  catch (PDOException $e) {
+      echo('Échec lors de la connexion : ' . $e->getMessage());
+  }
 ?>
 ```
 

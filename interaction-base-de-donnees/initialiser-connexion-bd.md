@@ -56,7 +56,8 @@ Création d'une instance de PDO et définir un mode d'erreur :
 
       // Définir l'encodage
       $dbh->exec('SET CHARACTER SET UTF8');
-  } catch (PDOException $e) {
+  }
+  catch (PDOException $e) {
       echo('Échec lors de la connexion : ' . $e->getMessage());
   }
 ?>

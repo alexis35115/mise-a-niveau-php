@@ -49,29 +49,30 @@ Cette fois, nous allons procéder à la suppression d'une série, mais à partir
 
 ```php
 <?php
-$dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
-$utilisateur = 'root';
-$motPasse = 'admin123';
+    $dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
+    $utilisateur = 'root';
+    $motPasse = 'admin123';
 
-try {
-    // Créer la connexion
-    $dbh = new PDO($dsn, $utilisateur, $motPasse);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $dbh->exec('SET CHARACTER SET UTF8');
+    try {
+        // Créer la connexion
+        $dbh = new PDO($dsn, $utilisateur, $motPasse);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->exec('SET CHARACTER SET UTF8');
 
-    $idSerie = 3;
+        $idSerie = 3;
 
-    // Requête DELETE pour la suppression d'une série
-    $requeteSupprimerSerie = "DELETE FROM serie WHERE id_serie = :id_serie";
+        // Requête DELETE pour la suppression d'une série
+        $requeteSupprimerSerie = "DELETE FROM serie WHERE id_serie = :id_serie";
 
-    $sth = $dbh->prepare($requeteSupprimerSerie);
+        $sth = $dbh->prepare($requeteSupprimerSerie);
 
-    $sth->bindParam(':id_serie', $idSerie, PDO::PARAM_INT);
-    $sth->execute();
+        $sth->bindParam(':id_serie', $idSerie, PDO::PARAM_INT);
+        $sth->execute();
 
-} catch (PDOException $e) {
-    echo('Échec lors de la connexion : ' . $e->getMessage());
-}
+    }
+    catch (PDOException $e) {
+        echo('Échec lors de la connexion : ' . $e->getMessage());
+    }
 ?>
 ```
 

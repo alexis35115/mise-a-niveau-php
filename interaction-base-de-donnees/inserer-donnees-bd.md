@@ -69,48 +69,49 @@ Cette fois, nous allons procéder à la création d'une série, mais à partir d
 
 ```php
 <?php
-$dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
-$utilisateur = 'root';
-$motPasse = 'admin123';
+    $dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
+    $utilisateur = 'root';
+    $motPasse = 'admin123';
 
-try {
-    // Créer la connexion
-    $dbh = new PDO($dsn, $utilisateur, $motPasse);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $dbh->exec('SET CHARACTER SET UTF8');
+    try {
+        // Créer la connexion
+        $dbh = new PDO($dsn, $utilisateur, $motPasse);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->exec('SET CHARACTER SET UTF8');
 
-    // Valeur de la série à créer
-    $nom = "Nom de la série";
-    $synopsis = "Synopsis de la série";
-    $description = "Description de la série";
-    $dateCreation = "2009-09-23 06:23:19";
-    $dateModification = NULL;
-    $dateSuppression = NULL;
+        // Valeur de la série à créer
+        $nom = "Nom de la série";
+        $synopsis = "Synopsis de la série";
+        $description = "Description de la série";
+        $dateCreation = "2009-09-23 06:23:19";
+        $dateModification = NULL;
+        $dateSuppression = NULL;
 
-    // Requête INSERT pour la création de la nouvelle série
-    $requeteAjoutSerie = "INSERT INTO serie (nom, synopsis, description, date_creation, date_modification, date_suppression)
-                                     VALUES (:nom, :synopsis, :description, :date_creation, :date_modification, :date_suppression)";
+        // Requête INSERT pour la création de la nouvelle série
+        $requeteAjoutSerie = "INSERT INTO serie (nom, synopsis, description, date_creation, date_modification, date_suppression)
+                                        VALUES (:nom, :synopsis, :description, :date_creation, :date_modification, :date_suppression)";
 
-    $sth = $dbh->prepare($requeteAjoutSerie);
+        $sth = $dbh->prepare($requeteAjoutSerie);
 
-    $sth->bindParam(':nom', $nom, PDO::PARAM_STR);
-    $sth->bindParam(':synopsis', $synopsis, PDO::PARAM_STR);
-    $sth->bindParam(':description', $description, PDO::PARAM_STR);
-    $sth->bindParam(':date_creation', $dateCreation, PDO::PARAM_STR);
-    $sth->bindParam(':date_modification', $dateModification, PDO::PARAM_STR);
-    $sth->bindParam(':date_suppression', $dateSuppression, PDO::PARAM_STR);
-    $sth->execute();
+        $sth->bindParam(':nom', $nom, PDO::PARAM_STR);
+        $sth->bindParam(':synopsis', $synopsis, PDO::PARAM_STR);
+        $sth->bindParam(':description', $description, PDO::PARAM_STR);
+        $sth->bindParam(':date_creation', $dateCreation, PDO::PARAM_STR);
+        $sth->bindParam(':date_modification', $dateModification, PDO::PARAM_STR);
+        $sth->bindParam(':date_suppression', $dateSuppression, PDO::PARAM_STR);
+        $sth->execute();
 
-    /*
-    À l'aide de la méthode "lastInsertId()" de PDO, il est possible de récupérer l'identifiant unique de la série créée (id_serie).
+        /*
+        À l'aide de la méthode "lastInsertId()" de PDO, il est possible de récupérer l'identifiant unique de la série créée (id_serie).
 
-    Au besoin, référez-vous à cette question sur StackOver Flow https://stackoverflow.com/questions/17112852/get-the-new-record-primary-key-id-from-mysql-insert-query.
-    */
-    echo($dbh->lastInsertId());
+        Au besoin, référez-vous à cette question sur StackOver Flow https://stackoverflow.com/questions/17112852/get-the-new-record-primary-key-id-from-mysql-insert-query.
+        */
+        echo($dbh->lastInsertId());
 
-} catch (PDOException $e) {
-    echo('Échec lors de la connexion : ' . $e->getMessage());
-}
+    }
+    catch (PDOException $e) {
+        echo('Échec lors de la connexion : ' . $e->getMessage());
+    }
 ?>
 ```
 

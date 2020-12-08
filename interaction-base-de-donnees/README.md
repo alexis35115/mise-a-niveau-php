@@ -14,7 +14,7 @@ Les bases de données peuvent contenir un large éventail d’informations, comm
 - Les informations d'un usager
 - Etc
 
-Si un site web peut fournir un large éventail d’informations, et ce efficacement, il devient beaucoup plus utile qu’une simple page web statique.
+Si un site Web peut fournir un large éventail d’informations, et ce efficacement, il devient beaucoup plus utile qu’une simple page Web statique.
 
 Les bases de données sont également utilisées pour stocker la structure des pages Web elles-mêmes, pas seulement le contenu.
 
@@ -23,7 +23,7 @@ Une demande à un site Web se résume ainsi :
 - Le serveur reçoit la demande
 - Le serveur demande à la logique d'affaires d'analyser la demande
 - La logique d'affaires va, au besoin, récupérer de l'information dans la base de données
-- Le serveur met le tout ensemble dans une page Web et envoie la page au navigateur.
+- Le serveur assemble le tout dans une page Web et envoie la page au navigateur.
 
 ![Schéma expliquant l'interaction entre PHP et MySQL](../images/schema-php-mysql.png)
 

@@ -1,0 +1,24 @@
+{
+  "carte": [
+    {
+      "id": 1,
+      "nom": "Nom de la carte 1",
+      "description": "Description de la carte 1"
+    },
+    {
+      "id": 2,
+      "nom": "Nom de la carte 2",
+      "description": "Description de la carte 2"
+    },
+    {
+      "id": 3,
+      "nom": "Nom de la carte 3",
+      "description": "Description de la carte 3"
+    },
+    {
+      "id": 4,
+      "nom": "nom de la carte 4",
+      "description": "description de la carte 4"
+    }
+  ]
+}

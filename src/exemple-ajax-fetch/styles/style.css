@@ -1,0 +1,31 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    height: 100px;
+    background-color: #333;
+    display: flex;
+    padding: 0 30px;
+    align-items: center;
+    color: #eee;
+}
+
+main{
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+section{
+    text-align: center;
+}
+
+input{
+    margin-bottom: 15px;
+}
+
+input[type="text"]{
+    padding: 5px;
+}

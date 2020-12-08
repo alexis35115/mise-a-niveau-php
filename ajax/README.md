@@ -4,6 +4,8 @@ l'acronyme __AJAX__ signifie _asynchronous JavaScript and XML_. L'AJAX combine l
 
 L'AJAX permet de mettre à jour une page web de manière asynchrone en échangeant des données avec un serveur web. Cela signifie qu’il est possible de mettre à jour des parties d’une page Web, sans recharger toute la page.
 
+>**Astuce** - Une [démonstration](https://youtu.be/dyz4HF3vvMY) sur l'utilisation de l'AJAX est disponible ainsi que le [code](..src/exemple-ajax-fetch) de la démonstration.
+
 ## Que permet l'AJAX
 
 L'AJAX permet de :
@@ -41,7 +43,7 @@ Une demande envers un serveur web doit être indiquée par un verbe HTTP. Les ve
 
 ![Architecture d'un API REST](../images/structure-api-rest.png)
 
-## La nouvelle API native Fetch
+## Fetch la nouvelle API native
 
 Fetch est une nouvelle API JavaScript native, supportée par la plupart des navigateurs d'aujourd’hui. Fetch vous permet de faire des requêtes similaires à __XMLHttpRequest__. Selon [Google](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api), il est plus facile avec __fetch()__ de faire des demandes asynchrones et d'en gérer les réponses qu’avec les anciennes manières.
 

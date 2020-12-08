@@ -4,7 +4,7 @@ PHP est un langage de programmation côté serveur (_backend_). Une de ses fonct
 
 ## Affichage simple avec la commande _echo_
 
-La commande _echo_ sert à afficher du contenu texte, ce texte doit être placé entre des guillemets.
+La commande __echo__ sert à afficher du contenu texte, ce texte doit être placé entre des guillemets.
 
 ```php
 echo("Voici la commande echo");
@@ -22,7 +22,7 @@ L'affichage :
 Voici la commande echo
 ```
 
-Il est également possible d'afficher un nombre, dans ce cas l'utilisation de guillemets n'est pas nécessaire.
+Il est également possible d'afficher un nombre, dans ce cas l'utilisation de guillemets __n'est pas nécessaire__.
 
 ```php
 echo(2020);
@@ -36,7 +36,7 @@ L'affichage :
 
 ## Afficher du HTML à l'aide de la commande _echo_
 
-À l'aide de la commande _echo_, il est possible de produire du HTML.
+À l'aide de la commande __echo__, il est également possible de produire du HTML.
 
 ```php
 echo("<h3>Titre simple</h3><p>Bacon ipsum</p>");
@@ -124,7 +124,7 @@ Le nom de mon chien est Louna.
 
 Il est possible de générer des éléments HTML plus complexes.
 
-Créons une liste de prénoms avec une balise __\<ul\>__ et des balises __\<li\>__.
+Créons une liste à puces de prénoms avec une balise __\<ul\>__ et des balises __\<li\>__.
 
 ```php
 <!DOCTYPE html>

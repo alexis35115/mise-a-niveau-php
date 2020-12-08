@@ -16,7 +16,7 @@ ou bien avec des apostrophes
 echo('Voici la commande echo');
 ```
 
-L'affichage :
+Affichage :
 
 ```txt
 Voici la commande echo
@@ -28,7 +28,7 @@ Il est également possible d'afficher un nombre, dans ce cas l'utilisation de gu
 echo(2020);
 ```
 
-L'affichage :
+Affichage :
 
 ```txt
 2020
@@ -42,7 +42,7 @@ L'affichage :
 echo("<h3>Titre simple</h3><p>Bacon ipsum</p>");
 ```
 
-L'affichage :
+Affichage :
 
 __Titre simple__
 
@@ -100,18 +100,26 @@ echo('<a id="lien" href="#" title="infobulle"> lien </a>');
 
 ## Version courte de la commande _echo_
 
-Depuis quelques versions, la commande _echo_ possède une version courte. Cette version courte est utile dans un document HTML. __<?="ma valeur"?>__
+Depuis quelques versions, la commande __echo__ possède une version courte. Cette version courte est utile dans un document HTML. __<?="ma valeur"?>__
 
 Code PHP :
 
 ```php
-$nom = "Louna";
-```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version courte de la commande echo</title>
+</head>
+<body>
+    <?php
+        $nom = "Louna";
+    ?>
 
-Code HTML :
-
-```php
-<p>Le nom de mon chien est <?=$nom?>.</p>
+    <p>Le nom de mon chien est <?=$nom?>.</p>
+</body>
+</html>
 ```
 
 Affichage :

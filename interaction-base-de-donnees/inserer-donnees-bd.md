@@ -107,9 +107,7 @@ Cette fois, nous allons procéder à la création d'une série, mais à partir d
         Au besoin, référez-vous à cette question sur StackOver Flow https://stackoverflow.com/questions/17112852/get-the-new-record-primary-key-id-from-mysql-insert-query.
         */
         echo($dbh->lastInsertId());
-
-    }
-    catch (PDOException $e) {
+    } catch (PDOException $e) {
         echo('Échec lors de la connexion : ' . $e->getMessage());
     }
 ?>

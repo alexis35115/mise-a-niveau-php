@@ -69,8 +69,7 @@ Cette fois, nous allons procéder à la suppression d'une série, mais à partir
         $sth->bindParam(':id_serie', $idSerie, PDO::PARAM_INT);
         $sth->execute();
 
-    }
-    catch (PDOException $e) {
+    } catch (PDOException $e) {
         echo('Échec lors de la connexion : ' . $e->getMessage());
     }
 ?>

@@ -43,23 +43,22 @@ Création d'une instance de PDO et définir un mode d'erreur :
 
 ```php
 <?php
-  $dsn = 'mysql:dbname=testdb;host=localhost';
-  $utilisateur = 'root';
-  $motPasse = 'admin123';
+$dsn = 'mysql:dbname=testdb;host=localhost';
+$utilisateur = 'root';
+$motPasse = 'admin123';
 
-  try {
-      // Instanciation de la connexion
-      $dbh = new PDO($dsn, $utilisateur, $motPasse);
+try {
+    // Instanciation de la connexion
+    $dbh = new PDO($dsn, $utilisateur, $motPasse);
 
-      // Définir le mode d'erreur
-      $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Définir le mode d'erreur
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      // Définir l'encodage
-      $dbh->exec('SET CHARACTER SET UTF8');
-  }
-  catch (PDOException $e) {
-      echo('Échec lors de la connexion : ' . $e->getMessage());
-  }
+    // Définir l'encodage
+    $dbh->exec('SET CHARACTER SET UTF8');
+} catch (PDOException $e) {
+    echo ('Échec lors de la connexion : ' . $e->getMessage());
+}
 ?>
 ```
 
@@ -71,29 +70,29 @@ Créer une instance PDO et définir le mode d'erreur à partir du constructeur :
 
 ```php
 <?php
-  ini_set('display_errors', 1);
-  $dsn = 'mysql:dbname=test;host=localhost';
-  $utilisateur = 'root';
-  $motPasse = 'admin123';
+    ini_set('display_errors', 1);
+    $dsn = 'mysql:dbname=test;host=localhost';
+    $utilisateur = 'root';
+    $motPasse = 'admin123';
 
-  /*
-      L'utilisation des blocs try/catch autour du constructeur est toujours valide
-      même si nous définissons le ERRMODE à WARNING sachant que PDO::__construct
-      va toujours lancer une exception PDOException si la connexion échoue.
-  */
-  try {
-      // Instanciation de la connexion
-      $dbh = new PDO($dsn, $utilisateur, $motPasse, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+    /*
+        L'utilisation des blocs try/catch autour du constructeur est toujours valide
+        même si nous définissons le ERRMODE à WARNING sachant que PDO::__construct
+        va toujours lancer une exception PDOException si la connexion échoue.
+    */
+    try {
+        // Instanciation de la connexion
+        $dbh = new PDO($dsn, $utilisateur, $motPasse, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
 
-      // Définir l'encodage
-      $dbh->exec('SET CHARACTER SET UTF8');
-  } catch (PDOException $e) {
-      echo('Échec de la connexion : ' . $e->getMessage());
-      exit;
-  }
+        // Définir l'encodage
+        $dbh->exec('SET CHARACTER SET UTF8');
+    } catch (PDOException $e) {
+        echo('Échec de la connexion : ' . $e->getMessage());
+        exit;
+    }
 
-  // Ceci fera que PDO lancera une erreur de niveau E_WARNING au lieu d'une exception (lorsque la table n'existe pas)
-  $dbh->query("SELECT colonne FROM table_inexistante");
+    // Ceci fera que PDO lancera une erreur de niveau E_WARNING au lieu d'une exception (lorsque la table n'existe pas)
+    $dbh->query("SELECT colonne FROM table_inexistante");
 ?>
 ```
 

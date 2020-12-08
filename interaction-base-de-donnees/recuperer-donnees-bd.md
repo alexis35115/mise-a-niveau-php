@@ -60,8 +60,7 @@ L'exemple suivant sélectionne les colonnes _id\_utilisateur_, _prenom_ et _nom_
         print_r($utilisateurs);
         echo("</pre>");
 
-    }
-    catch (PDOException $e) {
+    } catch (PDOException $e) {
         echo('Échec lors de la connexion : ' . $e->getMessage());
     }
 ?>
@@ -135,37 +134,37 @@ L'exemple suivant sélectionne les colonnes _id\_utilisateur_, _prenom_ et _nom_
 
 ```php
 <?php
-$dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
-$utilisateur = 'root';
-$motPasse = 'admin123';
+    $dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
+    $utilisateur = 'root';
+    $motPasse = 'admin123';
 
-try {
-    // Instanciation de la connexion
-    $dbh = new PDO($dsn, $utilisateur, $motPasse);
+    try {
+        // Instanciation de la connexion
+        $dbh = new PDO($dsn, $utilisateur, $motPasse);
 
-    // Définir le mode d'erreur
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // Définir le mode d'erreur
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Définir l'encodage
-    $dbh->exec('SET CHARACTER SET UTF8');
+        // Définir l'encodage
+        $dbh->exec('SET CHARACTER SET UTF8');
 
-    // Préparer la requête à exécuter
-    $sth = $dbh->prepare("SELECT id_utilisateur, nom, prenom FROM utilisateur WHERE id_utilisateur = 1;");
+        // Préparer la requête à exécuter
+        $sth = $dbh->prepare("SELECT id_utilisateur, nom, prenom FROM utilisateur WHERE id_utilisateur = 1;");
 
-    // Exécution de la requête
-    $sth->execute();
+        // Exécution de la requête
+        $sth->execute();
 
-    // Récupérer l'utilisateur provenant de l'exécution de la requête
-    $utilisateur = $sth->fetch();
+        // Récupérer l'utilisateur provenant de l'exécution de la requête
+        $utilisateur = $sth->fetch();
 
-    // Afficher les informations de l'utilisateur à l'écran
-    echo("<pre>");
-    print_r($utilisateur);
-    echo("</pre>");
+        // Afficher les informations de l'utilisateur à l'écran
+        echo("<pre>");
+        print_r($utilisateur);
+        echo("</pre>");
 
-} catch (PDOException $e) {
-    echo('Échec lors de la connexion : ' . $e->getMessage());
-}
+    } catch (PDOException $e) {
+        echo('Échec lors de la connexion : ' . $e->getMessage());
+    }
 ?>
 ```
 
@@ -263,36 +262,36 @@ Voici un exemple d'utilisation d'une requête préparée avec un _placeholder_, 
 
 ```php
 <?php
-$dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
-$utilisateur = 'root';
-$motPasse = 'admin123';
+    $dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
+    $utilisateur = 'root';
+    $motPasse = 'admin123';
 
-try {
-    // Créer la connexion
-    $dbh = new PDO($dsn, $utilisateur, $motPasse);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $dbh->exec('SET CHARACTER SET UTF8');
+    try {
+        // Créer la connexion
+        $dbh = new PDO($dsn, $utilisateur, $motPasse);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->exec('SET CHARACTER SET UTF8');
 
-    $idUtilisateur = 1;
+        $idUtilisateur = 1;
 
-    // Requête SQL à exécuter, notez la présence du paramètre ":id"
-    $requeteObtenirUtilisateur = "SELECT id_utilisateur, nom, prenom FROM utilisateur WHERE id_utilisateur = :id";
+        // Requête SQL à exécuter, notez la présence du paramètre ":id"
+        $requeteObtenirUtilisateur = "SELECT id_utilisateur, nom, prenom FROM utilisateur WHERE id_utilisateur = :id";
 
-    $sth = $dbh->prepare($requeteObtenirUtilisateur);
+        $sth = $dbh->prepare($requeteObtenirUtilisateur);
 
-    // Préciser la valeur ainsi que le type du paramètre ":id"
-    $sth->bindParam(':id', $idUtilisateur, PDO::PARAM_INT);
-    $sth->execute();
-    $utilisateur = $sth->fetch();
+        // Préciser la valeur ainsi que le type du paramètre ":id"
+        $sth->bindParam(':id', $idUtilisateur, PDO::PARAM_INT);
+        $sth->execute();
+        $utilisateur = $sth->fetch();
 
-    // Afficher les informations de l'utilisateur à l'écran
-    echo("<pre>");
-    print_r($utilisateur);
-    echo("</pre>");
+        // Afficher les informations de l'utilisateur à l'écran
+        echo("<pre>");
+        print_r($utilisateur);
+        echo("</pre>");
 
-} catch (PDOException $e) {
-    echo('Échec lors de la connexion : ' . $e->getMessage());
-}
+    } catch (PDOException $e) {
+        echo('Échec lors de la connexion : ' . $e->getMessage());
+    }
 ?>
 ```
 
@@ -316,42 +315,42 @@ Voici un autre exemple d'utilisation d'une requête préparée avec un _placehol
 
 ```php
 <?php
-$dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
-$utilisateur = 'root';
-$motPasse = 'admin123';
+    $dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
+    $utilisateur = 'root';
+    $motPasse = 'admin123';
 
-try {
-    // Créer la connexion
-    $dbh = new PDO($dsn, $utilisateur, $motPasse);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $dbh->exec('SET CHARACTER SET UTF8');
+    try {
+        // Créer la connexion
+        $dbh = new PDO($dsn, $utilisateur, $motPasse);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->exec('SET CHARACTER SET UTF8');
 
-    $nom = "Garon-Michaud";
+        $nom = "Garon-Michaud";
 
-    // Requête SQL à exécuter, notez la présence du paramètre ":nom"
-    $requeteObtenirUtilisateurs = "SELECT id_utilisateur, nom, prenom FROM utilisateur WHERE nom = :nom";
+        // Requête SQL à exécuter, notez la présence du paramètre ":nom"
+        $requeteObtenirUtilisateurs = "SELECT id_utilisateur, nom, prenom FROM utilisateur WHERE nom = :nom";
 
-    $sth = $dbh->prepare($requeteObtenirUtilisateurs);
+        $sth = $dbh->prepare($requeteObtenirUtilisateurs);
 
-    // Préciser la valeur ainsi que le type du paramètre ":nom"
-    $sth->bindParam(':nom', $nom, PDO::PARAM_STR);
-    $sth->execute();
-    $utilisateurs = $sth->fetchAll();
+        // Préciser la valeur ainsi que le type du paramètre ":nom"
+        $sth->bindParam(':nom', $nom, PDO::PARAM_STR);
+        $sth->execute();
+        $utilisateurs = $sth->fetchAll();
 
-    // Afficher les informations des utilisateurs à l'écran
-    foreach ($utilisateurs as $utilisateur) {
-    ?>
-        <div style="border:solid 1px black; margin:5px; padding:5px;">
-        <?php
-            echo($utilisateur['id_utilisateur'] . " - " . $utilisateur['prenom'] . " " . $utilisateur['nom'])
+        // Afficher les informations des utilisateurs à l'écran
+        foreach ($utilisateurs as $utilisateur) {
         ?>
-        </div>
-    <?php
-    }
+            <div style="border:solid 1px black; margin:5px; padding:5px;">
+            <?php
+                echo($utilisateur['id_utilisateur'] . " - " . $utilisateur['prenom'] . " " . $utilisateur['nom'])
+            ?>
+            </div>
+        <?php
+        }
 
-} catch (PDOException $e) {
-    echo('Échec lors de la connexion : ' . $e->getMessage());
-}
+    } catch (PDOException $e) {
+        echo('Échec lors de la connexion : ' . $e->getMessage());
+    }
 ?>
 ```
 

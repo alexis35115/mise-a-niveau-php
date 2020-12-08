@@ -4,7 +4,7 @@ On ne devrait jamais mentionner le terme "c'est la norme à suivre". C'est utopi
 
 On devrait plus tôt utiliser le terme de "pratiques émergentes".
 
-Néanmoins, voici quelques recommandations à suivre lors de la rédaction de SQL.
+Néanmoins, voici quelques recommandations à suivre lors de la rédaction du code SQL.
 
 ## Général
 
@@ -55,7 +55,7 @@ Néanmoins, voici quelques recommandations à suivre lors de la rédaction de SQ
 - Doit se rapporter d’une manière ou d’une autre à l’objet ou à l’expression qu’il est l'alias.
 - En règle générale, le nom de corrélation doit être la première lettre de chaque mot au nom de l’objet.
 - S’il existe déjà une corrélation avec le même nom, puis ajouter un nombre.
-- Pour les données calculées ( ou ) utilisez le nom que vous lui donneriez s’il s’agissait d’une colonne définie dans le schéma (SUM() ou AVG()).
+- Pour les données calculées (ou) utilisez le nom que vous lui donneriez s’il s’agissait d’une colonne définie dans le schéma (SUM() ou AVG()).
 
 ### Procédures stockées
 
@@ -64,19 +64,21 @@ Néanmoins, voici quelques recommandations à suivre lors de la rédaction de SQ
 
 ### Préfixes uniformes
 
-Les préfixes suivants ont un sens universel garantissant que les colonnes peuvent être lues et comprises facilement à partir du code SQL. Utilisez le préfixe correct, le cas échéant.
+Les préfixes suivants ont un sens universel garantissant que les colonnes peuvent être lues et comprises facilement à partir du code SQL.
+
+Utilisez le préfixe correct, le cas échéant :
 
 - id - un identificateur unique tel qu’une colonne qui est une clé primaire.
 - date - désigne une colonne qui contient la date de quelque chose.
 
-__Prendre note qu'en anglais, on parlerait de suffixes!__
+>**Note :** En anglais, on parlerait de suffixes!
 
 ## Syntaxe de requête
 
 ### Mots réservés
 
 - Toujours utiliser les majuscules pour les mots clés réservés comme SELECT et WHERE.
-- Il est préférable d’éviter les mots clés abrégés et d’utiliser les mots-clés pleine longueur lorsque disponible, ABSOLUTE au lieu de ABS.
+- Il est préférable d’éviter les mots clés abrégés et d’utiliser les mots-clés pleine longueur lorsque disponible.
 
 ### Espace blanc
 
@@ -132,8 +134,8 @@ Garder tous les mots clés alignés sur le côté droit et les valeurs à gauche
 
 ```sql
 INSERT INTO albums (title, release_date, recording_date)
-VALUES ('Charcoal Lane', '1990-01-01 01:01:01.00000', '1990-01-01 01:01:01.00000'),
-       ('The New Danger', '2008-01-01 01:01:01.00000', '1990-01-01 01:01:01.00000');
+            VALUES ('Charcoal Lane', '1990-01-01 01:01:01.00000', '1990-01-01 01:01:01.00000'),
+                   ('The New Danger', '2008-01-01 01:01:01.00000', '1990-01-01 01:01:01.00000');
 ```
 
 ## Conclusion

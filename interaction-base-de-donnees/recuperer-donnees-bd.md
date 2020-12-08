@@ -2,7 +2,7 @@
 
 Dans cette section, nous allons couvrir la récupération de données à partir d'une base de données MySQL et ce à l'aide de PHP.
 
->**Astuce :** Le [script de création](../src/exemple-interaction-bd/demo_acces_donnees.sql) de la base de données cible pour la démonstration est disponible. Au besoin, consultez la section À METTRE ICI, pour l'importation d'une base de données via un script.
+>**Astuce :** Le [script de création](../src/exemple-interaction-bd/demo_acces_donnees.sql) de la base de données cible pour la démonstration est disponible.
 
 ## Récupérer mes premières données
 
@@ -24,7 +24,7 @@ SELECT *
 
 ### Utiliser PDO et fetchAll() pour récupérer des données
 
-La fonction fetchAll(), retourne un tableau contenant toutes les lignes du jeu d'enregistrements. Le tableau représente chaque ligne comme soit un tableau de valeurs des colonnes, soit un objet avec des propriétés correspondant à chaque nom de colonne.
+La fonction fetchAll(), retourne un tableau associatif contenant toutes les lignes du jeu d'enregistrements. Le tableau représente chaque ligne comme soit un tableau de valeurs des colonnes, soit un objet avec des propriétés correspondant à chaque nom de colonne.
 
 L'utilisation de cette méthode pour récupérer de gros jeux de résultats peut augmenter les ressources du système, mais également ces ressources. Plutôt que de récupérer toutes les données et de les manipuler avec PHP, utilisez la base de données pour manipuler les jeux de résultats. Par exemple, utilisez les clauses WHERE et ORDER BY dans vos requêtes SQL pour restreindre les résultats avant de les récupérer et de les traiter avec PHP.
 
@@ -204,7 +204,7 @@ Les attaques d’injection SQL sont l’une des vulnérabilités d’application
 
 Pour effectuer une attaque d’injection SQL, un attaquant doit d’abord trouver des entrées utilisateur vulnérables dans la page Web ou l’application Web. Une page Web ou une application Web qui a une vulnérabilité d’injection SQL utilise ces entrées utilisateur directement dans une requête SQL. L’attaquant peut créer du contenu d’entrée. Ce contenu est souvent appelé une charge utile malveillante et est l’élément clé de l’attaque. Une fois que l’attaquant envoie ce contenu, des commandes SQL malveillantes sont exécutées dans la base de données.
 
-Le SQL est un langage qui a été conçu pour gérer les données stockées dans des bases de données relationnelles. Vous pouvez l’utiliser pour accéder, modifier et supprimer des données. De nombreuses applications web et sites Web stockent toutes les données dans les bases de données SQL. Dans certains cas, vous pouvez également utiliser les commandes SQL pour exécuter des commandes de système d’exploitation. Par conséquent, __une attaque d’injection SQL réussie peut avoir de très graves conséquences__.
+Le SQL est un langage qui a été conçu pour gérer les données stockées dans des bases de données relationnelles. Vous pouvez l’utiliser pour accéder, modifier et supprimer des données. De nombreuses applications Web et sites Web stockent toutes les données dans les bases de données SQL. Dans certains cas, vous pouvez également utiliser les commandes SQL pour exécuter des commandes de système d’exploitation. Par conséquent, __une attaque d’injection SQL réussie peut avoir de très graves conséquences__.
 
 - Les attaquants peuvent utiliser de l'injection SQL pour trouver les informations d’identification d’autres utilisateurs dans la base de données. Ils peuvent alors usurper l’identité de ces utilisateurs. L’utilisateur usurpé peut être un __administrateur de base de données avec tous les privilèges de la base de données__.
 - Le SQL vous permet de sélectionner les données de la base de données. Une vulnérabilité d’injection SQL pourrait permettre à l’attaquant d’accéder à toutes les données d’un serveur de base de données.
@@ -236,16 +236,19 @@ Ces champs d’entrée sont vulnérables à l’injection SQL. Un attaquant peut
 Par conséquent, le serveur de base de données exécute la requête SQL suivante :
 
 ```SQL
-SELECT id_utilisateur FROM utilisateur WHERE id_utilisateur='idUtilisateur' AND mot_passe=''OR 1=1#'
+SELECT id_utilisateur
+  FROM utilisateur
+ WHERE id_utilisateur = 'idUtilisateur'
+   AND mot_passe = ''OR 1=1#'
 ```
 
 En raison de la déclaration __'OR 1=1#__, la clause __WHERE__ renvoie tous les utilisateurs de la table, peu importe l'identifiant utilisateur et son mot de passe!
 
 ### Comment prévenir une injection SQL
 
-La seule manière sûre de se protéger des attaques d’injection SQL est la validation des valeurs à l'entrée et l'utilisation des requêtes paramétrées, y compris les instructions préparées. __Le code d'une application ne doit jamais utiliser les valeurs à l'entrée directement__. Le développeur doit [assainir](https://www.larousse.fr/dictionnaires/francais/assainir/5771) toutes les entrées, et pas seulement les entrées de formulaire web telles que les formulaires de connexion. Ils doivent supprimer les éléments malveillants potentiels du code tels que les guillemets simples. C’est également très important de ne pas afficher les erreurs de la base de données pour les sites de production. Les erreurs retournées par la base de données peuvent être utilisées avec de l'injection SQL pour obtenir des informations sur votre base de données.
+La seule manière sûre de se protéger des attaques d’injection SQL est la validation des valeurs à l'entrée et l'utilisation des requêtes paramétrées, y compris les instructions préparées. __Le code d'une application ne doit jamais utiliser les valeurs à l'entrée directement__. Le développeur doit [assainir](https://www.larousse.fr/dictionnaires/francais/assainir/5771) toutes les entrées, et pas seulement les entrées de formulaire Web telles que les formulaires de connexion. Ils doivent supprimer les éléments malveillants potentiels du code tels que les guillemets simples. C’est également très important de ne pas afficher les erreurs de la base de données pour les sites de production. Les erreurs retournées par la base de données peuvent être utilisées avec de l'injection SQL pour obtenir des informations sur votre base de données.
 
->**Astuce :** Si vous voulez en apprendre plus sur le sujet, je vous propose cette [lecture](https://kinsta.com/fr/blog/injections-sql/).
+>**Astuce :** Si vous voulez en apprendre plus sur le sujet, effectuez cette [lecture](https://kinsta.com/fr/blog/injections-sql/).
 
 ## Récupérer des données à partir d'une requête paramétrée
 
@@ -255,7 +258,7 @@ Les requêtes préparées PDO fonctionnent comme ceci :
 - Lier des valeurs aux _placesholders_
 - Exécuter la requête
 
-Voici un exemple d'utilisation d'une requête préparée avec un _placeholders_, dans le cas présent, le paramètre sera _:id_ et aura la valeur de _1_ :
+Voici un exemple d'utilisation d'une requête préparée avec un _placeholder_, dans le cas présent, le paramètre sera _:id_ et aura la valeur de _1_ :
 
 ```php
 <?php
@@ -308,7 +311,7 @@ Array
 
 > **Astuces :** Référez-vous à la [documentation](https://www.php.net/manual/fr/pdo.constants.php) au besoin.
 
-Voici un autre exemple d'utilisation d'une requête préparée avec un _placeholders_. Cette fois, le paramètre sera _:nom_ et aura la valeur de _Garon-Michaud_ :
+Voici un autre exemple d'utilisation d'une requête préparée avec un _placeholder_. Cette fois, le paramètre sera _:nom_ et aura la valeur de _Garon-Michaud_ :
 
 ```php
 <?php

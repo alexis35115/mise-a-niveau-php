@@ -1,6 +1,6 @@
 # Inclusion de fichiers
 
-En pratique, lorsque l'on créer un site web, les contenus communs à toutes les pages sont enregistrés dans différents fichiers (entête de page, pied de page, menu principal...). Lors de la création d'une nouvelle page, on peut appeler ces fichiers et les placer au bon endroit grâce à la fonction __include()__ ou __require()__.
+En pratique, lors de la création d'un site Web, les contenus communs à toutes les pages sont enregistrés dans différents fichiers (entête de page, pied de page, menu principal...). Lors de la création d'une nouvelle page, on peut appeler ces fichiers et les placer au bon endroit grâce à la fonction __include()__ ou __require()__.
 
 Par exemple :
 

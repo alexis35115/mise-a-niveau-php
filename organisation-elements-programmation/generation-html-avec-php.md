@@ -144,7 +144,7 @@ Créons une liste à puces de prénoms avec une balise __\<ul\>__ et des balises
 </head>
 <body>
 <?php
-$prenoms = ["Alexis", "Ken", "Nadine", "Sébastien"];
+    $prenoms = ["Alexis", "Ken", "Nadine", "Sébastien"];
 ?>
 
 <ul>

@@ -10,17 +10,17 @@ PDO est fourni avec PHP 5.1+ et ne fonctionne pas avec les versions antérieures
 
 Les connexions sont établies en créant des instances de la classe de base de PDO. Le constructeur accepte des paramètres pour spécifier la source de la base de données (connue en tant que __DSN__) et optionnellement, le nom d'utilisateur et le mot de passe (s'il y en a un).
 
-__Exemple de connexion à MySQL__ :
+__Exemple de connexion à une base de données MySQL__ :
 
 ```php
 <?php
-$dbh = new PDO('mysql:host=localhost;dbname=test', $utilisateur, $motPasse);
+  $dbh = new PDO('mysql:host=localhost;dbname=test', $utilisateur, $motPasse);
 ?>
 ```
 
 S'il y a des erreurs de connexion, un objet __PDOException__ est lancé. Vous pouvez attraper cette exception si vous voulez gérer cette erreur, ou laisser le gestionnaire global d'exception défini via la fonction [set_exception_handler()](https://www.php.net/manual/fr/function.set-exception-handler.php) la traiter.
 
-Lorsque la connexion à la base de données a réussi, une instance de la classe PDO est retournée. La connexion est active tant que l'objet PDO l'est. Pour clore la connexion, vous devez détruire l'objet en vous assurant que toutes ses références sont effacées. Vous pouvez faire cela en assignant __NULL__ à la variable gérant l'objet. Si vous ne le faites pas explicitement, PHP fermera automatiquement la connexion lorsque le script arrivera à la fin.
+Lorsque la connexion à la base de données a réussi, une instance de la classe PDO est retournée. La connexion est active tant que l'objet PDO l'est. Pour clore la connexion, vous devez détruire l'objet en vous assurant que toutes ses références sont effacées. Vous pouvez faire cela en assignant __NULL__ à la variable gérant l'objet. Si vous ne le faites pas explicitement, PHP fermera automatiquement la connexion lorsque le script arrivera à sa fin.
 
 Référez-vous à la [documentation](https://www.php.net/manual/fr/pdo.connections.php) au besoin.
 
@@ -43,22 +43,22 @@ Création d'une instance de PDO et définir un mode d'erreur :
 
 ```php
 <?php
-$dsn = 'mysql:dbname=testdb;host=localhost';
-$utilisateur = 'root';
-$motPasse = 'admin123';
+  $dsn = 'mysql:dbname=testdb;host=localhost';
+  $utilisateur = 'root';
+  $motPasse = 'admin123';
 
-try {
-    // Instanciation de la connexion
-    $dbh = new PDO($dsn, $utilisateur, $motPasse);
+  try {
+      // Instanciation de la connexion
+      $dbh = new PDO($dsn, $utilisateur, $motPasse);
 
-    // Définir le mode d'erreur
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      // Définir le mode d'erreur
+      $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Définir l'encodage
-    $dbh->exec('SET CHARACTER SET UTF8');
-} catch (PDOException $e) {
-    echo('Échec lors de la connexion : ' . $e->getMessage());
-}
+      // Définir l'encodage
+      $dbh->exec('SET CHARACTER SET UTF8');
+  } catch (PDOException $e) {
+      echo('Échec lors de la connexion : ' . $e->getMessage());
+  }
 ?>
 ```
 
@@ -70,29 +70,29 @@ Créer une instance PDO et définir le mode d'erreur à partir du constructeur :
 
 ```php
 <?php
-ini_set('display_errors', 1);
-$dsn = 'mysql:dbname=test;host=localhost';
-$utilisateur = 'root';
-$motPasse = 'admin123';
+  ini_set('display_errors', 1);
+  $dsn = 'mysql:dbname=test;host=localhost';
+  $utilisateur = 'root';
+  $motPasse = 'admin123';
 
-/*
-    L'utilisation des blocs try/catch autour du constructeur est toujours valide
-    même si nous définissons le ERRMODE à WARNING sachant que PDO::__construct
-    va toujours lancer une exception PDOException si la connexion échoue.
-*/
-try {
-    // Instanciation de la connexion
-    $dbh = new PDO($dsn, $utilisateur, $motPasse, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+  /*
+      L'utilisation des blocs try/catch autour du constructeur est toujours valide
+      même si nous définissons le ERRMODE à WARNING sachant que PDO::__construct
+      va toujours lancer une exception PDOException si la connexion échoue.
+  */
+  try {
+      // Instanciation de la connexion
+      $dbh = new PDO($dsn, $utilisateur, $motPasse, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
 
-    // Définir l'encodage
-    $dbh->exec('SET CHARACTER SET UTF8');
-} catch (PDOException $e) {
-    echo('Échec de la connexion : ' . $e->getMessage());
-    exit;
-}
+      // Définir l'encodage
+      $dbh->exec('SET CHARACTER SET UTF8');
+  } catch (PDOException $e) {
+      echo('Échec de la connexion : ' . $e->getMessage());
+      exit;
+  }
 
-// Ceci fera que PDO lancera une erreur de niveau E_WARNING au lieu d'une exception (lorsque la table n'existe pas)
-$dbh->query("SELECT colonne FROM table_inexistante");
+  // Ceci fera que PDO lancera une erreur de niveau E_WARNING au lieu d'une exception (lorsque la table n'existe pas)
+  $dbh->query("SELECT colonne FROM table_inexistante");
 ?>
 ```
 

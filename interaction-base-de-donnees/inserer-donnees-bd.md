@@ -29,7 +29,7 @@ Lorsqu'on fournit les valeurs à insérer dans un nouvel enregistrement, les él
 
 ![Structure de la table série.](../images/structure-table-serie.PNG)
 
->**Remarque :** Le champ _id\_serie_ possède l'attribut __[AUTO_INCREMENT](https://dev.mysql.com/doc/refman/8.0/en/example-auto-increment.html)__ pour générer automatiquement un identifiant unique lors de la création d'un nouvel enregistrement. Pour cette raison, il est recommandé de déléguer la généreration l'identifiant unique à la base de données.
+>**Remarque :** Le champ _id\_serie_ possède l'attribut __[AUTO_INCREMENT](https://dev.mysql.com/doc/refman/8.0/en/example-auto-increment.html)__ pour générer automatiquement un identifiant unique lors de la création d'un nouvel enregistrement. Pour cette raison, il est recommandé de déléguer la généreration de l'identifiant unique à la base de données.
 
 >**Astuce :** Le [script](../src/exemple-interaction-bd/creation-table-serie.sql) pour la création de la table _serie_ est disponible.
 

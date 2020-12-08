@@ -1,5 +1,7 @@
 # Générer du HTML à l'aide de PHP
 
+PHP est un langage de programmation côté serveur (_backend_). Une de ses fonctions primaires est la construction d'une page Web, ceci consiste à générer des balises HTML qui composent la page et qu'il enverra le tout au client (au navigateur).
+
 ## Affichage simple avec la commande _echo_
 
 La commande _echo_ sert à afficher du contenu texte, ce texte doit être placé entre des guillemets.

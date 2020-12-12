@@ -38,9 +38,9 @@ Dirigez-vous vers [cette section](/interaction-base-de-donnees/README.md).
 
 Dirigez-vous vers [cette section](/validation-parametres/README.md).
 
-## Programmation d'un panneau d'administration sécurisé
+## Programmation d'un panneau d'administration
 
-Dirigez-vous vers [cette section](/programmation-panneau-administration-securise/README.md).
+Dirigez-vous vers [cette section](/programmation-panneau-administration/README.md).
 
 ## Ajax
 

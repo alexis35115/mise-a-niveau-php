@@ -34,6 +34,10 @@ Dirigez-vous vers [cette section](/bonnes-pratiques/README.md).
 
 Dirigez-vous vers [cette section](/interaction-base-de-donnees/README.md).
 
+## Validation des paramètres
+
+Dirigez-vous vers [cette section](/validation-parametres/README.md).
+
 ## Programmation d'un panneau d'administration sécurisé
 
 Dirigez-vous vers [cette section](/programmation-panneau-administration-securise/README.md).
@@ -42,9 +46,9 @@ Dirigez-vous vers [cette section](/programmation-panneau-administration-securise
 
 Dirigez-vous vers [cette section](/ajax/README.md).
 
-## Authentification, traçage et sécurité
+## Authentification
 
-Dirigez-vous vers [cette section](/authentification-tracage-securite/README.md).
+Dirigez-vous vers [cette section](/authentification/README.md).
 
 ## S'apprivoiser un VPS
 

@@ -1,13 +1,11 @@
 # Validation des paramètres
 
-__Documentation à venir!__ 🪂
-
-INTRODUCTION À METTRE
-
+Cette section couvre les différentes techniques pour la validation des paramètres.
 
 Voici les notions qui seront couvertes :
 
-- Validation des données reçues en paramètres
-- Validation des données reçues lors de la soumission d'un formulaire (__PHP\_FILTER__)
+- [Principes de bases lors de la validation des données](principes-validation-donnees.md)
+- [Validation des données reçues en paramètres](valider-donnees-parametres.md)
+- [Validation des données reçues lors de la soumission d'un formulaire](valider-donnees-formulaire.md)
 
 [Revenir à la page principale](../README.md)

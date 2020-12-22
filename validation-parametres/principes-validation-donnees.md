@@ -1,14 +1,12 @@
 # Principes de bases lors de la validation des données
 
-__RÉDACTION EN COURS!__ 🏗 
-
 La validation des valeurs d'entrées est un dispositif défensif de votre application Web. Ce périmètre protège la logique de base, le traitement et la génération de sortie. Au-delà du périmètre tout doit être considéré comme un ennemi potentiel.
 
 Ne jamais faire confiance à __l’entrée de l’utilisateur__. En supposant que les utilisateurs ne sont pas fiables, nous insinuons que tout le reste est digne de confiance. C’est faux. Les utilisateurs ne sont que la source d’entrée la plus évidente et non fiable puisqu’ils sont des étrangers sur lesquels nous n’avons aucun contrôle.
 
 ## Considérations lors de la validation
 
-La validation des entrées est à la fois la défense la plus fondamentale sur laquelle repose une application Web et la plus peu fiable. Une grande majorité des vulnérabilités d’applications Web découlent d’une défaillance de validation.
+La validation des entrées est à la fois la défense la plus fondamentale sur laquelle repose une application Web et la plus peu fiable. Une grande majorité des vulnérabilités des applications Web découlent d’une défaillance de validation.
 
 Il faut garder à l’esprit qu'à chaque fois qu'on implémente des validations personnalisées ou qu'on utilise une bibliothèque de validation tierce. Quand il s’agit de valideurs tiers, il faut  également considérer que ceux-ci ont tendance à être de __nature générale__ et très probablement omettre les routines de validation spécifique clé de votre application Web. Comme pour toute bibliothèque axée sur la sécurité, il ne faut pas oublier d’examiner personnellement notre bibliothèque pour ses défauts et ses limitations. Il convient également de garder à l’esprit que PHP n’est pas au-dessus de certains comportements bizarres sans doute dangereux.
 
@@ -26,7 +24,7 @@ La validation des entrées vise à empêcher l’entrée de données __dangereus
 
 Par exemple, on reçoit un morceau de données contenant un nom, on peut le valider assez vaguement pour permettre des apostrophes, des virgules, des parenthèses, des espaces, et toute la gamme des caractères Unicode alphanumériques. En tant que nom, nous avons des données valides qui peuvent être utiles à des fins d’affichage. Toutefois, si on utilise ces données ailleurs comme pour une requête à la base de données, on les met dans un nouveau contexte. Dans ce nouveau contexte, certains de ces caractères que nous autorisons seraient toujours dangereux, notre nom pourrait en fait être __une chaîne soigneusement conçue destinée à effectuer une attaque d’injection SQL__.
 
-Le résultat est que la validation des entrées est intrinsèquement peu fiable. La validation des entrées fonctionne mieux avec des valeurs extrêmement restreintes, par exemple lorsque quelque chose doit être un entier, une chaîne alphanumérique ou une URL. Ces formats et valeurs limités sont les moins susceptibles de constituer une menace s’ils sont correctement validés. D’autres valeurs telles que le texte libre, les tableaux associatifs GET/POST et HTML sont à la fois plus difficiles à valider et __beaucoup plus susceptibles de contenir des données malveillantes__.
+Le résultat est que la validation des entrées est intrinsèquement peu fiable. La validation des entrées fonctionne mieux avec des valeurs extrêmement restreintes, par exemple lorsque quelque chose doit être un nombre entier, une chaîne alphanumérique ou une URL. Ces formats et valeurs limités sont les moins susceptibles de constituer une menace s’ils sont correctement validés. D’autres valeurs telles que le texte libre, les tableaux associatifs GET/POST et HTML sont à la fois plus difficiles à valider et __beaucoup plus susceptibles de contenir des données malveillantes__.
 
 Puisque notre application passera une grande partie de son temps à transporter des données entre les contextes, la validation des entrées est notre défense initiale, __mais jamais notre seule__.
 
@@ -34,11 +32,11 @@ L’une des défenses supplémentaires les plus courantes utilisées avec la val
 
 Outre l'échappement, qui est orienté vers la sortie pour éviter une mauvaise interprétation par le récepteur, comme les données entrent dans un nouveau contexte, il devrait souvent être accueilli par un autre cycle de validation spécifique au contexte.
 
-Bien qu’elles soient souvent perçues comme une duplication de la validation de première entrée, d’autres séries de validation des paramètres d'entrées plus conscientes du contexte actuel où les exigences de validation peuvent différer considérablement de la ronde initiale. Par exemple, lors de la soumission d'une donnée dans un formulaire peut inclure un nombre entier sous forme de pourcentage. À la première entrée, on vérifiera qu’il s’agit bien d’un nombre entier. Toutefois, une fois passé au modèle de l'application, une nouvelle exigence pourrait émerger - le pourcentage doit être dans une plage spécifique, quelque chose que seul le modèle est au courant puisque le format est un produit de la logique d’entreprise.
+Bien qu’elles soient souvent perçues comme une duplication de la validation intiale, d’autres séries de validation des paramètres d'entrées plus conscientes du contexte actuel où les exigences de validation peuvent différer considérablement de la ronde initiale. Par exemple, lors de la soumission d'une donnée dans un formulaire peut inclure un nombre entier sous forme de pourcentage. À la première entrée, on vérifiera qu’il s’agit bien d’un nombre entier. Toutefois, une fois passé au modèle de l'application, une nouvelle exigence pourrait émerger - le pourcentage doit être dans une plage spécifique, quelque chose que seul le modèle est au courant puisque le format est un produit de la logique d'affaire.
 
 Ne pas se revalider dans le nouveau contexte pourrait avoir de très mauvais résultats!
 
-## Ne jamais les listes noires (_blacklist_), seulement les listes blanches (_whitelist_)
+## Ne jamais utiliser les listes noires (_blacklist_) et favoriser l'utilisation des listes blanches (_whitelist_)
 
 Les deux principales approches pour valider une valeur à l'entrée sont la liste blanche et la liste noire. La liste noire consiste à vérifier si l’entrée contient des données inacceptables pendant que la liste blanche vérifie si l’entrée contient des données acceptables. La raison pour laquelle on doit préférer l'utilisation de la liste blanche est qu’elle produit une routine de validation qui ne transmet que les données que nous attendons. L'utilisation de la liste noire s’appuie sur l'anticipation des développeurs de toutes les données inattendues possibles, ce qui signifie qu’il est beaucoup plus facile d’aller à l’encontre des omissions et des erreurs.
 
@@ -69,9 +67,9 @@ Ne pas valider les paramètres d'entrées peut conduire à la fois à des faille
 
 Voici quelques techniques de validation.
 
-### Vérification du type de données
+### La valudation du type de données
 
-Une vérification de type de données vérifie simplement si les données sont une chaîne, un nombre entier, un nombre à virgule, un tableau et autres. Étant donné que beaucoup de données sont reçues par le biais de formulaires, on ne peut pas aveuglément utiliser les fonctions de PHP telles que is_int() puisqu’une valeur provenant d'un formulaire va être une chaîne de caractère et elle peut potentiellement dépasser la valeur maximale d’entier permis en PHP. On ne devrait pas être trop créatif non plus et se tourner vers l'utilisation des expressions régulières, car cela peut violer le principe [KISS](https://fr.wikipedia.org/wiki/Principe_KISS#:~:text=Le%20principe%20KISS%2C%20Keep%20it,ligne%20directrice%20de%20conception%20qui).
+La validation du type de données vérifie simplement si les données sont une chaîne, un nombre entier, un nombre à virgule, un tableau ou autres. Étant donné que beaucoup de données sont reçues par le biais de formulaires, on ne peut pas aveuglément utiliser les fonctions de PHP telles que is_int() puisqu’une valeur provenant d'un formulaire va être nécessairement une chaîne de caractère et elle peut potentiellement dépasser la valeur maximale d’entier permis en PHP. On ne devrait pas être trop créatif non plus et se tourner vers l'utilisation des expressions régulières, car cela peut violer le principe [KISS](https://fr.wikipedia.org/wiki/Principe_KISS#:~:text=Le%20principe%20KISS%2C%20Keep%20it,ligne%20directrice%20de%20conception%20qui).
 
 ### La validation des caractères autorisés
 
@@ -79,11 +77,11 @@ La validation des caractères autorisés garantit simplement qu’une chaîne ne
 
 ### La validation du format
 
-Les validations de format garantissent que les données correspondent à __un modèle spécifique de caractères autorisés__. Les adresses courriel, les URLs et les dates sont des exemples. Les meilleures approches devraient utiliser la fonction [filter_var()](https://www.php.net/manual/fr/function.filter-var.php) de PHP, la classe [DateTime](https://www.php.net/manual/en/class.datetime.php) et les [expressions régulières](https://www.php.net/manual/fr/function.preg-match.php) pour d’autres formats. Plus un format est complexe, plus vous devriez vous pencher vers des vérifications de format éprouvées ou des outils de vérification syntaxe.
+Les validations de format garantissent que les données correspondent à __un modèle spécifique de caractères autorisés__. Les adresses courriel, les URLs et les dates sont des exemples. Les meilleures approches devraient utiliser la fonction [filter_var()](https://www.php.net/manual/fr/function.filter-var.php) de PHP, la classe [DateTime](https://www.php.net/manual/en/class.datetime.php) et les [expressions régulières](https://www.php.net/manual/fr/function.preg-match.php) pour d’autres formats. Plus un format est complexe, plus vous devriez vous pencher vers des vérifications de format éprouvées ou des outils de vérification de la syntaxe.
 
 ### La validation des valeurs limites
 
-La validation des valeurs limite est conçue pour tester si une valeur se situe dans la plage de données acceptées. Par exemple, on peut accepter un nombre entier qui est supérieur à 5 ou entre 0 et 3 ou qui ne peut être 15. Il s’agit de limites d’entier, mais une vérification des limites peut être appliquée à la longueur des chaînes, à la taille d'un fichier, aux dimensions d'une image, aux périodes de date, etc.
+La validation des valeurs limite est conçue pour tester si une valeur se situe dans la plage de données acceptées. Par exemple, on peut accepter un nombre entier qui est supérieur à 5 ou entre 0 et 3 et qui ne peut être 15. Il s’agit de limites d’entier, mais une vérification des limites peut être appliquée à la longueur des chaînes, à la taille d'un fichier, aux dimensions d'une image, aux périodes de date, etc.
 
 ### La validation de la présence
 

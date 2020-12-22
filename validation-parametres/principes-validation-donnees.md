@@ -99,4 +99,20 @@ La validation logique est essentiellement un contrôle des erreurs où on assure
 
 Les validations de l’existence des ressources confirment simplement que lorsque les données indiquent une ressource à utiliser, la ressource existe réellement. Ceci est presque toujours accompagné de contrôles supplémentaires pour empêcher la création automatique de ressources non existantes, le détournement du travail vers des ressources non valides et les tentatives de formater les chemins de système de fichiers pour permettre les [attaques transversales de répertoires](https://ogelin.wordpress.com/hacking/attaques-par-injection-les-plus-communes/attaque-par-traversee-de-repertoires/).
 
+## Filtres
+
+PHP offre deux grandes catégories de filtres, les filtres de validation et les filtres de nettoyage.
+
+Un [filtre de validation](https://www.php.net/manual/fr/filter.filters.validate.php) sert à vérifier si une donnée passe certains critères. Par exemple, le __FILTER\_VALIDATE\_EMAIL__ permet de déterminer si une donnée d'entrée est une adresse courriel valide, __mais ne va pas modifier la donnée elle-même__.
+
+Un [filtre de nettoyage](https://www.php.net/manual/fr/filter.filters.sanitize.php) a pour rôle de nettoyer une donnée, par exemple en retirant les caractères indésirables. Par exemple, le filtre __FILTER\_SANITIZE\_EMAIL__ permet de supprimer les caractères inappropriés dans une adresse courriel. __D'un autre coté, la donnée n'est pas validée__.
+
+Certaines [options](https://www.php.net/manual/fr/filter.filters.flags.php) sont disponibles pour la validation et le nettoyage, pour adapter leur comportement à des besoins spécifiques.
+
+## Références
+
+- <https://www.php.net/manual/fr/filter.filters.php>
+- <https://www.php.net/manual/fr/filter.filters.validate.php>
+- <https://www.php.net/manual/fr/filter.filters.sanitize.php>
+
 [Revenir à la page principale de la section](README.md)

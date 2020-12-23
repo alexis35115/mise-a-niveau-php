@@ -2,11 +2,11 @@
 
 Dans ce module, nous allons expérimenter quelques techniques pour la validation des données.
 
-> :warning: **À garder en tête :** Les exemples sont banalisés et dénudés de bonnes pratiques d'archiecture pour en simplifier l'affichage.
+> :warning: **À garder en tête :** Les exemples sont banalisés et dénudés de bonnes pratiques d'architecture pour en simplifier l'affichage.
 
 ## Les super variables globales
 
-Les variables super globales sont des variables intégrées qui sont __toujours disponibles dans toutes les portés__.
+Les super variables globales sont des variables intégrées qui sont __toujours disponibles dans toutes les portés__.
 
 ### La super variable globale $_GET
 
@@ -36,7 +36,7 @@ Le __prenom__ et l'__âge__ dans l’URL correspondent à des paramètres de la 
 
 ### Avantages et inconvénients de l’utilisation de la méthode GET
 
-- Étant donné que les données envoyées par la méthode GET sont affichées en claire dans l’URL, il est possible de créer un favorit de la page avec des valeurs spécifiques.
+- Étant donné que les données envoyées par la méthode GET sont affichées en claire dans l’URL, il est possible de créer un favori de la page avec des valeurs spécifiques.
 - La méthode GET __n’est pas adaptée pour transmettre des informations sensibles__ telles que le nom d’un utilisateur et son mot de passe, car ces données sont entièrement visibles dans l'URL.
 - La longueur d'un URL est limitée. Il y a donc une limitation pour l’envoi total des données.
 
@@ -72,7 +72,7 @@ Avec la méthode POST, les données sont envoyées au serveur sous forme de [paq
 
 - La méthode POST est plus sécuritaire que la méthode GET parce que les informations saisies par l’utilisateur ne sont jamais visibles dans l'URL ou dans les journaux du serveur.
 - La méthode POST possède une limite de transfert beaucoup plus grande que la méthode GET. En plus de pouvoir transmettre des données textuelles, il est également possible de transmettre des données binaires comme un fichier (téléchargement d’un fichier).
-- Étant donné que les données envoyées par la méthode POST ne sont pas visibles dans l’URL, il n’est donc pas possible de créer un favorit de la page avec des valeurs spécifiques.
+- Étant donné que les données envoyées par la méthode POST ne sont pas visibles dans l’URL, il n’est donc pas possible de créer un favori de la page avec des valeurs spécifiques.
 
 On se souvient que PHP fournit une autre super variable globale pour accéder à toutes les informations envoyées par la méthode POST ou soumises par le biais d’un formulaire HTML en précisant la méthode "POST".
 
@@ -102,7 +102,7 @@ if(isset($_POST["nom"])){
 
 Dans cette section, nous allons procéder à la validation des données provenant d'un formulaire HTML.
 
-> :warning: **À garder en tête :** Il est cruciale de se soucier de la sécurité lors du traitement des formulaire en PHP. Une validation adéquate des données d'un formulaire est importante pour protéger votre formulaire contre les pirates informatiques et les spammeurs!
+> :warning: **À garder en tête :** Il est crucial de se soucier de la sécurité lors du traitement des formulaires en PHP. Une validation adéquate des données d'un formulaire est importante pour protéger votre formulaire contre les pirates informatiques et les pourrielleurs!
 
 Regardons de plus près le formulaire HTML avec lequel nous allons travailler. Celui-ci possède divers champs d’entrée tels que des champs de texte obligatoires et facultatifs, des boutons radio et d'un bouton pour la soumission du formulaire :
 
@@ -143,7 +143,7 @@ Tout d’abord, regardons le code HTML du formulaire :
 
 ### L’élément de formulaire
 
-Regardons de plus près la balise form.
+Regardons de plus près la balise "form".
 
 ```php
 <form method="post" action="<?=htmlspecialchars($_SERVER["PHP_SELF"])?>">  
@@ -156,7 +156,7 @@ Lorsque le formulaire est soumis, les données du formulaire sont envoyées par 
 Ainsi, le $_SERVER["PHP_SELF"] envoie les données du formulaire soumises à la page elle-même, au lieu de sauter à une page différente. De cette façon, l’utilisateur recevra des messages d’erreur sur la même page que le formulaire.
 
 >**Qu'est-ce que la fonction htmlspecialchars()? :** La fonction htmlspecialchars () convertit des caractères spéciaux en entités
-HTML. Cela signifie qu’il remplacera les caractères HTML comme < et > avec &lt; et &gt;. Cela empêche les attaquants d’exploiter le code en injectant du code HTML ou Javascript (attaques de type [_cross-site scripting_](https://fr.wikipedia.org/wiki/Cross-site_scripting)(XSS)).
+HTML. Cela signifie qu’il remplacera les caractères HTML comme < et > avec &lt; et &gt;. Cela empêche les attaquants d’exploiter le code en injectant du code HTML ou JavaScript (attaques de type [_cross-site scripting_](https://fr.wikipedia.org/wiki/Cross-site_scripting)(XSS)).
 
 ### Note sur la sécurité d'un formulaire en PHP
 
@@ -237,7 +237,7 @@ Nous ferons deux autres actions lorsque l’utilisateur soumettra le formulaire 
 
 La prochaine étape est de créer une fonction qui enchaînera ces diverses vérifications, nommons celle-ci validerEntree().
 
-Maintenant, nous pouvons vérifier chacune des variables présente dans la variable $_POST avec la fonction validerEntree() et le script PHP ressemble à ceci:
+Maintenant, nous pouvons vérifier chacune des variables présentes dans la variable $_POST avec la fonction validerEntree() et le script PHP ressemble à ceci:
 
 ```php
 <?php

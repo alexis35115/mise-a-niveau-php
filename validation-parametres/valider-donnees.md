@@ -104,6 +104,8 @@ Dans cette section, nous allons procéder à la validation des données provenan
 
 > :warning: **À garder en tête :** Il est crucial de se soucier de la sécurité lors du traitement des formulaires en PHP. Une validation adéquate des données d'un formulaire est importante pour protéger votre formulaire contre les pirates informatiques et les pourrielleurs!
 
+>**À lire :** Lisez [cet](https://www.zdnet.com/article/programming-language-security-these-are-the-worst-bugs-for-each-top-language/) article.  
+
 Regardons de plus près le formulaire HTML avec lequel nous allons travailler. Celui-ci possède divers champs d’entrée tels que des champs de texte obligatoires et facultatifs, des boutons radio et d'un bouton pour la soumission du formulaire :
 
 ![Exemple de la validation des données d'un formulaire](../images/exemple-validation-formulaire.PNG)

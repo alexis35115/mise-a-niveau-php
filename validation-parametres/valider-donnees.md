@@ -1,4 +1,4 @@
-# Validation des données reçues
+# Validation des données
 
 Dans ce module, nous allons expérimenter quelques techniques pour la validation des données.
 
@@ -10,21 +10,21 @@ Les super variables globales sont des variables intégrées qui sont __toujours 
 
 ### La super variable globale $_GET
 
-La super variable globale $_GET est utilisée pour recueillir des données de formulaire après avoir soumis un formulaire HTML avec method="get". Il est également possible d'utiliser $_GET pour recueillir des données envoyées dans l’URL.
+La super variable globale $\_GET est un tableau associatif des valeurs passées au script courant via les paramètres d'URL aussi connue sous le nom de [_query string_](https://en.wikipedia.org/wiki/Query_string). Notez que ce tableau n'est pas seulement rempli pour les requêtes GET, mais plutôt pour toutes les requêtes avec un _query string_.
 
 ### La super variable globale $_POST
 
-La super variable globale $_POST est utilisée pour recueillir des données de formulaire après avoir soumis un formulaire HTML avec method="post". Il est également possible d'utiliser $_POST passer des variables.
+La super variable globale $\_POST est un tableau associatif des valeurs passées au script courant via le protocole HTTP et la méthode POST lors de l'utilisation de la chaîne application/x-www-form-urlencoded ou multipart/form-data comme en-tête HTTP [Content-Type](https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Content-Type) dans la requête.
 
 ## La différence entre GET et POST
 
-Un navigateur communique avec un serveur en utilisant généralement l’une des deux méthodes HTTP(_Hypertext Transfer Protocol_), soient les méthodes GET et POST. Ces deux méthodes transmettent l’information différemment et ont des avantages et des inconvénients différents.
+Un navigateur communique avec un serveur en utilisant généralement l’une des deux méthodes HTTP([_Hypertext Transfer Protocol_](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol)), soient les méthodes GET et POST. Ces deux méthodes transmettent l’information différemment et ont des avantages et des inconvénients différents.
 
 >**Note :** Au besoin, référez-vous à cet [article](https://www.diffen.com/difference/GET-vs-POST-HTTP-Requests).
 
 ### La méthode GET
 
-Avec la méthode méthode GET, les données sont envoyées sous forme de paramètres dans l'URL qui sont généralement des paires clés valeurs séparées par des esperluettes.
+Avec la méthode GET, les données sont envoyées sous forme de paramètres dans l'URL qui sont généralement des paires de clés valeurs séparées par des esperluettes.
 
 Une URL avec des données GET ressemblera à :
 

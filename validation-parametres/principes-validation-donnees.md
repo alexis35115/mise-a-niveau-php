@@ -119,7 +119,7 @@ Un [filtre de nettoyage](https://www.php.net/manual/fr/filter.filters.sanitize.p
 
 Certaines [options](https://www.php.net/manual/fr/filter.filters.flags.php) sont disponibles pour la validation et le nettoyage, pour adapter leur comportement à des besoins spécifiques.
 
-### Les fonctions de filtre
+### Les fonctions de filtrage
 
 PHP offre plusieurs fonctions pour le filtrage des données, en voici la liste :
 

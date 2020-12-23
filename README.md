@@ -14,11 +14,11 @@ __Si vous êtes à vos débuts, il est fortement recommandé de suivre les secti
 
 Dirigez-vous vers [cette section](/configuration-environnement/README.md).
 
-## PhpMyAdmin
+## PhpMyAdmin (en construction)
 
 Dirigez-vous vers [cette section](/phpMyAdmin/README.md).
 
-## PHP - Les bases
+## PHP - Les bases (en construction)
 
 Dirigez-vous vers [cette section](/phpMyAdmin/README.md).
 
@@ -26,7 +26,7 @@ Dirigez-vous vers [cette section](/phpMyAdmin/README.md).
 
 Dirigez-vous vers [cette section](/organisation-elements-programmation/README.md).
 
-## Introduction aux bonnes pratiques
+## Introduction aux bonnes pratiques (en construction)
 
 Dirigez-vous vers [cette section](/bonnes-pratiques/README.md).
 
@@ -38,7 +38,7 @@ Dirigez-vous vers [cette section](/interaction-base-de-donnees/README.md).
 
 Dirigez-vous vers [cette section](/validation-parametres/README.md).
 
-## Programmation d'un panneau d'administration
+## Programmation d'un panneau d'administration (en construction)
 
 Dirigez-vous vers [cette section](/programmation-panneau-administration/README.md).
 
@@ -46,7 +46,7 @@ Dirigez-vous vers [cette section](/programmation-panneau-administration/README.m
 
 Dirigez-vous vers [cette section](/ajax/README.md).
 
-## Authentification
+## Authentification (en construction)
 
 Dirigez-vous vers [cette section](/authentification/README.md).
 
@@ -54,7 +54,7 @@ Dirigez-vous vers [cette section](/authentification/README.md).
 
 Dirigez-vous vers [cette section](/apprivoiser-vps/README.md).
 
-## Configuration du serveur
+## Configuration du serveur (en construction)
 
 Dirigez-vous vers [cette section](/configuration-serveur/README.md).
 
@@ -62,13 +62,9 @@ Dirigez-vous vers [cette section](/configuration-serveur/README.md).
 
 Dirigez-vous vers [cette section](/gestion-fichiers-utilisateurs/README.md).
 
-## Résolution de problème
+## Résolution de problème (en construction)
 
 Dirigez-vous vers [cette section](/resolution-probleme/README.md).
-
-## Cross-site
-
-Dirigez-vous vers [cette section](/cross-site/README.md).
 
 ## Remerciements
 

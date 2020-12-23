@@ -102,7 +102,7 @@ if(isset($_POST["nom"])){
 
 Dans cette section, nous allons procéder à la validation des données provenant d'un formulaire HTML.
 
-> :warning: **À garder en tête :** Il est crucial de se soucier de la sécurité lors du traitement des formulaires en PHP. Une validation adéquate des données d'un formulaire est importante pour protéger votre formulaire contre les pirates informatiques et les pourrielleurs!
+> :warning: **À garder en tête :** Il est crucial de se soucier de la sécurité lors du traitement des formulaires en PHP. Une validation adéquate des données d'un formulaire est importante pour protéger votre formulaire contre les pirates informatiques!
 
 >**À lire :** Lisez [cet](https://www.zdnet.com/article/programming-language-security-these-are-the-worst-bugs-for-each-top-language/) article.  
 

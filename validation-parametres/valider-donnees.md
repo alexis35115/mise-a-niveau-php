@@ -6,7 +6,7 @@ Dans ce module, nous allons expérimenter quelques techniques pour la validation
 
 ## Les super variables globales
 
-Les super variables globales sont des variables intégrées qui sont __toujours disponibles dans toutes les portés__.
+Les super variables globales sont des variables intégrées qui sont __toujours disponibles peu importe où nous sommes__.
 
 ### La super variable globale $_GET
 

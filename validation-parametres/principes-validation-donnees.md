@@ -103,11 +103,33 @@ Les validations de l’existence des ressources confirment simplement que lorsqu
 
 PHP offre deux grandes catégories de filtres, les filtres de validation et les filtres de nettoyage.
 
+### Filtres de validation
+
 Un [filtre de validation](https://www.php.net/manual/fr/filter.filters.validate.php) sert à vérifier si une donnée passe certains critères. Par exemple, le __FILTER\_VALIDATE\_EMAIL__ permet de déterminer si une donnée d'entrée est une adresse courriel valide, __mais ne va pas modifier la donnée elle-même__.
+
+>**Astuces :** Référez-vous à la [documentation officielle](https://www.php.net/manual/fr/filter.filters.validate.php) pour consulter la liste complète.
+
+### Filtres de nettoyage
 
 Un [filtre de nettoyage](https://www.php.net/manual/fr/filter.filters.sanitize.php) a pour rôle de nettoyer une donnée, par exemple en retirant les caractères indésirables. Par exemple, le filtre __FILTER\_SANITIZE\_EMAIL__ permet de supprimer les caractères inappropriés dans une adresse courriel. __D'un autre côté, la donnée n'est pas validée__.
 
+>**Astuces :** Référez-vous à la [documentation officielle](https://www.php.net/manual/fr/filter.filters.sanitize.php) pour consulter la liste complète.
+
+### Les options lors de l'utilisation d'un filtre
+
 Certaines [options](https://www.php.net/manual/fr/filter.filters.flags.php) sont disponibles pour la validation et le nettoyage, pour adapter leur comportement à des besoins spécifiques.
+
+### Les fonctions de filtre
+
+PHP offre plusieurs fonctions pour le filtrage des données, en voici la liste :
+
+- [filter_has_var](https://www.php.net/manual/fr/function.filter-has-var.php) - Vérifie si une variable d'un type spécifique existe
+- [filter_id](https://www.php.net/manual/fr/function.filter-id.php) — Retourne l'identifiant d'un filtre nommé
+- [filter_input_array](https://www.php.net/manual/fr/function.filter-input-array.php) — Récupère plusieurs valeurs externes et les filtre
+- [filter_input](https://www.php.net/manual/fr/function.filter-input.php) — Récupère une variable externe et la filtre
+- [filter_list](https://www.php.net/manual/fr/function.filter-list.php) — Retourne une liste de tous les filtres supportés
+- [filter_var_array](https://www.php.net/manual/fr/function.filter-var-array.php) — Récupère plusieurs variables et les filtre
+- [filter_var](https://www.php.net/manual/fr/function.filter-var.php) — Filtre une variable avec un filtre spécifique
 
 ## Références
 

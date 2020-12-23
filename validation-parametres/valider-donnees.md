@@ -10,11 +10,11 @@ Les super variables globales sont des variables intégrées qui sont __toujours 
 
 ### La super variable globale $_GET
 
-La super variable globale $\_GET est un tableau associatif des valeurs passées au script courant via les paramètres d'URL aussi connue sous le nom de [_query string_](https://en.wikipedia.org/wiki/Query_string). Notez que ce tableau n'est pas seulement rempli pour les requêtes GET, mais plutôt pour toutes les requêtes avec un _query string_.
+La super variable globale [$\_GET](https://www.php.net/manual/fr/reserved.variables.get.php) est un tableau associatif des valeurs passées au script courant via les paramètres d'URL aussi connue sous le nom de [_query string_](https://en.wikipedia.org/wiki/Query_string). Notez que ce tableau n'est pas seulement rempli pour les requêtes GET, mais plutôt pour toutes les requêtes avec un _query string_.
 
 ### La super variable globale $_POST
 
-La super variable globale $\_POST est un tableau associatif des valeurs passées au script courant via le protocole HTTP et la méthode POST lors de l'utilisation de la chaîne application/x-www-form-urlencoded ou multipart/form-data comme en-tête HTTP [Content-Type](https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Content-Type) dans la requête.
+La super variable globale [$\_POST](https://www.php.net/manual/fr/reserved.variables.post.php) est un tableau associatif des valeurs passées au script courant via le protocole HTTP et la méthode POST lors de l'utilisation de la chaîne application/x-www-form-urlencoded ou multipart/form-data comme en-tête HTTP [Content-Type](https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Content-Type) dans la requête.
 
 ## La différence entre GET et POST
 
@@ -22,7 +22,7 @@ Un navigateur communique avec un serveur en utilisant généralement l’une des
 
 >**Note :** Au besoin, référez-vous à cet [article](https://www.diffen.com/difference/GET-vs-POST-HTTP-Requests).
 
-### La méthode GET
+### La méthode HTTP GET
 
 Avec la méthode GET, les données sont envoyées sous forme de paramètres dans l'URL qui sont généralement des paires de clés valeurs séparées par des esperluettes.
 
@@ -34,7 +34,7 @@ http://www.pewpew.com/pewpew.php?prenom=alexis&age=28
 
 Le __prenom__ et l'__âge__ dans l’URL correspondent à des paramètres de la requête HTTP GET. La valeur d'un paramètre correspond à la valeur suivant le "=". De plus, il est possible d'ajouter des paramètres en séparant les valeurs avec des esperluettes. On ne peut qu'envoyer des données textuelles simples.
 
-### Avantages et inconvénients de l’utilisation de la méthode GET
+### Avantages et inconvénients de l’utilisation de la méthode HTTP GET
 
 - Étant donné que les données envoyées par la méthode GET sont affichées en claire dans l’URL, il est possible de créer un favori de la page avec des valeurs spécifiques.
 - La méthode GET __n’est pas adaptée pour transmettre des informations sensibles__ telles que le nom d’un utilisateur et son mot de passe, car ces données sont entièrement visibles dans l'URL.
@@ -64,11 +64,11 @@ if(isset($_GET["nom"])){
 </body>
 ```
 
-### La méthode POST
+### La méthode HTTP POST
 
 Avec la méthode POST, les données sont envoyées au serveur sous forme de [paquet](https://fr.wikipedia.org/wiki/Commutation_de_paquets) dans une communication séparée du script de traitement. Les données envoyées par la méthode POST ne seront pas visibles dans l’URL.
 
-### Avantages et inconvénients de l’utilisation de la méthode POST
+### Avantages et inconvénients de l’utilisation de la méthode HTTP POST
 
 - La méthode POST est plus sécuritaire que la méthode GET parce que les informations saisies par l’utilisateur ne sont jamais visibles dans l'URL ou dans les journaux du serveur.
 - La méthode POST possède une limite de transfert beaucoup plus grande que la méthode GET. En plus de pouvoir transmettre des données textuelles, il est également possible de transmettre des données binaires comme un fichier (téléchargement d’un fichier).

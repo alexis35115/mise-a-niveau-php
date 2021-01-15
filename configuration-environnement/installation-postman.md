@@ -8,7 +8,7 @@ Postman stocke toutes les demandes que vous envoyez dans l’onglet « Historiqu
 
 Utilisez des scripts de test et de prédemande pour ajouter un comportement dynamique aux demandes et aux collections. Cela vous permet d’écrire des suites de test, de créer des requêtes qui peuvent contenir des paramètres dynamiques, de transmettre des données entre les demandes et plus encore.
 
->**Astuce** - Une [vidéo](https://youtu.be/WSLp58x2mYg) expliquant l'installation de Postman.
+>**Astuce** - Une [vidéo](https://youtu.be/WSLp58x2mYg) expliquant l'installation de Postman est disponible.
 
 ## Installation
 

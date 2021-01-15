@@ -6,7 +6,7 @@ Par sa structure décentralisée, Git illustre parfaitement ce qu'est un systèm
 
 En plus d'être décentralisé, Git a été conçu pour répondre à trois objectifs : performances, sécurité et flexibilité.
 
->**Astuce** - Une [vidéo](https://youtu.be/7vZ3URnjomM) expliquant l'installation et la configuration de Git.
+>**Astuce** - Une [vidéo](https://youtu.be/7vZ3URnjomM) expliquant l'installation et la configuration de Git est disponible.
 
 ## Installation
 

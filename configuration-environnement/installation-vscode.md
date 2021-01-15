@@ -34,6 +34,7 @@ Installez les extensions suivantes :
 - [sftp-sync](https://marketplace.visualstudio.com/items?itemName=liximomo.sftp) :  permet de transférer des fichiers sur le réseau via le protocole FTP
 - [Open PHP/HTML/JS In Browser](https://marketplace.visualstudio.com/items?itemName=PrimaFuture.open-php-html-js-in-browser) : permet d'ouvrir le code directement dans le navigateur à l'aide du raccourci par défaut __Shift+F6__.
 - [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) : permet d'ajouter de l'_IntelliSense_ (autocomplétion du code) pour du code PHP.
+- [JS-CSS-HTML Formatter](https://marketplace.visualstudio.com/items?itemName=lonefy.vscode-JS-CSS-HTML-formatter) : permet de gérer le format du code.
 
 ## Configuration des extensions
 
@@ -53,7 +54,10 @@ Ensuite, il faut procéder à quelques configurations :
 ```json
     "open-php-html-js-in-browser.customUrlToOpen": "http://${host}/${fileBasename}",
     "open-php-html-js-in-browser.documentRootFolder": "C:\\Bitnami\\wampstack\\apache2\\htdocs",
-    "open-php-html-js-in-browser.customHost": "localhost"
+    "open-php-html-js-in-browser.customHost": "localhost",
+    "[html]": {
+        "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
+    }
 ```
 
 [Revenir à la page principale de la section](README.md)

@@ -1,8 +1,8 @@
 # Postman
 
-Postman est rempli de fonctionnalités qui en font un outil puissant pour l’exploration et le développement de l’API.
-
-Générer des extraits de code à partir de vos demandes dans une variété de frameworks et de langues que vous pouvez utiliser pour faire les mêmes demandes à partir de votre propre application.
+Postman est rempli de fonctionnalités qui en font un outil puissant pour l’exploration et le développement d’API.
+n
+Générer des extraits de code à partir de vos demandes dans une variété de frameworks et de langages que vous pouvez utiliser pour faire les mêmes demandes à partir de votre propre application.
 
 Postman stocke toutes les demandes que vous envoyez dans l’onglet « Historique », vous permettant d’expérimenter rapidement des variations de demandes sans perdre de temps à construire une demande à partir de zéro.
 

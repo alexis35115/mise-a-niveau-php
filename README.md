@@ -14,7 +14,7 @@ __Si vous êtes à vos débuts, il est fortement recommandé de suivre les secti
 
 Dirigez-vous vers [cette section](/configuration-environnement/README.md).
 
-## PhpMyAdmin (en construction)
+## phpMyAdmin
 
 Dirigez-vous vers [cette section](/phpMyAdmin/README.md).
 

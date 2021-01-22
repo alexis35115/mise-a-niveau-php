@@ -25,14 +25,10 @@ Actuellement phpMyAdmin peut :
 
 L'interface phpMyAdmin est accessible via un navigateur web.
 
-Vous pouvez vous connecter à l'interface de phpMyAdmin depuis votre ordinateur (s'il est
-configuré comme un serveur) ou d'un ordinateur distant (serveur de réseau local ou serveur web). Les
-serveurs fournissant le service de phpMyAdmin exécutent localement le gestionnaire de base de données
-MySQL, un serveur web (par exemple Apache), puis phpMyAdmin. Une combinaison
-de ces logiciels est fournie dans certains regroupements de logiciels comme [WAMP](https://bitnami.com/stack/wamp) sous Windows.
+Vous pouvez vous connecter à l'interface de phpMyAdmin depuis votre ordinateur (s'il est configuré comme un serveur) ou d'un ordinateur distant (serveur de réseau local ou serveur web). Les serveurs fournissant le service de phpMyAdmin exécutent localement le gestionnaire de base de données
+MySQL, un serveur web (par exemple Apache), puis phpMyAdmin. Une combinaison de ces logiciels est fournie dans certains regroupements de logiciels comme [WAMP](https://bitnami.com/stack/wamp) sous Windows.
 
-Pour accéder à l'interface de phpMyAdmin, il faut accéder à l'adresse désignée dans un
-navigateur (il faut parfois utiliser un mot de passe).
+Pour accéder à l'interface de phpMyAdmin, il faut accéder à l'adresse désignée dans un navigateur (il faut parfois utiliser un mot de passe).
 
 L'adresse par défaut lors de l'installation de WAMP est <http://localhost/phpmyadmin/index.php>. Notez bien que le [port](https://fr.wikipedia.org/wiki/Liste_de_ports_logiciels) peut être différent.
 

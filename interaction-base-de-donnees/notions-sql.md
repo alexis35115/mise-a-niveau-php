@@ -110,7 +110,7 @@ Résultats :
 
 ### GROUP BY
 
-L’instruction GROUP BY va __regrouper les enregistrements retournés en fonction des colonnes spécifiés__ dans la clause GROUP BY. __Tous les enregistrements retournés par la requête seront regroupés en fonction des champs spécifiés dans la clause GROUP BY__.
+L’instruction GROUP BY va __regrouper les enregistrements retournés en fonction des colonnes spécifiées__ dans la clause GROUP BY. __Tous les enregistrements retournés par la requête seront regroupés en fonction des champs spécifiés dans la clause GROUP BY__.
 
 ```sql
 SELECT id_utilisateur,

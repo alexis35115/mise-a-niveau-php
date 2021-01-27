@@ -193,7 +193,7 @@ Résultats :
 
 ### Les opérateurs arithmétiques
 
-Les opérateurs arithmétiques exécutent des opérations mathématiques sur deux expressions d’un ou plusieurs types de données. Ils sont exécutés à partir de la catégorie de type donnée numérique.
+Les opérateurs arithmétiques exécutent des opérations mathématiques sur deux expressions d’un ou plusieurs types de données. Ils sont exécutés à partir de la catégorie de type donné numérique.
 
 Le tableau suivant répertorie les opérateurs arithmétiques :
 

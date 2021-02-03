@@ -108,7 +108,7 @@ SELECT b.species_name
  GROUP BY b.species_name, b.observation_date;
 ```
 
-Notez que les "," sont tous alignés à droite tandis que les noms de colonne réelle et les détails spécifiques à l’implémentation sont alignés (les SELECT et les FROM).
+Notez que les "," sont tous alignés à gauche tandis que les noms de colonne réelle et les détails spécifiques à l’implémentation sont alignés (les SELECT et les FROM).
 
 Bien que non exhaustive comprend toujours des espaces :
 
@@ -116,7 +116,9 @@ Bien que non exhaustive comprend toujours des espaces :
 - après les virgules (,)
 
 ```sql
-SELECT a.title, a.release_date, a.recording_date
+SELECT a.title
+      ,a.release_date
+      ,a.recording_date
   FROM albums AS a
  WHERE a.title = 'Charcoal Lane'
     OR a.title = 'The New Danger';

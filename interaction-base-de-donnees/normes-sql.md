@@ -89,16 +89,18 @@ Pour faciliter la lecture du code, il est important que le complément appropri�
 Les espaces doivent être utilisés pour aligner le code de sorte que les mots clés racines se terminent tous sur la même limite de caractère. Cela forme une rivière au milieu, ce qui rend facile pour l’œil des lecteurs de numériser sur le code et de séparer les mots clés du détail de l’implémentation. Les rivières sont mauvaises en typographie, mais utiles ici :
 
 ```sql
-SELECT f.species_name,
-       AVG(f.height) AS average_height, AVG(f.diameter) AS average_diameter
+SELECT f.species_name
+      ,AVG(f.height) AS average_height
+      ,AVG(f.diameter) AS average_diameter
   FROM flora AS f
  WHERE f.species_name = 'Banksia'
     OR f.species_name = 'Sheoak'
     OR f.species_name = 'Wattle'
  GROUP BY f.species_name, f.observation_date)
  UNION ALL
-SELECT b.species_name,
-       AVG(b.height) AS average_height, AVG(b.diameter) AS average_diameter
+SELECT b.species_name
+      ,AVG(b.height) AS average_height
+      ,AVG(b.diameter) AS average_diameter
   FROM botanic_garden_flora AS b
  WHERE b.species_name = 'Banksia'
     OR b.species_name = 'Sheoak'

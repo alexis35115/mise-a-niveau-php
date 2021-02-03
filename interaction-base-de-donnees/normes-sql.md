@@ -116,9 +116,9 @@ Bien que non exhaustive comprend toujours des espaces :
 - après les virgules (,)
 
 ```sql
-SELECT a.title
-      ,a.release_date
-      ,a.recording_date
+SELECT a.titre
+      ,a.date_sortie
+      ,a.date_enregistrement
   FROM albums AS a
  WHERE a.title = 'Charcoal Lane'
     OR a.title = 'The New Danger';
@@ -137,7 +137,7 @@ Incluez toujours de nouvelles lignes/espaces verticales :
 Garder tous les mots clés alignés sur le côté droit et les valeurs à gauche alignées crée un écart uniforme au milieu de la requête. Il est également beaucoup plus facile de numériser rapidement sur la définition de requêtes.
 
 ```sql
-INSERT INTO albums (title, release_date, recording_date)
+INSERT INTO albums (titre, date_sortie, date_enregistrement)
             VALUES ('Charcoal Lane', '1990-01-01 01:01:01.00000', '1990-01-01 01:01:01.00000'),
                    ('The New Danger', '2008-01-01 01:01:01.00000', '1990-01-01 01:01:01.00000');
 ```

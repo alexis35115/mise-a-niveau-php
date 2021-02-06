@@ -18,7 +18,7 @@ Dirigez-vous vers [cette section](/configuration-environnement/README.md).
 
 Dirigez-vous vers [cette section](/phpMyAdmin/README.md).
 
-## PHP - Les bases (en construction)
+## PHP - Les bases
 
 Dirigez-vous vers [cette section](/bases-php/README.md).
 

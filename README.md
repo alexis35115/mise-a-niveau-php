@@ -20,7 +20,7 @@ Dirigez-vous vers [cette section](/phpMyAdmin/README.md).
 
 ## PHP - Les bases (en construction)
 
-Dirigez-vous vers [cette section](/phpMyAdmin/README.md).
+Dirigez-vous vers [cette section](/bases-php/README.md).
 
 ## Organisation des éléments de programmation
 

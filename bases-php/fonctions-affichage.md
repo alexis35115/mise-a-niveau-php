@@ -55,7 +55,7 @@ Exemple :
 <?php
 $n =  43951789;
 $u = -43951789;
-$c = 65; // ASCII 65 is 'A'
+$c = 65; // 65 en ASCII est 'A'
 
 // notez le double %%, cela affiche un caractère '%' littéral
 printf("%%b = '%b'\n", $n); // représentation binaire
@@ -141,8 +141,8 @@ Exemple :
 ```php
 <pre>
 <?php
-$a = array ('a' => 'apple', 'b' => 'banana', 'c' => array ('x', 'y', 'z'));
-print_r ($a);
+$a = array('a' => 'pomme', 'b' => 'banane', 'c' => array('x', 'y', 'z'));
+print_r($a);
 ?>
 </pre>
 ```
@@ -153,8 +153,8 @@ Résultat :
 <pre>
 Array
 (
-    [a] => apple
-    [b] => banana
+    [a] => pomme
+    [b] => banane
     [c] => Array
         (
             [0] => x

@@ -28,7 +28,7 @@ define('AGE_LEGAL_ACHAT_ALCOOL', 18);
 
 C'est le type le plus simple. Un booléen représente une valeur de vérité. Il peut valoir TRUE ou FALSE.
 
-> **Astuces** : il est jugé une bonne pratique de préfixer une variable booléenne par "est"
+> **Astuces** : il est jugé d'être une bonne pratique de préfixer une variable booléenne par "est".
 
 Exemples :
 
@@ -49,7 +49,7 @@ $nombreEntier = 18;
 
 ## Nombres à virgules flottantes
 
-Les nombres à virgule flottante (aussi connus comme "floats", "doubles", ou "real numbers") peuvent être spécifiés en utilisant les syntaxes.
+Les nombres à virgule flottante (aussi connus comme "floats", "doubles", ou "real numbers") peuvent être spécifiés en utilisant la syntaxe.
 
 Exemple :
 
@@ -59,7 +59,7 @@ $moyenneAuCours = 89.50;
 
 ## Les chaînes de caractères
 
-Une chaîne de caractères est une série de caractères, où un caractère est la même chose qu'un octet. De ce fait, PHP ne supporte que les jeux de caractères comportant 256 caractères différents, et, donc, n'a pas de support natif pour l'Unicode. Reportez-vous aux détails sur le type chaîne de caractères pour plus d'informations.
+Une chaîne de caractères est une série de caractères, où un caractère est la même chose qu'un octet. De ce fait, PHP ne supporte que les jeux de caractères comportant 256 caractères différents, et, donc, n'a pas de support natif pour l'Unicode.
 
 Exemples :
 
@@ -76,9 +76,6 @@ echo('Arnold a dit : "I\'ll be back"');
 // Affiche : Voulez-vous supprimer C:\*.*?
 echo('Voulez-vous supprimer C:\\*.*?');
 
-// Affiche : Voulez-vous supprimer C:\*.*?
-echo('Voulez-vous supprimer C:\*.*?');
-
 // Affiche : Ceci n'affichera pas \n de nouvelle ligne
 echo('Ceci n\'affichera pas \n de nouvelle ligne');
 
@@ -88,7 +85,7 @@ echo('Les variables ne seront pas $traitees $ici');
 
 ## Les tableaux
 
-Un tableau en PHP est en fait une carte ordonnée. Une carte est un type qui associe des valeurs à des clés. Ce type est optimisé pour différentes utilisations ; il peut être considéré comme un tableau, une liste, une table de hashage, un dictionnaire, une collection, une pile, une file d'attente et probablement plus. On peut avoir, comme valeur d'un tableau, d'autres tableaux, multidimensionnels ou non. La structure de ces données dépasse l'objet de ce manuel, mais vous trouverez au moins un exemple pour chacun des cas évoqués. Pour plus d'informations, reportez-vous aux différentes explications sur le sujet que l'on trouve sur le web.
+Un tableau en PHP est en fait une carte ordonnée. Une carte est un type qui associe des valeurs à des clés. Ce type est optimisé pour différentes utilisations ; il peut être considéré comme un tableau, une liste, une table de hashage, un dictionnaire, une collection, une pile, une file d'attente et probablement plus. On peut avoir, comme valeur d'un tableau, d'autres tableaux, multidimensionnels ou non.
 
 Exemples :
 

@@ -57,11 +57,11 @@ Exemple :
 ```php
 <?php
 if ($i == 0) {
-    echo "i égal 0";
+    echo("i égal 0");
 } elseif ($i == 1) {
-    echo "i égal 1";
+    echo("i égal 1");
 } elseif ($i == 2) {
-    echo "i égal 2";
+    echo("i égal 2");
 }
 
 switch ($i) {
@@ -101,7 +101,7 @@ Exemple :
 <?php
 /* exemple 1 */
 for ($i = 1; $i <= 10; $i++) {
-    echo $i;
+    echo($i);
 }
 
 /* exemple 2 */
@@ -109,7 +109,7 @@ for ($i = 1; ; $i++) {
     if ($i > 10) {
         break;
     }
-    echo $i;
+    echo($i);
 }
 
 /* exemple 3 */
@@ -118,7 +118,7 @@ for (; ; ) {
     if ($i > 10) {
         break;
     }
-    echo $i;
+    echo($i);
     $i++;
 }
 
@@ -144,7 +144,7 @@ Exemple :
 <?php
 $i = 1;
 while ($i <= 10) {
-    echo $i++;  /* La valeur affichée est $i avant l'incrémentation
+    echo($i++);  /* La valeur affichée est $i avant l'incrémentation
                    (post-incrémentation)  */
 }
 ?>

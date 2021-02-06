@@ -10,7 +10,7 @@ Par exemple :
 
 ```php
 <?php
-    // Exemple, ceci est un commentaire simple sur une seule ligne.
+// Exemple, ceci est un commentaire simple sur une seule ligne.
 ?>
 ```
 
@@ -22,10 +22,10 @@ Par exemple :
 
 ```php
 <?php
-    /*
-        Toute cette section est un commentaire.
-        Il n'est pas nécessaire de mettre les "//" en début de ligne.
-    */
+/*
+    Toute cette section est un commentaire.
+    Il n'est pas nécessaire de mettre les "//" en début de ligne.
+*/
 ?>
 ```
 

@@ -96,7 +96,8 @@ SELECT f.species_name
  WHERE f.species_name = 'Banksia'
     OR f.species_name = 'Sheoak'
     OR f.species_name = 'Wattle'
- GROUP BY f.species_name, f.observation_date)
+ GROUP BY f.species_name
+         ,f.observation_date)
  UNION ALL
 SELECT b.species_name
       ,AVG(b.height) AS average_height
@@ -105,7 +106,8 @@ SELECT b.species_name
  WHERE b.species_name = 'Banksia'
     OR b.species_name = 'Sheoak'
     OR b.species_name = 'Wattle'
- GROUP BY b.species_name, b.observation_date;
+ GROUP BY b.species_name
+         ,b.observation_date;
 ```
 
 Notez que les "," sont tous alignés à gauche tandis que les noms de colonne réelle et les détails spécifiques à l’implémentation sont alignés (les SELECT et les FROM).

@@ -64,7 +64,7 @@ try {
 
 >**Note :** [PDO::__construct()](https://www.php.net/manual/fr/pdo.construct.php) va toujours lancer une exception [PDOException](https://www.php.net/manual/fr/class.pdoexception.php) si la connexion échoue suivant la configuration de __PDO::ATTR_ERRMODE__. Les exceptions non attrapées deviennent des erreurs fatales.
 
->**Remarque :** dbh = _Database Handle_ et $sth = "Statement Handle". Voir la [question](https://stackoverflow.com/questions/6379752/php-pdo-what-do-dbh-and-sth-stand-for) sur StackOver Flow.
+>**Remarque :** dbh = _Database Handle_ et $sth = "Statement Handle". Voir la [question](https://stackoverflow.com/questions/6379752/php-pdo-what-do-dbh-and-sth-stand-for) sur Stack OverFlow.
 
 Créer une instance PDO et définir le mode d'erreur à partir du constructeur :
 

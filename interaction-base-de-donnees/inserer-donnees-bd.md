@@ -89,7 +89,7 @@ Cette fois, nous allons procéder à la création d'une série, mais à partir d
         /*
         À l'aide de la méthode "lastInsertId()" de PDO, il est possible de récupérer l'identifiant unique de la série créée (id_serie).
 
-        Au besoin, référez-vous à cette question sur StackOver Flow https://stackoverflow.com/questions/17112852/get-the-new-record-primary-key-id-from-mysql-insert-query.
+        Au besoin, référez-vous à cette question sur Stack OverFlow https://stackoverflow.com/questions/17112852/get-the-new-record-primary-key-id-from-mysql-insert-query.
         */
         echo($dbh->lastInsertId());
     } catch (PDOException $e) {
@@ -141,7 +141,7 @@ Cette fois, nous allons procéder à la création d'une série, mais à partir d
         /*
         À l'aide de la méthode "lastInsertId()" de PDO, il est possible de récupérer l'identifiant unique de la série créée (id_serie).
 
-        Au besoin, référez-vous à cette question sur StackOver Flow https://stackoverflow.com/questions/17112852/get-the-new-record-primary-key-id-from-mysql-insert-query.
+        Au besoin, référez-vous à cette question sur Stack OverFlow https://stackoverflow.com/questions/17112852/get-the-new-record-primary-key-id-from-mysql-insert-query.
         */
         echo($dbh->lastInsertId());
     } catch (PDOException $e) {

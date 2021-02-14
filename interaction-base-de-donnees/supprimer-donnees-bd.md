@@ -65,6 +65,9 @@ Cette fois, nous allons procéder à la suppression d'une série, mais à partir
         $sth = $dbh->prepare($requeteSupprimerSerie);
         $sth->execute();
 
+        // Afficher le nombre de lignes affectés
+        echo("Nombre de lignes de affectés : " . $sth->rowCount());
+
     } catch (PDOException $e) {
         echo('Échec lors de la connexion : ' . $e->getMessage());
     }
@@ -98,6 +101,9 @@ Cette fois, nous allons procéder à la suppression d'une série, mais à partir
 
         $sth->bindParam(':id_serie', $idSerie, PDO::PARAM_INT);
         $sth->execute();
+
+        // Afficher le nombre de lignes affectés
+        echo("Nombre de lignes de affectés : " . $sth->rowCount());
 
     } catch (PDOException $e) {
         echo('Échec lors de la connexion : ' . $e->getMessage());

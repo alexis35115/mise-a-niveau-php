@@ -86,6 +86,9 @@ Cette fois, nous allons procéder à la mise à jour d'une série, mais à parti
         $sth = $dbh->prepare($requeteMiseAJourSerie);
         $sth->execute();
 
+        // Afficher le nombre de lignes affectés
+        echo("Nombre de lignes de affectés : " . $sth->rowCount());
+
     } catch (PDOException $e) {
         echo('Échec lors de la connexion : ' . $e->getMessage());
     }
@@ -124,6 +127,9 @@ Cette fois, nous allons procéder à la mise à jour d'une série, mais à parti
         $sth->bindParam(':date_suppression', $dateSuppression, PDO::PARAM_STR);
         $sth->bindParam(':id_serie', $idSerie, PDO::PARAM_INT);
         $sth->execute();
+
+        // Afficher le nombre de lignes affectés
+        echo("Nombre de lignes de affectés : " . $sth->rowCount());
 
     } catch (PDOException $e) {
         echo('Échec lors de la connexion : ' . $e->getMessage());

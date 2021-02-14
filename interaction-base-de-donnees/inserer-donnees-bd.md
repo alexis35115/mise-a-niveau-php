@@ -63,9 +63,46 @@ Voici le message de confirmation, notez que l'identifiant de la série préalabl
 
 ![Message de confirmation suite à l'insertion de la série](../images/confirmation-phpmyadmin-insert.PNG)
 
-## Créer une donnée avec PHP à l'aide de PDO
+## Créer une donnée avec PHP à l'aide de PDO sans l'utilisation de bindParam
 
-Cette fois, nous allons procéder à la création d'une série, mais à partir de PHP avec PDO.
+Cette fois, nous allons procéder à la création d'une série, mais à partir de PHP avec PDO et __sans l'utilisation de bindParam__.
+
+```php
+<?php
+    $dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
+    $utilisateur = 'root';
+    $motPasse = 'admin123';
+
+    try {
+        // Créer la connexion
+        $dbh = new PDO($dsn, $utilisateur, $motPasse);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->exec('SET CHARACTER SET UTF8');
+
+        // Requête INSERT pour la création de la nouvelle série
+        $requeteAjoutSerie = "INSERT INTO serie (nom, synopsis, description, date_creation, date_modification, date_suppression)
+                                         VALUES ('Nom de la série', 'Synopsis de la série', 'Description de la série', '2009-09-23 06:23:19', NULL, NULL)";
+
+        $sth = $dbh->prepare($requeteAjoutSerie);
+        $sth->execute();
+
+        /*
+        À l'aide de la méthode "lastInsertId()" de PDO, il est possible de récupérer l'identifiant unique de la série créée (id_serie).
+
+        Au besoin, référez-vous à cette question sur StackOver Flow https://stackoverflow.com/questions/17112852/get-the-new-record-primary-key-id-from-mysql-insert-query.
+        */
+        echo($dbh->lastInsertId());
+    } catch (PDOException $e) {
+        echo('Échec lors de la connexion : ' . $e->getMessage());
+    }
+?>
+```
+
+À l'aide de l'identifiant unique (_id\_serie_) affiché à l'écran, provenant de lastInsertId(), il est possible de rechercher la nouvelle série créée.
+
+## Créer une donnée avec PHP à l'aide de PDO avec l'utilisation de bindParam
+
+Cette fois, nous allons procéder à la création d'une série, mais à partir de PHP avec PDO et __avec l'utilisation de bindParam__.
 
 ```php
 <?php

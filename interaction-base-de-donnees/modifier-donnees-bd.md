@@ -62,9 +62,41 @@ SELECT *
 
 >**Remarque :** Notez que les autres champs de l'enregistrement sont restés inchangés suite à la mise à jour, car seul le champ _date\_suppression_ était inclus dans la déclaration __SET__.
 
-## Modifier une donnée avec PHP à l'aide de PDO
+## Modifier une donnée avec PHP à l'aide de PDO sans l'utilisation de bindParam
 
-Cette fois, nous allons procéder à la mise à jour d'une série, mais à partir de PHP avec PDO.
+Cette fois, nous allons procéder à la mise à jour d'une série, mais à partir de PHP avec PDO et __sans l'utilisation de bindParam__.
+
+```php
+<?php
+    $dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
+    $utilisateur = 'root';
+    $motPasse = 'admin123';
+
+    try {
+        // Créer la connexion
+        $dbh = new PDO($dsn, $utilisateur, $motPasse);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->exec('SET CHARACTER SET UTF8');
+
+        // Requête UPDATE pour la mise à jour d'une série
+        $requeteMiseAJourSerie = "UPDATE serie
+                                    SET date_suppression = '2020-12-04 01:01:01'
+                                  WHERE id_serie = 2";
+
+        $sth = $dbh->prepare($requeteMiseAJourSerie);
+        $sth->execute();
+
+    } catch (PDOException $e) {
+        echo('Échec lors de la connexion : ' . $e->getMessage());
+    }
+?>
+```
+
+À l'aide de phpMyAdmin, il est possible de confirmer la mise à jour de la série.
+
+## Modifier une donnée avec PHP à l'aide de PDO avec l'utilisation de bindParam
+
+Cette fois, nous allons procéder à la mise à jour d'une série, mais à partir de PHP avec PDO et __avec l'utilisation de bindParam__.
 
 ```php
 <?php

@@ -43,9 +43,39 @@ DELETE FROM serie
 
 ![Image de confirmation lors de la suppression d'une série avec phpMyAdmin](../images/confirmation-suppression-phpmyadmin.PNG)
 
-## Supprimer une donnée avec PHP à l'aide de PDO
+## Supprimer une donnée avec PHP à l'aide de PDO sans l'utilisation de bindParam
 
-Cette fois, nous allons procéder à la suppression d'une série, mais à partir de PHP avec PDO.
+Cette fois, nous allons procéder à la suppression d'une série, mais à partir de PHP avec PDO et __sans l'utilisation de bindParam__.
+
+```php
+<?php
+    $dsn = 'mysql:dbname=demo_acces_donnees;host=localhost';
+    $utilisateur = 'root';
+    $motPasse = 'admin123';
+
+    try {
+        // Créer la connexion
+        $dbh = new PDO($dsn, $utilisateur, $motPasse);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->exec('SET CHARACTER SET UTF8');
+
+        // Requête DELETE pour la suppression d'une série
+        $requeteSupprimerSerie = "DELETE FROM serie WHERE id_serie = 3";
+
+        $sth = $dbh->prepare($requeteSupprimerSerie);
+        $sth->execute();
+
+    } catch (PDOException $e) {
+        echo('Échec lors de la connexion : ' . $e->getMessage());
+    }
+?>
+```
+
+À l'aide de phpMyAdmin, il est possible de confirmer la suppression de la série.
+
+## Supprimer une donnée avec PHP à l'aide de PDO avec l'utilisation de bindParam
+
+Cette fois, nous allons procéder à la suppression d'une série, mais à partir de PHP avec PDO et __avec l'utilisation de bindParam__.
 
 ```php
 <?php

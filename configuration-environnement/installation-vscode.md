@@ -35,6 +35,7 @@ Installez les extensions suivantes :
 - [Open PHP/HTML/JS In Browser](https://marketplace.visualstudio.com/items?itemName=PrimaFuture.open-php-html-js-in-browser) : permet d'ouvrir le code directement dans le navigateur à l'aide du raccourci par défaut __Shift+F6__.
 - [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) : permet d'ajouter de l'_IntelliSense_ (autocomplétion du code) pour du code PHP.
 - [JS-CSS-HTML Formatter](https://marketplace.visualstudio.com/items?itemName=lonefy.vscode-JS-CSS-HTML-formatter) : permet de gérer le format du code.
+- [PHP Awesome Snippets](https://marketplace.visualstudio.com/items?itemName=hakcorp.php-awesome-snippets) : permet d'ajouter des snippets à Viusal Studio Code.
 
 ## Configuration des extensions
 
